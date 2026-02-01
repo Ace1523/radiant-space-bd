@@ -136,7 +136,7 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border);
             border-radius: 12px;
-            max-height: 400px;
+            max-height: 500px;
             overflow-y: auto;
             display: none;
             z-index: 1001;
@@ -157,6 +157,58 @@
 
         .search-result-item h4 { color: var(--text); font-size: 0.875rem; font-weight: 500; }
         .search-result-item p { color: var(--text-dim); font-size: 0.75rem; margin-top: 0.25rem; }
+
+        .search-results-header {
+            padding: 0.75rem 1rem;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .search-results-header strong { color: var(--accent); }
+
+        .search-tab-group {
+            border-bottom: 1px solid var(--border);
+        }
+        .search-tab-group:last-child { border-bottom: none; }
+
+        .search-tab-header {
+            padding: 0.5rem 1rem;
+            background: rgba(167, 139, 250, 0.1);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .search-result-item .search-tab-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            color: var(--text-dim);
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .search-result-item .search-highlight {
+            background: rgba(250, 204, 21, 0.3);
+            color: var(--warning);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--text-dim);
+        }
+        .search-no-results p { margin-top: 0.5rem; font-size: 0.8rem; }
 
         /* Navigation */
         .nav-tabs {
@@ -1093,7 +1145,7 @@
             </div>
             <div class="search-container">
                 <span class="search-icon">&#128269;</span>
-                <input type="text" id="globalSearch" placeholder="Search contracts, agencies, terms..." onkeyup="handleSearch(this.value)">
+                <input type="text" id="globalSearch" placeholder="Search everything..." onkeyup="handleSearch(this.value)">
                 <div class="search-results" id="searchResults"></div>
             </div>
         </div>
@@ -13137,24 +13189,160 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
             }
         });
 
-        // Search
-        const searchData = [
-            {title: 'NASA FSP RFI', desc: 'Fission Surface Power System Request for Information', tab: 'contracts', link: 'https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view'},
-            {title: 'DARPA TTO BAA', desc: 'Tactical Technology Office Broad Agency Announcement', tab: 'contracts', link: 'https://sam.gov/opp/109aceb76198452b91f8ecce72b4890b/view'},
-            {title: 'SAM.gov', desc: 'Central federal contracts portal', tab: 'contracts', link: 'https://sam.gov/'},
-            {title: 'SBIR.gov', desc: 'Small Business Innovation Research opportunities', tab: 'contracts', link: 'https://www.sbir.gov/topics'},
-            {title: 'SpaceWERX', desc: 'Space Force innovation and SBIR programs', tab: 'agencies', link: 'https://spacewerx.us/ventures/sbir-sttr/'},
-            {title: 'DIU Solicitations', desc: 'Defense Innovation Unit open opportunities', tab: 'agencies', link: 'https://www.diu.mil/work-with-us/open-solicitations'},
-            {title: 'HALEU', desc: 'High-Assay Low-Enriched Uranium fuel', tab: 'glossary'},
-            {title: 'TRISO', desc: 'Tri-structural isotropic fuel particles', tab: 'glossary'},
-            {title: 'OTA', desc: 'Other Transaction Authority - fast prototyping', tab: 'glossary'},
-            {title: 'BAA', desc: 'Broad Agency Announcement', tab: 'glossary'},
-            {title: 'FSP', desc: 'Fission Surface Power program', tab: 'programs'},
-            {title: 'DRACO', desc: 'Nuclear thermal propulsion demonstration', tab: 'programs'},
-            {title: 'Radiant Kaleidos', desc: 'Portable nuclear generator', tab: 'radiant'},
-            {title: 'Matthew Evans', desc: 'NASA FSP Agreements Officer', tab: 'agencies'},
-            {title: 'Linda Nabors', desc: 'NASA FSP Agreements Officer', tab: 'agencies'},
-        ];
+        // Comprehensive Search System
+        let searchIndex = [];
+
+        // Tab name mapping for display
+        const tabNames = {
+            'home': 'Home',
+            'contracts': 'Contract Hub',
+            'agencies': 'Agencies',
+            'strategy': 'Strategy & Playbook',
+            'technical': 'Technical',
+            'history': 'History',
+            'programs': 'Programs & Timeline',
+            'radiant': 'Radiant Nuclear',
+            'deep-dive': 'Contract Deep Dive',
+            'policy': 'Policy',
+            'news': 'News & Events',
+            'glossary': 'Glossary'
+        };
+
+        // Build search index from all page content
+        function buildSearchIndex() {
+            searchIndex = [];
+            const tabs = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                const tabId = tab.id;
+                if (!tabId) return;
+
+                // Index headings (h2, h3, h4) with their content
+                const headings = tab.querySelectorAll('h2, h3, h4');
+                headings.forEach((heading, idx) => {
+                    const text = heading.textContent.trim();
+                    if (text.length > 2) {
+                        // Get surrounding context
+                        let context = '';
+                        let nextEl = heading.nextElementSibling;
+                        while (nextEl && !['H2', 'H3', 'H4'].includes(nextEl.tagName)) {
+                            if (nextEl.textContent) {
+                                context += nextEl.textContent.trim() + ' ';
+                            }
+                            nextEl = nextEl.nextElementSibling;
+                            if (context.length > 300) break;
+                        }
+
+                        searchIndex.push({
+                            type: 'heading',
+                            title: text.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim(),
+                            content: context.substring(0, 300),
+                            tab: tabId,
+                            element: heading
+                        });
+                    }
+                });
+
+                // Index cards and important sections
+                const cards = tab.querySelectorAll('.card, .stat-card, .opportunity-card, .timeline-item, .glossary-item');
+                cards.forEach((card, idx) => {
+                    const title = card.querySelector('h3, h4, .stat-value, .glossary-term');
+                    const content = card.textContent.trim();
+                    if (content.length > 10) {
+                        searchIndex.push({
+                            type: 'card',
+                            title: title ? title.textContent.trim().replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim() : 'Section',
+                            content: content.substring(0, 400),
+                            tab: tabId,
+                            element: card
+                        });
+                    }
+                });
+
+                // Index table rows
+                const tableRows = tab.querySelectorAll('table tr');
+                tableRows.forEach(row => {
+                    const text = row.textContent.trim();
+                    if (text.length > 10) {
+                        searchIndex.push({
+                            type: 'table',
+                            title: 'Table Entry',
+                            content: text.substring(0, 300),
+                            tab: tabId,
+                            element: row
+                        });
+                    }
+                });
+
+                // Index paragraphs with substantial content
+                const paragraphs = tab.querySelectorAll('p');
+                paragraphs.forEach(p => {
+                    const text = p.textContent.trim();
+                    if (text.length > 50) {
+                        // Find nearest heading for context
+                        let heading = p.closest('.card')?.querySelector('h2, h3, h4');
+                        if (!heading) {
+                            let prev = p.previousElementSibling;
+                            while (prev) {
+                                if (['H2', 'H3', 'H4'].includes(prev.tagName)) {
+                                    heading = prev;
+                                    break;
+                                }
+                                prev = prev.previousElementSibling;
+                            }
+                        }
+                        searchIndex.push({
+                            type: 'paragraph',
+                            title: heading ? heading.textContent.trim().replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim() : 'Content',
+                            content: text.substring(0, 400),
+                            tab: tabId,
+                            element: p
+                        });
+                    }
+                });
+
+                // Index list items
+                const listItems = tab.querySelectorAll('li');
+                listItems.forEach(li => {
+                    const text = li.textContent.trim();
+                    if (text.length > 20) {
+                        searchIndex.push({
+                            type: 'list',
+                            title: 'List Item',
+                            content: text.substring(0, 300),
+                            tab: tabId,
+                            element: li
+                        });
+                    }
+                });
+            });
+
+            console.log(`Search index built: ${searchIndex.length} items indexed`);
+        }
+
+        // Highlight search term in text
+        function highlightMatch(text, query) {
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Get snippet around match
+        function getSnippet(content, query, maxLength = 120) {
+            const lowerContent = content.toLowerCase();
+            const lowerQuery = query.toLowerCase();
+            const matchIndex = lowerContent.indexOf(lowerQuery);
+
+            if (matchIndex === -1) return content.substring(0, maxLength) + '...';
+
+            const start = Math.max(0, matchIndex - 40);
+            const end = Math.min(content.length, matchIndex + query.length + 80);
+            let snippet = content.substring(start, end);
+
+            if (start > 0) snippet = '...' + snippet;
+            if (end < content.length) snippet = snippet + '...';
+
+            return highlightMatch(snippet, query);
+        }
 
         function handleSearch(query) {
             const results = document.getElementById('searchResults');
@@ -13162,37 +13350,130 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                 results.classList.remove('active');
                 return;
             }
-            const matches = searchData.filter(item =>
-                item.title.toLowerCase().includes(query.toLowerCase()) ||
-                item.desc.toLowerCase().includes(query.toLowerCase())
+
+            const lowerQuery = query.toLowerCase();
+
+            // Find all matches
+            const matches = searchIndex.filter(item =>
+                item.title.toLowerCase().includes(lowerQuery) ||
+                item.content.toLowerCase().includes(lowerQuery)
             );
-            if (matches.length > 0) {
-                results.innerHTML = matches.map(m => `
-                    <div class="search-result-item" onclick="goToResult('${m.tab}', '${m.link || ''}')">
-                        <h4>${m.title}</h4>
-                        <p>${m.desc}</p>
-                    </div>
-                `).join('');
+
+            // Remove duplicates based on similar content
+            const uniqueMatches = [];
+            const seenContent = new Set();
+            matches.forEach(match => {
+                const key = match.tab + ':' + match.content.substring(0, 100);
+                if (!seenContent.has(key)) {
+                    seenContent.add(key);
+                    uniqueMatches.push(match);
+                }
+            });
+
+            // Group by tab
+            const groupedByTab = {};
+            uniqueMatches.forEach(match => {
+                if (!groupedByTab[match.tab]) {
+                    groupedByTab[match.tab] = [];
+                }
+                groupedByTab[match.tab].push(match);
+            });
+
+            // Limit results per tab
+            Object.keys(groupedByTab).forEach(tab => {
+                groupedByTab[tab] = groupedByTab[tab].slice(0, 5);
+            });
+
+            const totalResults = Object.values(groupedByTab).flat().length;
+
+            if (totalResults > 0) {
+                let html = `<div class="search-results-header"><strong>${totalResults}</strong> result${totalResults !== 1 ? 's' : ''} found for "${query}"</div>`;
+
+                // Order tabs logically
+                const tabOrder = ['contracts', 'agencies', 'programs', 'radiant', 'strategy', 'technical', 'policy', 'deep-dive', 'history', 'news', 'glossary', 'home'];
+                const sortedTabs = Object.keys(groupedByTab).sort((a, b) => {
+                    return tabOrder.indexOf(a) - tabOrder.indexOf(b);
+                });
+
+                sortedTabs.forEach(tab => {
+                    const tabMatches = groupedByTab[tab];
+                    html += `<div class="search-tab-group">`;
+                    html += `<div class="search-tab-header">${tabNames[tab] || tab} (${tabMatches.length})</div>`;
+
+                    tabMatches.forEach((match, idx) => {
+                        const snippet = getSnippet(match.content, query);
+                        const titleHighlighted = highlightMatch(match.title, query);
+                        html += `
+                            <div class="search-result-item" data-tab="${match.tab}" data-index="${searchIndex.indexOf(match)}">
+                                <h4>${titleHighlighted}</h4>
+                                <p>${snippet}</p>
+                            </div>
+                        `;
+                    });
+
+                    html += `</div>`;
+                });
+
+                results.innerHTML = html;
                 results.classList.add('active');
+
+                // Add click handlers
+                results.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const tab = this.dataset.tab;
+                        const index = parseInt(this.dataset.index);
+                        goToResult(tab, index);
+                    });
+                });
             } else {
-                results.classList.remove('active');
+                results.innerHTML = `
+                    <div class="search-no-results">
+                        <div style="font-size: 1.5rem; opacity: 0.5;">&#128269;</div>
+                        <p>No results found for "<strong>${query}</strong>"</p>
+                        <p>Try different keywords or check spelling</p>
+                    </div>
+                `;
+                results.classList.add('active');
             }
         }
 
-        function goToResult(tab, link) {
+        function goToResult(tab, index) {
+            // Switch to the correct tab
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
             document.getElementById(tab).classList.add('active');
+
+            // Close search
             document.getElementById('searchResults').classList.remove('active');
             document.getElementById('globalSearch').value = '';
-            if (link) window.open(link, '_blank');
+
+            // Scroll to the element if we have an index
+            if (typeof index === 'number' && searchIndex[index] && searchIndex[index].element) {
+                setTimeout(() => {
+                    const element = searchIndex[index].element;
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Briefly highlight the element
+                    element.style.transition = 'background 0.3s ease';
+                    element.style.background = 'rgba(167, 139, 250, 0.3)';
+                    setTimeout(() => {
+                        element.style.background = '';
+                    }, 2000);
+                }, 100);
+            }
         }
 
+        // Close search on outside click
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.search-container')) {
                 document.getElementById('searchResults').classList.remove('active');
             }
+        });
+
+        // Build index on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(buildSearchIndex, 500);
         });
 
         // Download functions
