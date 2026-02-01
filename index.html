@@ -2337,7 +2337,7 @@
                             </a>
                         </div>
                         <div class="strategy-nav-category">
-                            <a href="#agency-other-defense" class="strategy-nav-btn" style="text-decoration: none;">
+                            <a href="#agency-other-defense" class="strategy-nav-btn" style="text-decoration: none;" onclick="openAccordionAndScroll('agency-other-defense'); return false;">
                                 <span class="nav-icon">&#128737;</span> Other Defense
                             </a>
                         </div>
@@ -13067,6 +13067,21 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
         function toggleAccordion(header) {
             const item = header.parentElement;
             item.classList.toggle('active');
+        }
+
+        // Open accordion by ID and scroll to it
+        function openAccordionAndScroll(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                // Open the accordion if it's not already open
+                if (!element.classList.contains('active')) {
+                    element.classList.add('active');
+                }
+                // Scroll to it
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
 
         // Checklist
