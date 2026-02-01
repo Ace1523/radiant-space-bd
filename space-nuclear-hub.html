@@ -5465,8 +5465,19 @@
                             </button>
                             <div class="strategy-nav-dropdown">
                                 <a href="#tech-why-nuclear" class="strategy-nav-link">&#127775; Why Nuclear for Space</a>
-                                <a href="#tech-fission" class="strategy-nav-link">&#9762; How Fission Works</a>
+                                <a href="#tech-fission-101" class="strategy-nav-link">&#128218; Fission 101 (Start Here)</a>
+                                <a href="#tech-fission" class="strategy-nav-link">&#9762; Fission Physics Deep Dive</a>
                                 <a href="#tech-haleu" class="strategy-nav-link">&#9889; HALEU Fuel</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128640;</span> Radiant Tech
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#tech-radiant-how" class="strategy-nav-link">&#9889; How Kaleidos Works</a>
+                                <a href="#tech-radiant-components" class="strategy-nav-link">&#128295; Core Components</a>
+                                <a href="#tech-radiant-safety" class="strategy-nav-link">&#128737; Safety Features</a>
                             </div>
                         </div>
                         <div class="strategy-nav-category">
@@ -5552,8 +5563,457 @@
                     </div>
                 </div>
 
+                <!-- ========== FISSION 101: COMPREHENSIVE GUIDE ========== -->
+                <div class="card" id="tech-fission-101" style="border: 2px solid var(--accent);">
+                    <h2>&#128218; Understanding Nuclear Fission: A Complete Guide</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">From the basics to Radiant's micro-reactor. Start here if you're new to nuclear technology.</p>
+
+                    <!-- PART 1: THE BASICS -->
+                    <div class="highlight-box" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Part 1: What Is Nuclear Fission?</h3>
+                        <p style="color: var(--text); font-size: 1rem; line-height: 1.7;">Imagine breaking a heavy rock in two, and discovering that the two pieces weigh slightly <em>less</em> than the original rock. That tiny bit of "missing" matter has been converted into an enormous amount of energy. That's nuclear fission.</p>
+                    </div>
+
+                    <!-- Visual: Atom Splitting Diagram -->
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent); text-align: center; margin-bottom: 1rem;">&#9881; The Fission Process Visualized</h4>
+                        <div style="font-family: monospace; text-align: center; color: var(--text); line-height: 1.4; font-size: 0.9rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px;">
+<pre style="margin: 0;">
+       NEUTRON                    URANIUM-235 ATOM
+          &#9679;  &#8594;&#8594;&#8594;&#8594;&#8594;                   &#11044;
+         (n)                    (92 protons
+                                143 neutrons)
+
+                    &#11015; COLLISION &#11015;
+
+           &#128165;&#128165;&#128165; ATOM SPLITS &#128165;&#128165;&#128165;
+
+      &#9679;                              &#9679;
+       &#8598;    FISSION FRAGMENT      &#8599;
+          &#11044;  (e.g., Barium)  &#11044;
+           &#8600;                  &#8601;
+              &#9679;   +   &#9679;   +   &#9679;
+            (2-3 NEW NEUTRONS)
+                    +
+           &#128293; ENERGY (HEAT) &#128293;
+</pre>
+                        </div>
+                        <p style="color: var(--text-muted); text-align: center; margin-top: 1rem; font-size: 0.875rem;">Each fission releases ~200 million electron volts of energy and 2-3 new neutrons that can split more atoms.</p>
+                    </div>
+
+                    <!-- The Key Insight -->
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent);">&#128161; The Key Insight</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">When uranium-235 absorbs a neutron, its nucleus becomes so unstable that it splits into two smaller atoms. During this split, a tiny amount of mass is converted directly into energy according to Einstein's famous equation:</p>
+                            <p style="color: var(--accent); font-size: 1.25rem; text-align: center; margin: 1rem 0; font-weight: bold;">E = mc&sup2;</p>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Because the speed of light (c) is so enormous (300 million m/s), even a tiny amount of mass converts to a huge amount of energy.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--success);">
+                            <h4 style="color: var(--success);">&#9889; Why It's So Powerful</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">A single kilogram of uranium-235, fully fissioned, releases the same energy as:</p>
+                            <ul style="color: var(--text); margin-left: 1rem; margin-top: 0.5rem;">
+                                <li><strong>3 million kg</strong> of coal</li>
+                                <li><strong>2.7 million liters</strong> of gasoline</li>
+                                <li><strong>20 billion calories</strong> of food</li>
+                            </ul>
+                            <p style="color: var(--accent); font-size: 0.875rem; margin-top: 0.75rem;"><strong>That's 2-3 million times more energy per kg than chemical fuels!</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- The Chain Reaction -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#128260; The Chain Reaction: How Power Is Sustained</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">The magic of nuclear power lies in the <strong>chain reaction</strong>. Each fission event releases 2-3 new neutrons. If one of those neutrons hits another uranium atom and causes it to split, the reaction sustains itself.</p>
+
+                    <!-- Visual: Chain Reaction -->
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent); text-align: center; margin-bottom: 1rem;">&#9889; Chain Reaction Visualization</h4>
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px;">
+<pre style="margin: 0;">
+Generation 1:              &#9679;&#8594;&#11044;&#128165;
+                              &#8595;
+Generation 2:         &#9679;&#8594;&#11044;&#128165;   &#9679;&#8594;&#11044;&#128165;
+                         &#8595;           &#8595;
+Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
+                    &#8595;      &#8595;      &#8595;      &#8595;
+                   (8 fissions in generation 4...)
+
+&#9679; = neutron   &#11044; = uranium atom   &#128165; = fission event
+</pre>
+                        </div>
+                        <p style="color: var(--text-muted); text-align: center; margin-top: 1rem; font-size: 0.875rem;">In just 80 generations (a fraction of a second), a single neutron can trigger 10<sup>24</sup> fission events!</p>
+                    </div>
+
+                    <!-- Controlled vs Uncontrolled -->
+                    <div class="grid-2" style="margin-bottom: 2rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--success);">
+                            <h4 style="color: var(--success);">&#10004; Controlled Chain Reaction (Reactor)</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">On average, exactly <strong>1 neutron from each fission</strong> goes on to cause another fission. The reaction sustains itself at a steady rate. Extra neutrons are absorbed by control materials.</p>
+                            <p style="color: var(--success); font-size: 0.875rem; margin-top: 0.5rem;"><strong>Result:</strong> Steady heat production for years</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--error);">
+                            <h4 style="color: var(--error);">&#10006; Uncontrolled Chain Reaction (Bomb)</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Multiple neutrons from each fission cause more fissions. The reaction multiplies exponentially in microseconds. Requires highly enriched uranium (>90%) in a specific geometry.</p>
+                            <p style="color: var(--error); font-size: 0.875rem; margin-top: 0.5rem;"><strong>This is physically impossible in reactor fuel (<20% enrichment)</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- PART 2: MICROREACTORS -->
+                    <div class="highlight-box" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Part 2: How Micro-Reactors Work</h3>
+                        <p style="color: var(--text); font-size: 1rem; line-height: 1.7;">A micro-reactor is simply a very small nuclear reactor. Think of it as shrinking a power plant down to shipping-container size. The physics are the same; the engineering is different.</p>
+                    </div>
+
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">&#128295; The Five Essential Components</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Every fission reactor, from giant power plants to portable micro-reactors, needs the same five components:</p>
+
+                    <!-- Component Diagram -->
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px;">
+<pre style="margin: 0;">
+&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
+&#9608;  &#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;  &#9608;
+&#9608;  &#9618;  &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;  &#9618;  &#9608;  &#9664; SHIELDING (5)
+&#9608;  &#9618;  &#9474;  &#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044;  &#9474;  &#9618;  &#9608;
+&#9608;  &#9618;  &#9474;  &#11044;[FUEL]&#11044;[FUEL]&#11044;  &#9474;  &#9618;  &#9608;  &#9664; FUEL (1)
+&#9608;  &#9618;  &#9474;  &#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044;  &#9474;  &#9618;  &#9608;
+&#9608;  &#9618;  &#9474;      [MODERATOR]      &#9474;  &#9618;  &#9608;  &#9664; MODERATOR (2)
+&#9608;  &#9618;  &#9474;  &#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044;  &#9474;  &#9618;  &#9608;
+&#9608;  &#9618;  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;  &#9618;  &#9608;
+&#9608;  &#9618;           &#8593;&#8593;&#8593;               &#9618;  &#9608;
+&#9608;  &#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;[COOLANT]&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;  &#9608;  &#9664; COOLANT (3)
+&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
+          &#9660;                   &#9660;
+    [CONTROL]             [CONTROL]              &#9664; CONTROL SYSTEM (4)
+</pre>
+                        </div>
+                    </div>
+
+                    <!-- The 5 Components Explained -->
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box">
+                            <h4 style="color: var(--accent);">1. Fuel &#9889;</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">The uranium (or other fissile material) that undergoes fission. For micro-reactors, this is typically HALEU (High-Assay Low-Enriched Uranium) at 5-20% U-235 enrichment. Higher enrichment = smaller core.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4 style="color: var(--accent);">2. Moderator &#128260;</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Material that <strong>slows down neutrons</strong>. Fast neutrons from fission are less likely to cause more fissions. Slow "thermal" neutrons are ~1000x more effective. Common moderators: water, graphite, zirconium hydride.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4 style="color: var(--accent);">3. Coolant &#127777;</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Carries heat away from the reactor core to be converted to electricity. Can be water, gas (helium), liquid metal, or molten salt. Micro-reactors often use helium or heat pipes for simplicity and safety.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4 style="color: var(--accent);">4. Control System &#128295;</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Regulates the chain reaction by absorbing neutrons. More neutrons absorbed = less fissions = less power. Control rods, drums, or blades containing boron or similar materials are inserted/rotated to adjust power.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent);">5. Shielding &#128737;</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Protects people and equipment from radiation. Fission produces neutrons and gamma rays that must be contained. Lead, concrete, and water are common shielding materials. Micro-reactors use "shadow shielding" - only shielding in the direction of people.</p>
+                    </div>
+
+                    <!-- What Makes Micro-Reactors Different -->
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">&#129520; What Makes Micro-Reactors Different?</h4>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Feature</th><th>Traditional Reactor</th><th>Micro-Reactor</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Power Output</td><td>500-1,400 MWe</td><td>1-20 MWe</td></tr>
+                                <tr><td>Size</td><td>Building-sized</td><td>Shipping container</td></tr>
+                                <tr><td>Construction</td><td>Built on-site (years)</td><td>Factory-built, deployed</td></tr>
+                                <tr><td>Operators</td><td>Hundreds of staff</td><td>Autonomous or minimal</td></tr>
+                                <tr><td>Refueling</td><td>Every 18-24 months</td><td>Every 5-10+ years (or swap unit)</td></tr>
+                                <tr><td>Cooling</td><td>Requires water source</td><td>Air-cooled or heat pipes</td></tr>
+                                <tr><td>Enrichment</td><td>3-5% (LEU)</td><td>5-20% (HALEU)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Power Regulation Basics -->
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">&#128200; How Power Is Regulated</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Controlling a reactor is all about controlling neutrons. More neutrons = more fissions = more power.</p>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px;">
+<pre style="margin: 0;">
+&#9660;&#9660;&#9660; INSERT CONTROL MATERIAL &#9660;&#9660;&#9660;     &#9650;&#9650;&#9650; WITHDRAW CONTROL MATERIAL &#9650;&#9650;&#9650;
+
+    Neutrons     &#8594;    ABSORBED           Neutrons    &#8594;    REFLECTED BACK
+        &#9679; &#9679; &#9679;          &#10006;                  &#9679; &#9679; &#9679;          &#128260; &#8594; &#11044;&#128165;
+
+    Fewer fissions                       More fissions
+    Less heat                            More heat
+
+    &#128309; POWER DECREASES                   &#128994; POWER INCREASES
+</pre>
+                        </div>
+                        <p style="color: var(--text-muted); text-align: center; margin-top: 1rem; font-size: 0.875rem;"><strong>Neutron absorbers</strong> (boron, cadmium) capture neutrons. <strong>Reflectors</strong> (graphite, beryllium) bounce them back into the core.</p>
+                    </div>
+                </div>
+
+                <!-- ========== HOW RADIANT'S KALEIDOS WORKS ========== -->
+                <div class="card" id="tech-radiant-how" style="border: 2px solid var(--accent); background: var(--gradient-subtle);">
+                    <h2>&#9889; How Radiant's Kaleidos Micro-Reactor Works</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A deep dive into Radiant's proprietary technology - the Kaleidos portable nuclear generator.</p>
+
+                    <!-- Overview -->
+                    <div class="highlight-box" style="margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--accent);">The Big Picture</h3>
+                        <p style="color: var(--text);">Kaleidos is a <strong>high-temperature gas-cooled reactor (HTGR)</strong> that fits in a shipping container. It uses TRISO fuel (the safest fuel type), helium gas coolant (which can't become radioactive), and zirconium hydride moderator (Radiant's innovation for compact design).</p>
+                        <div class="grid-4" style="margin-top: 1rem;">
+                            <div class="stat-card">
+                                <div class="stat-value">1 MWe</div>
+                                <div class="stat-label">Electric Output</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">3 MWt</div>
+                                <div class="stat-label">Thermal Output</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">5 years</div>
+                                <div class="stat-label">Fuel Cycle</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">20 years</div>
+                                <div class="stat-label">Service Life</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Fuel: From Uranium to Power -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;" id="tech-radiant-components">&#128293; The Fuel Journey: From Rock to Reactor</h3>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent); text-align: center; margin-bottom: 1rem;">Uranium Enrichment to HALEU to TRISO</h4>
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; overflow-x: auto;">
+<pre style="margin: 0;">
+&#9959; NATURAL URANIUM    &#8594;    ENRICHMENT    &#8594;    HALEU    &#8594;    TRISO FUEL
+   (0.7% U-235)            (centrifuge)        (19.75%)        (ceramic-coated
+                                                                particles)
+
+&#9679; TRISO Particle Cross-Section:
+
+           &#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;
+          &#9678;                     &#9678;
+         &#9678;   &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;     &#9678;   &#9664; Outer Carbon Layer
+        &#9678;   &#9608; &#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618; &#9608;    &#9678;   &#9664; Silicon Carbide (SiC)
+       &#9678;   &#9608; &#9618; &#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; &#9618; &#9608;   &#9678;   &#9664; Inner Carbon Layer
+       &#9678;   &#9608; &#9618; &#9617; &#9604;&#9604;&#9604; &#9617; &#9618; &#9608;   &#9678;   &#9664; Buffer Carbon
+       &#9678;   &#9608; &#9618; &#9617; &#9604;&#9679;&#9604; &#9617; &#9618; &#9608;   &#9678;   &#9664; UCO KERNEL (fuel)
+       &#9678;   &#9608; &#9618; &#9617; &#9604;&#9604;&#9604; &#9617; &#9618; &#9608;   &#9678;
+       &#9678;   &#9608; &#9618; &#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; &#9618; &#9608;   &#9678;   Particle size:
+        &#9678;   &#9608; &#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618; &#9608;    &#9678;   ~1mm diameter
+         &#9678;   &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;     &#9678;   (poppy seed size)
+          &#9678;                     &#9678;
+           &#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;&#9678;
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--success);">
+                            <h4 style="color: var(--success);">&#128737; Why TRISO Is "Meltdown-Proof"</h4>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li>Each particle is its own tiny containment vessel</li>
+                                <li>Silicon carbide layer survives <strong>1,650°C for 300+ hours</strong></li>
+                                <li>Even if all cooling fails, fuel stays intact</li>
+                                <li>Traditional fuel fails at ~1,200°C; TRISO keeps going</li>
+                                <li>DOE calls it "the most robust nuclear fuel on Earth"</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent);">&#128161; Key Difference from Traditional Fuel</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Traditional reactors use fuel rods with pellets. If a rod breaches, radioactive gases escape. <strong>TRISO encapsulates each fuel particle individually</strong> - a breach in one particle affects nothing else. It's like having millions of tiny containment vessels instead of one big one.</p>
+                        </div>
+                    </div>
+
+                    <!-- How Neutrons Flow -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#9762; How Neutrons Flow in the Kaleidos Core</h3>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.75rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; overflow-x: auto;">
+<pre style="margin: 0;">
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;             GRAPHITE REFLECTOR RING                  &#9474;
+&#9474;   &#9484;&#9472;&#9472;&#9472;&#9488;&#9484;&#9472;&#9472;&#9472;&#9488;                          &#9484;&#9472;&#9472;&#9472;&#9488;&#9484;&#9472;&#9472;&#9472;&#9488;   &#9474;
+&#9474;   &#9474;B4C&#9474;&#9474;   &#9474;&#8592;&#8592; ROTATING CONTROL DRUMS &#8594;&#8594;&#9474;   &#9474;&#9474;B4C&#9474;   &#9474;
+&#9474;   &#9492;&#9472;&#9472;&#9472;&#9496;&#9492;&#9472;&#9472;&#9472;&#9496;      (Boron Carbide)       &#9492;&#9472;&#9472;&#9472;&#9496;&#9492;&#9472;&#9472;&#9472;&#9496;   &#9474;
+&#9474;          &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;          &#9474;
+&#9474;   &#8593;      &#9474;     REACTOR CORE        &#9474;      &#8593;   &#9474;
+&#9474; neutron  &#9474;  &#9679;&#8594;&#11044;&#128165;&#8594;&#9679;&#9679;&#8594;&#11044;&#128165;&#8594;&#9679;  &#9474; neutron  &#9474;
+&#9474;  bounce  &#9474;  &#8595;            &#8595;       &#9474;  bounce  &#9474;
+&#9474;   &#8595;      &#9474;  &#11044;&#128165;&#8592;&#9679;&#9679;&#8592;&#11044;&#128165;&#8592;&#9679;  &#9474;   &#8595;      &#9474;
+&#9474;          &#9474;  [TRISO][ZrH2][TRISO]  &#9474;          &#9474;
+&#9474;   GRAPHITE &#9474;  FUEL  MOD   FUEL    &#9474; GRAPHITE  &#9474;
+&#9474;  REFLECTS  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496; REFLECTS  &#9474;
+&#9474;  NEUTRONS                            NEUTRONS  &#9474;
+&#9474;   BACK     &#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;&#8593;     BACK     &#9474;
+&#9474;          [HELIUM COOLANT FLOWS UP]             &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+
+&#9679; = neutron   &#11044; = fuel atom   &#128165; = fission   ZrH2 = moderator
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box">
+                            <h4 style="color: var(--secondary);">&#9863; Graphite Reflector</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">A ring of graphite surrounds the core. When neutrons try to escape, the graphite <strong>bounces them back</strong> into the fuel. This improves fuel efficiency - fewer neutrons are wasted, more cause fissions.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4 style="color: var(--warning);">&#128260; Rotating Control Drums</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Instead of control rods, Kaleidos uses <strong>rotating drums with boron carbide (B4C)</strong> on one side. Rotate drums toward core = boron absorbs neutrons = power down. Rotate away = graphite reflects = power up.</p>
+                        </div>
+                    </div>
+
+                    <!-- Zirconium Hydride Innovation -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#128300; Radiant's Zirconium Hydride Innovation</h3>
+                    <div class="feature-box" style="border: 2px solid var(--accent); margin-bottom: 1.5rem;">
+                        <div class="grid-2">
+                            <div>
+                                <h4 style="color: var(--accent);">Why ZrH&#8322; Matters</h4>
+                                <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Zirconium hydride is <strong>packed with hydrogen atoms</strong>. Hydrogen is the best neutron moderator because it's similar in mass to a neutron - like a cue ball hitting another cue ball, it transfers energy efficiently.</p>
+                                <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                    <li>Enables a <strong>much more compact core</strong></li>
+                                    <li>Slows neutrons in less space</li>
+                                    <li>Works at high temperatures</li>
+                                    <li>Key to fitting a reactor in a shipping container</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--accent);">How It's Used</h4>
+                                <p style="color: var(--text-muted); font-size: 0.875rem;">The ZrH&#8322; is <strong>encapsulated</strong> in the core structure. Helium coolant flows through channels directly cooling the moderator. This:</p>
+                                <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                    <li>Limits peak temperatures in the moderator</li>
+                                    <li>Reduces thermal gradients</li>
+                                    <li>Prevents hydrogen migration</li>
+                                    <li>Enables stable, predictable performance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Helium Coolant System -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#127777; The Helium Coolant System</h3>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent); text-align: center; margin-bottom: 1rem;">Heat Flow Diagram</h4>
+                        <div style="font-family: monospace; text-align: center; color: var(--text); font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; overflow-x: auto;">
+<pre style="margin: 0;">
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;      &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;      &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;      &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;  REACTOR &#9474;      &#9474;     HEAT      &#9474;      &#9474;   BRAYTON     &#9474;      &#9474; ELECTRIC &#9474;
+&#9474;   CORE   &#9474; &#8594;&#8594;&#8594; &#9474;   EXCHANGER   &#9474; &#8594;&#8594;&#8594; &#9474;   TURBINE     &#9474; &#8594;&#8594;&#8594; &#9474; GENERATOR&#9474;
+&#9474;  (HEAT)  &#9474;      &#9474;              &#9474;      &#9474;   (sCO2)      &#9474;      &#9474;          &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;      &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;      &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;      &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+     &#8593;                   &#8593;
+     &#9474;                   &#9474;
+ HOT HELIUM &#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#9516;
+     &#8593;                   &#9474;
+     &#9474;              TRANSFERS HEAT
+     &#9474;              TO sCO2 LOOP
+ COOL HELIUM &#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#9524;
+     &#8593;                   &#8595;
+     &#9474;                   &#9474;
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;    &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;  HELIUM   &#9474;    &#9474;    WASTE       &#9474;
+&#9474; COMPRESSOR&#9474;    &#9474;  HEAT TO AIR  &#9474;
+&#9474; (THE PUMP)&#9474;    &#9474;  (RADIATOR)   &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;    &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--success);">
+                            <h4 style="color: var(--success);">&#10004; Why Helium Is Ideal</h4>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Cannot become radioactive</strong> - helium is the only element that doesn't activate under neutron bombardment because it's already atomically stable</li>
+                                <li>Chemically inert - won't corrode anything</li>
+                                <li>Works at very high temperatures</li>
+                                <li>No phase changes (stays gas)</li>
+                                <li>Simplifies safety case dramatically</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent);">&#9881; The Heart of the System</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">The <strong>helium compressor</strong> is the main moving part. It:</p>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li>Pushes helium through the reactor core</li>
+                                <li>Extracts hot helium carrying heat</li>
+                                <li>Brings it to the heat exchanger</li>
+                                <li>Uses magnetic bearings (no contact = long life)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Safety Features -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;" id="tech-radiant-safety">&#128737; Passive Safety Features</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Kaleidos is designed so that even with complete failure of all active systems, the reactor safely shuts down on its own.</p>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border: 2px solid var(--success);">
+                            <h4 style="color: var(--success);">&#9203; 300 Millisecond Auto-Shutdown</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">If power is lost or any control problem is detected, the reactor automatically shuts down within <strong>300 milliseconds</strong> (faster than you can blink). No operator action required.</p>
+                        </div>
+                        <div class="feature-box" style="border: 2px solid var(--success);">
+                            <h4 style="color: var(--success);">&#127777; Natural Air Cooling</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">The reactor is small enough that after shutdown, <strong>natural air convection</strong> is sufficient to remove decay heat. No pumps, no water, no electricity needed for emergency cooling.</p>
+                        </div>
+                        <div class="feature-box" style="border: 2px solid var(--success);">
+                            <h4 style="color: var(--success);">&#128293; Negative Temperature Coefficient</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Physics works in your favor: as the reactor heats up, the chain reaction <strong>naturally slows down</strong>. This is built into the fuel and moderator behavior. Runaway reactions are physically impossible.</p>
+                        </div>
+                        <div class="feature-box" style="border: 2px solid var(--success);">
+                            <h4 style="color: var(--success);">&#128274; TRISO Containment</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Even under extreme conditions, TRISO fuel retains all radioactive fission products. There's no scenario where the public could be exposed to dangerous radiation levels.</p>
+                        </div>
+                    </div>
+
+                    <!-- Digital Twin -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#128187; Digital Twin Technology</h3>
+                    <div class="feature-box" style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Radiant developed <strong>SimEngine</strong>, proprietary software that creates a real-time digital twin of the Kaleidos reactor. This allows:</p>
+                        <div class="grid-2" style="margin-top: 1rem;">
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li>Simulation of startup, shutdown, and off-normal scenarios</li>
+                                <li>Calculation of temperatures throughout the core</li>
+                                <li>Rapid design iterations (test changes virtually before building)</li>
+                            </ul>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li>Coupled physics simulations (neutronics + thermal + fluid)</li>
+                                <li>Validation against real test data</li>
+                                <li>Hardware control system development</li>
+                            </ul>
+                        </div>
+                        <p style="color: var(--accent); font-size: 0.875rem; margin-top: 1rem;"><strong>Result:</strong> Faster development cycles and higher confidence in safety before any fuel is ever loaded.</p>
+                    </div>
+
+                    <!-- Quick Reference -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">&#128203; Kaleidos Quick Reference</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Component</th><th>Kaleidos Choice</th><th>Why</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Fuel Type</td><td>TRISO particles</td><td>Cannot melt, each particle is own containment</td></tr>
+                                <tr><td>Fuel Enrichment</td><td>HALEU (19.75%)</td><td>Compact core, still below weapons-usable threshold</td></tr>
+                                <tr><td>Moderator</td><td>Zirconium Hydride (ZrH&#8322;)</td><td>Compact, hydrogen-rich for efficient moderation</td></tr>
+                                <tr><td>Reflector</td><td>Graphite</td><td>Bounces neutrons back, improves fuel economy</td></tr>
+                                <tr><td>Coolant</td><td>Helium gas</td><td>Cannot become radioactive, high-temp capable</td></tr>
+                                <tr><td>Power Control</td><td>Rotating B4C drums</td><td>Reliable, no rods to jam, infinite positioning</td></tr>
+                                <tr><td>Power Conversion</td><td>sCO&#8322; Brayton turbine</td><td>Compact, efficient, proven technology</td></tr>
+                                <tr><td>Safety</td><td>Passive (air cooling)</td><td>No pumps or power needed for emergency cooling</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <!-- Nuclear Fission Physics -->
-                <div class="card" id="tech-fission">
                     <h2>&#9762; Nuclear Fission: How It Works</h2>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">Understanding fission physics is essential for evaluating reactor designs and talking to technical stakeholders.</p>
 

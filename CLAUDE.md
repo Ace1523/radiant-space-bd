@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~835KB, ~11,000+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~880KB, ~11,500+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -112,7 +112,20 @@ Comprehensive Radiant-centric BD playbook:
 ## Technical Tab Content
 Comprehensive coverage of:
 - Why nuclear for space (solar vs nuclear comparison)
-- Nuclear fission physics (chain reactions, criticality, moderation)
+- **Fission 101: Complete Beginner's Guide** (NEW)
+  - Part 1: What is nuclear fission (E=mc², energy release, chain reactions)
+  - Part 2: How micro-reactors work (5 essential components explained)
+  - Visual ASCII diagrams throughout
+- **How Radiant's Kaleidos Works** (NEW - detailed section)
+  - TRISO fuel journey (uranium → enrichment → HALEU → TRISO particles)
+  - Neutron flow in the core with graphite reflector
+  - Rotating control drums (B4C) for power regulation
+  - Zirconium hydride moderator innovation
+  - Helium coolant system and heat exchanger
+  - Passive safety features (300ms shutdown, air cooling)
+  - Digital twin technology (SimEngine)
+  - Quick reference table of all components
+- Nuclear fission physics deep dive (chain reactions, criticality, moderation)
 - HALEU fuel (enrichment, supply chain, US producers)
 - Fuel forms (TRISO, CERMET, UN, Radiant's ZrH2/He approach)
 - Power conversion (Stirling, Brayton, Thermoelectric)
