@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~680KB, ~9,500+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~780KB, ~10,400+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -27,7 +27,7 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 7. **Radiant Nuclear** - Company information, master plan, **Why Radiant in Space origin story**, technology
 8. **Contract Deep Dive** - Federal contracting 101, vehicle comparison, SBIR guide, practical tips
 9. **Glossary** - Comprehensive 160+ term searchable glossary with category filtering
-10. **Policy** - Regulatory framework (placeholder for expansion)
+10. **Policy** - Comprehensive regulatory framework, executive orders, launch approval, export controls, legislation
 
 ### Key Features
 - Global search across all content
@@ -174,6 +174,24 @@ Comprehensive 160+ term searchable glossary organized by category:
 - **Policy, Budget & Regulatory Terms** (22+ terms) - NSPM-20, INSRB, POM, NDAA, ITAR, NQA-1
 - **Quick Reference Tables** - Power conversions, SBIR phases, TRL scale, uranium enrichment levels
 
+## Policy Tab Content
+Comprehensive policy and regulatory framework with searchable interface:
+- **Search functionality** - Real-time filtering across all policy content
+- **Executive Orders & Presidential Directives** - December 2025 Space Superiority EO, EO 14299/14300 (military microreactors), SPD-6, NSPM-20
+- **Policy Timeline 2019-2026** - Visual timeline of major policy developments
+- **Launch Approval Framework** - NSPM-20/INSRB tiered approval system (Tier I-III based on radioactive inventory)
+- **NRC & DOE Regulatory Authority** - NRC Part 53, DOE AEA authority, jurisdiction boundaries
+- **NEPA Environmental Requirements** - EA vs EIS, categorical exclusions, DOE NEPA process
+- **Safety Analysis Process** - PSAR, USAR, FSAR phases with timing and content
+- **Radiological Emergency Response** - NIRT, FRMAC, DOE/NNSA capabilities, launch site coordination
+- **Liability & Insurance** - Price-Anderson Act, government indemnification, commercial launch liability
+- **International Framework** - UN/COPUOS NPS Principles (1992), OST, Liability Convention, ISS precedent
+- **Export Controls** - 10 CFR Part 810, ITAR, EAR, Part 110, authorization requirements
+- **Key Legislation** - ADVANCE Act (2024), NEIMA (2019), NDAA provisions, appropriations
+- **Interagency Agreements** - NASA-DOE FSP MOU, DOE-DoD cooperation, national lab roles
+- **Implications for Radiant BD** - Practical guidance on regulatory engagement strategy
+- **Quick Reference Links** - Direct links to SAM.gov, NRC, DOE, White House, Congress.gov
+
 ## Technical Details
 
 ### Styling
@@ -189,6 +207,8 @@ Comprehensive 160+ term searchable glossary organized by category:
 - Accordion components
 - Checklist toggle functionality
 - Quick navigation dropdowns
+- Glossary search and category filtering
+- Policy search functionality
 
 ## Development Notes
 

@@ -9136,16 +9136,934 @@
 
             <!-- ==================== POLICY & INDUSTRY DIRECTION TAB ==================== -->
             <div id="policy" class="tab-content">
-                <h2 style="margin-bottom: 1.5rem;">Policy & Industry Direction</h2>
+                <h2 style="margin-bottom: 1.5rem;">&#9878; Policy & Regulatory Framework</h2>
 
-                <div class="card">
-                    <h2>Overview</h2>
-                    <p>This section covers policy developments and industry trends affecting space nuclear power and propulsion.</p>
+                <!-- Search and Overview -->
+                <div class="glossary-search-container">
+                    <div class="glossary-search-box">
+                        <input type="text" id="policy-search" class="glossary-search-input" placeholder="Search policies, regulations, executive orders..." onkeyup="filterPolicyCards()">
+                    </div>
+                    <div class="glossary-stats">
+                        <div class="glossary-stat"><span class="glossary-stat-number">25+</span> Key Policies</div>
+                        <div class="glossary-stat"><span class="glossary-stat-number">8</span> Categories</div>
+                        <div class="glossary-stat"><span class="glossary-stat-number">2025</span> Last Updated</div>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h2>Content Coming Soon</h2>
-                    <p>Policy analysis and industry direction content will be added here.</p>
+                <!-- Quick Navigation -->
+                <div class="strategy-nav">
+                    <div class="strategy-nav-header">
+                        <h3>&#9889; Quick Navigation</h3>
+                        <span style="color: var(--text-dim); font-size: 0.75rem;">Jump to section</span>
+                    </div>
+                    <div class="strategy-nav-categories">
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#127919;</span> Executive
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#policy-executive" class="strategy-nav-link">&#127919; Executive Orders & Directives</a>
+                                <a href="#policy-timeline" class="strategy-nav-link">&#128197; Policy Timeline 2019-2025</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128220;</span> Regulatory
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#policy-launch" class="strategy-nav-link">&#128640; Launch Approval (NSPM-20)</a>
+                                <a href="#policy-nrc" class="strategy-nav-link">&#9762; NRC & DOE Licensing</a>
+                                <a href="#policy-nepa" class="strategy-nav-link">&#127757; NEPA Requirements</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128737;</span> Safety
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#policy-safety" class="strategy-nav-link">&#128737; Safety Analysis Process</a>
+                                <a href="#policy-emergency" class="strategy-nav-link">&#128680; Emergency Response</a>
+                                <a href="#policy-liability" class="strategy-nav-link">&#128176; Liability & Insurance</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#127760;</span> International
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#policy-international" class="strategy-nav-link">&#127760; UN/COPUOS Framework</a>
+                                <a href="#policy-export" class="strategy-nav-link">&#128274; Export Controls</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128200;</span> Legislation
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#policy-legislation" class="strategy-nav-link">&#128220; Key Legislation</a>
+                                <a href="#policy-interagency" class="strategy-nav-link">&#129309; Interagency Agreements</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview Card -->
+                <div class="card policy-card" data-keywords="overview summary framework">
+                    <h2>&#9878; Space Nuclear Policy Overview</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">The U.S. space nuclear regulatory framework involves multiple agencies with overlapping jurisdictions. Understanding this landscape is critical for Radiant's BD strategy.</p>
+
+                    <div class="highlight-box" style="margin-bottom: 1.5rem;">
+                        <h3>Key Takeaway for Radiant</h3>
+                        <p style="color: var(--text);">Space nuclear is <strong style="color: var(--accent);">NOT regulated by the NRC</strong> for government missions. The launch approval process goes through the <strong>INSRB</strong> under <strong>NSPM-20</strong>, with DOE providing safety analysis. This is a fundamentally different (and faster) path than commercial terrestrial licensing.</p>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="feature-box">
+                            <h4>Primary Regulatory Bodies</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li><strong>INSRB:</strong> Interagency launch approval</li>
+                                <li><strong>DOE:</strong> Safety analysis, nuclear materials</li>
+                                <li><strong>NASA:</strong> Civilian mission authority</li>
+                                <li><strong>FAA:</strong> Commercial launch licensing</li>
+                                <li><strong>DoD:</strong> Military mission authority</li>
+                                <li><strong>NRC:</strong> Terrestrial commercial only</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Key Policy Documents</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li><strong>NSPM-20:</strong> Launch approval framework</li>
+                                <li><strong>SPD-6:</strong> National strategy for SNPP</li>
+                                <li><strong>EO 14299:</strong> DoD microreactor mandate</li>
+                                <li><strong>ADVANCE Act:</strong> NRC modernization</li>
+                                <li><strong>December 2025 EO:</strong> Space superiority</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== EXECUTIVE ORDERS & DIRECTIVES ========== -->
+                <div class="card policy-card" id="policy-executive" data-keywords="executive order presidential directive SPD NSPM EO Trump Biden">
+                    <h2>&#127919; Executive Orders & Presidential Directives</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Presidential actions establishing U.S. space nuclear policy priorities and implementation requirements.</p>
+
+                    <!-- December 2025 EO -->
+                    <div class="feature-box" style="border-color: var(--accent); background: var(--gradient-subtle); margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4 style="color: var(--accent);">&#127775; "Ensuring American Space Superiority" (December 2025)</h4>
+                            <span class="badge badge-hot">NEW</span>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Signed:</strong> December 18, 2025 by President Trump</p>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Establishes revised framework for U.S. space operations with specific nuclear power mandates:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-bottom: 0.75rem;">
+                            <li><strong>Lunar reactor by 2030:</strong> Deploy nuclear reactor on Moon surface</li>
+                            <li><strong>60-day deadline:</strong> APST must issue National Initiative for American Space Nuclear Power guidance</li>
+                            <li><strong>Revokes National Space Council</strong> - APST (Michael Kratsios) now leads implementation</li>
+                            <li>Enables nuclear reactors both on Moon and in orbit</li>
+                        </ul>
+                        <a href="https://www.whitehouse.gov/presidential-actions/2025/12/ensuring-american-space-superiority/" target="_blank" style="color: var(--accent);">Official Document &#8594;</a>
+                    </div>
+
+                    <!-- EO 14299 -->
+                    <div class="feature-box" style="border-color: var(--warning); margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4 style="color: var(--warning);">&#128187; Executive Order 14299 - DoD Microreactor Deployment</h4>
+                            <span class="badge" style="background: var(--warning); color: var(--bg-primary);">MANDATE</span>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Signed:</strong> May 23, 2025 by President Trump</p>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Directs DoD to deploy advanced nuclear reactor at domestic military installation:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-bottom: 0.75rem;">
+                            <li><strong>Deadline:</strong> Operational by September 30, 2028 (end of FY28)</li>
+                            <li><strong>Army designated Executive Agent</strong> for DoD nuclear energy (Janus Program)</li>
+                            <li>Establishes program of record for installation and operational nuclear energy</li>
+                            <li>Project Pele prototype must achieve criticality before July 4, 2026</li>
+                        </ul>
+                        <a href="https://www.presidency.ucsb.edu/documents/executive-order-14299-deploying-advanced-nuclear-reactor-technologies-for-national" target="_blank" style="color: var(--accent);">Official Document &#8594;</a>
+                    </div>
+
+                    <!-- EO 14300 -->
+                    <div class="feature-box" style="border-color: var(--success); margin-bottom: 1rem;">
+                        <h4>&#9762; Executive Order 14300 - NRC Reform</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Signed:</strong> May 23, 2025 by President Trump</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-bottom: 0.75rem;">
+                            <li><strong>18-month deadline</strong> for new reactor licensing decisions</li>
+                            <li><strong>12-month deadline</strong> for license renewals</li>
+                            <li>Expedited pathway for DOE/DoD-tested reactor designs</li>
+                            <li>High-volume licensing process for microreactors and modular reactors</li>
+                            <li>Standardized applications and approvals allowed</li>
+                        </ul>
+                        <a href="https://www.whitehouse.gov/presidential-actions/2025/05/ordering-the-reform-of-the-nuclear-regulatory-commission/" target="_blank" style="color: var(--accent);">Official Document &#8594;</a>
+                    </div>
+
+                    <!-- SPD-6 -->
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>&#128640; Space Policy Directive-6 (SPD-6) - National SNPP Strategy</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Signed:</strong> December 16, 2020 by President Trump</p>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Establishes national strategy for Space Nuclear Power and Propulsion (SNPP):</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-bottom: 0.75rem;">
+                            <li><strong>Goal 1:</strong> Develop fuel production capabilities by mid-2020s for RTGs to NTP/NEP</li>
+                            <li><strong>Goal 2:</strong> Demonstrate 40+ kWe fission surface power on Moon by mid-to-late 2020s</li>
+                            <li><strong>Goal 3:</strong> Develop NTP system for human Mars missions</li>
+                            <li>Sustained lunar presence and Mars exploration as key objectives</li>
+                        </ul>
+                        <a href="https://trumpwhitehouse.archives.gov/presidential-actions/memorandum-national-strategy-space-nuclear-power-propulsion-space-policy-directive-6/" target="_blank" style="color: var(--accent);">Official Document &#8594;</a>
+                    </div>
+
+                    <!-- NSPM-20 -->
+                    <div class="feature-box">
+                        <h4>&#128737; NSPM-20 - Launch Approval Framework</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Signed:</strong> August 20, 2019 by President Trump</p>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Modernized space nuclear launch authorization process:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-bottom: 0.75rem;">
+                            <li><strong>Created INSRB:</strong> Permanent board replaces ad-hoc panels</li>
+                            <li><strong>Tiered approval:</strong> Risk-based approach (Tier I-III)</li>
+                            <li><strong>Safety guidelines:</strong> Dose-based metrics for launch authorization</li>
+                            <li><strong>Commercial guidance:</strong> First framework addressing commercial launches</li>
+                            <li>Early engagement between safety evaluators and mission designers</li>
+                        </ul>
+                        <a href="https://www.nrc.gov/about-nrc/regulatory/research/space-nuclear-safety" target="_blank" style="color: var(--accent);">NRC Summary &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- ========== POLICY TIMELINE ========== -->
+                <div class="card policy-card" id="policy-timeline" data-keywords="timeline chronology history dates 2019 2020 2024 2025">
+                    <h2>&#128197; Space Nuclear Policy Timeline (2019-2026)</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Chronological development of U.S. space nuclear policy framework.</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Aug 2019</div>
+                            <div class="timeline-content">
+                                <h4>NSPM-20 Signed</h4>
+                                <p style="color: var(--text-muted);">Established tiered launch approval framework and created standing INSRB.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Oct 2020</div>
+                            <div class="timeline-content">
+                                <h4>NASA-DOE MOU Expanded</h4>
+                                <p style="color: var(--text-muted);">Working groups established for space nuclear power and propulsion collaboration.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Dec 2020</div>
+                            <div class="timeline-content">
+                                <h4>SPD-6 Issued</h4>
+                                <p style="color: var(--text-muted);">National Strategy for Space Nuclear Power and Propulsion established with specific goals.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jun 2022</div>
+                            <div class="timeline-content">
+                                <h4>NASA FSP Phase 1 Awards</h4>
+                                <p style="color: var(--text-muted);">Three $5M contracts awarded for initial lunar reactor designs (Lockheed, Westinghouse, IX).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Oct 2023</div>
+                            <div class="timeline-content">
+                                <h4>FAA SNS Advisory Circular</h4>
+                                <p style="color: var(--text-muted);">AC 450.45-1 issued - first FAA guidance on licensing space nuclear system launches.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jul 2024</div>
+                            <div class="timeline-content">
+                                <h4>ADVANCE Act Signed</h4>
+                                <p style="color: var(--text-muted);">Bipartisan legislation modernizing NRC for advanced reactors and microreactors.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Oct 2024</div>
+                            <div class="timeline-content">
+                                <h4>NRC Part 53 Proposed Rule</h4>
+                                <p style="color: var(--text-muted);">Technology-inclusive, risk-informed framework for advanced reactor licensing published.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2025</div>
+                            <div class="timeline-content">
+                                <h4>NASA-DOE MOU Renewed</h4>
+                                <p style="color: var(--text-muted);">Agencies commit to lunar reactor by 2030 under new memorandum of understanding.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2025</div>
+                            <div class="timeline-content">
+                                <h4>Four Nuclear Executive Orders</h4>
+                                <p style="color: var(--text-muted);">EO 14299-14302 reshape NRC, DOE, DoD nuclear policies. September 2028 DoD deadline set.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Dec 2025</div>
+                            <div class="timeline-content">
+                                <h4>Space Superiority EO</h4>
+                                <p style="color: var(--text-muted);">"Ensuring American Space Superiority" mandates lunar reactor by 2030, 60-day implementation guidance.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Feb 2026</div>
+                            <div class="timeline-content">
+                                <h4>DOE Categorical Exclusion</h4>
+                                <p style="color: var(--text-muted);">New CATEX for advanced reactor authorization effective February 2, 2026.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== LAUNCH APPROVAL FRAMEWORK ========== -->
+                <div class="card policy-card" id="policy-launch" data-keywords="NSPM-20 INSRB launch approval tiered tier authorization safety review">
+                    <h2>&#128640; Space Nuclear Launch Approval Framework (NSPM-20)</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The tiered approval process established by NSPM-20 for launching spacecraft containing nuclear systems.</p>
+
+                    <div class="alert alert-info" style="margin-bottom: 1.5rem;">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>Why This Matters for Radiant</h4>
+                            <p>Understanding the NSPM-20 tier your mission falls into determines the approval timeline, documentation requirements, and which agency has launch authority. Lower tiers = faster approvals.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">The Tiered Approval System</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Tier</th><th>Risk Level</th><th>Approval Authority</th><th>Requirements</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong style="color: var(--success);">Tier I</strong></td>
+                                    <td>Low risk, small quantities</td>
+                                    <td>Sponsoring agency head</td>
+                                    <td>Simplified safety analysis, no INSRB SER required</td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color: var(--warning);">Tier II</strong></td>
+                                    <td>Moderate risk</td>
+                                    <td>Sponsoring agency head + INSRB review</td>
+                                    <td>Full SAR, INSRB Safety Evaluation Report (SER)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color: var(--danger);">Tier III</strong></td>
+                                    <td>Highest risk</td>
+                                    <td>Presidential authorization</td>
+                                    <td>Full SAR, INSRB SER, NSC coordination</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">INSRB - Interagency Nuclear Safety Review Board</h3>
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box">
+                            <h4>Member Agencies (7 total)</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>Department of Defense</li>
+                                <li>Department of Energy</li>
+                                <li>Department of State</li>
+                                <li>Department of Transportation</li>
+                                <li>Environmental Protection Agency</li>
+                                <li>NASA</li>
+                                <li>Nuclear Regulatory Commission</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>INSRB Responsibilities</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>Review quality of mission safety analyses</li>
+                                <li>Conduct independent safety evaluations</li>
+                                <li>Prepare Safety Evaluation Reports (SER)</li>
+                                <li>Inform launch authority decision-makers</li>
+                                <li>Maintain standard operating procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Tier Determination Factors</h3>
+                    <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                        <li><strong>Material-at-risk:</strong> Type and quantity of radioactive material</li>
+                        <li><strong>Technology maturity:</strong> Heritage systems vs. new designs</li>
+                        <li><strong>Radiological risk:</strong> Dose estimates from safety analysis</li>
+                        <li><strong>Accident probability:</strong> Likelihood of release scenarios</li>
+                        <li><strong>Mission profile:</strong> Launch trajectory, orbital insertion, potential re-entry</li>
+                    </ul>
+                    <p style="color: var(--text-muted); margin-top: 1rem;"><em>Final tier determination occurs after completion of nuclear safety analysis.</em></p>
+                </div>
+
+                <!-- ========== NRC & DOE LICENSING ========== -->
+                <div class="card policy-card" id="policy-nrc" data-keywords="NRC DOE licensing Part 53 NEIMA ADVANCE Act microreactor commercial terrestrial">
+                    <h2>&#9762; NRC & DOE Regulatory Authority</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Understanding which agency has jurisdiction is critical - space nuclear follows a different path than commercial terrestrial.</p>
+
+                    <div class="highlight-box" style="margin-bottom: 1.5rem; border-left: 4px solid var(--warning);">
+                        <h3>&#9888; Key Distinction</h3>
+                        <p style="color: var(--text);"><strong>NRC does NOT license government space nuclear missions.</strong> Space nuclear for NASA/DoD missions is authorized through the INSRB process under NSPM-20, with DOE providing safety analysis.</p>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">NRC jurisdiction applies to: (1) commercial terrestrial reactors, (2) potentially commercial space nuclear if not for government mission.</p>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Jurisdictional Framework</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Scenario</th><th>Regulatory Authority</th><th>Process</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>NASA space mission (FSP)</td>
+                                    <td>INSRB + NASA</td>
+                                    <td>NSPM-20 tiered approval</td>
+                                </tr>
+                                <tr>
+                                    <td>DoD space/terrestrial mission</td>
+                                    <td>DoD (Army) + DOE</td>
+                                    <td>EO 14299, Army regulation</td>
+                                </tr>
+                                <tr>
+                                    <td>DOE site testing (DOME)</td>
+                                    <td>DOE authorization</td>
+                                    <td>DOE Order 425.1 / 426.2</td>
+                                </tr>
+                                <tr>
+                                    <td>Commercial terrestrial</td>
+                                    <td>NRC</td>
+                                    <td>10 CFR Part 50/52/53</td>
+                                </tr>
+                                <tr>
+                                    <td>Commercial space (private)</td>
+                                    <td>TBD - likely FAA + INSRB</td>
+                                    <td>Evolving framework</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">NRC Part 53 - Advanced Reactor Framework</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Status & Timeline</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><strong>Proposed Rule Published:</strong> October 31, 2024</li>
+                            <li><strong>Comment Period Closed:</strong> February 28, 2025</li>
+                            <li><strong>Draft Final to Commission:</strong> May 1, 2026</li>
+                            <li><strong>Final Rule Expected:</strong> End of 2027</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Key Features of Part 53</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><strong>Technology-inclusive:</strong> Works for any reactor type</li>
+                            <li><strong>Risk-informed:</strong> Uses PRA-led approach</li>
+                            <li><strong>Performance-based:</strong> Outcomes over prescriptive requirements</li>
+                            <li><strong>Cost savings:</strong> $53-68M per applicant vs. current process</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">DOE Authorization Pathway</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">For testing at DOE sites (like Radiant at DOME), DOE has its own authorization process:</p>
+                    <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                        <li><strong>DOE Order 425.1:</strong> Startup and restart of nuclear facilities</li>
+                        <li><strong>DOE Order 426.2:</strong> Personnel selection, training, qualification</li>
+                        <li><strong>Expedited pathway:</strong> EO 14300 establishes NRC-DOE coordination for tested designs</li>
+                        <li><strong>DARK:</strong> Radiant submitted DOE Authorization Request under new pathway</li>
+                    </ul>
+                </div>
+
+                <!-- ========== NEPA REQUIREMENTS ========== -->
+                <div class="card policy-card" id="policy-nepa" data-keywords="NEPA environmental impact assessment EIS EA categorical exclusion CATEX">
+                    <h2>&#127757; NEPA Environmental Requirements</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">National Environmental Policy Act requirements for space nuclear missions and DOE activities.</p>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">NEPA Analysis Levels</h3>
+                    <div class="grid-3" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-color: var(--success);">
+                            <h4 style="color: var(--success);">Categorical Exclusion (CATEX)</h4>
+                            <p style="color: var(--text-muted);">Actions with no significant environmental impact. Fastest path - no detailed analysis required.</p>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 0.5rem;"><em>New DOE CATEX for advanced reactors effective Feb 2, 2026</em></p>
+                        </div>
+                        <div class="feature-box" style="border-color: var(--warning);">
+                            <h4 style="color: var(--warning);">Environmental Assessment (EA)</h4>
+                            <p style="color: var(--text-muted);">Concise analysis for actions that may or may not have significant impacts. Results in FONSI or triggers EIS.</p>
+                        </div>
+                        <div class="feature-box" style="border-color: var(--danger);">
+                            <h4 style="color: var(--danger);">Environmental Impact Statement (EIS)</h4>
+                            <p style="color: var(--text-muted);">Full detailed analysis for major federal actions. Required when significant environmental impacts likely.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Space Nuclear NEPA Considerations</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>NASA Nuclear NEPA Handbook (2024)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">NASA published comprehensive guidance for NEPA practitioners on space nuclear missions:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Launch accident scenarios and probability analysis</li>
+                            <li>When EIS is required vs. EA sufficient</li>
+                            <li>Balancing probability against consequences</li>
+                            <li>DOE/NASA coordination for accident modeling</li>
+                        </ul>
+                        <a href="https://www.nasa.gov/wp-content/uploads/2024/07/nasa-nuclear-nepa-handbook-final-v2.pdf" target="_blank" style="color: var(--accent);">Download Handbook &#8594;</a>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>New DOE Categorical Exclusion (Feb 2026)</h4>
+                            <p>DOE established new CATEX for "authorization, siting, construction, operation, reauthorization, and decommissioning of advanced nuclear reactors" - significantly streamlining NEPA for microreactors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== SAFETY ANALYSIS PROCESS ========== -->
+                <div class="card policy-card" id="policy-safety" data-keywords="safety analysis SAR FSAR PSAR nuclear risk radiological dose accident">
+                    <h2>&#128737; Safety Analysis Process</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The rigorous safety documentation required for space nuclear launch approval.</p>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Safety Analysis Report Progression</h3>
+                    <div class="timeline" style="margin-bottom: 1.5rem;">
+                        <div class="timeline-item">
+                            <div class="timeline-date">PSAR</div>
+                            <div class="timeline-content">
+                                <h4>Preliminary Safety Analysis Report</h4>
+                                <p style="color: var(--text-muted);">Early design phase. Identifies potential hazards and preliminary risk estimates. Submitted early for INSRB feedback.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">USAR</div>
+                            <div class="timeline-content">
+                                <h4>Updated Safety Analysis Report</h4>
+                                <p style="color: var(--text-muted);">Design maturity increases. Refined accident scenarios and consequence analysis. Incorporates INSRB comments.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">FSAR</div>
+                            <div class="timeline-content">
+                                <h4>Final Safety Analysis Report</h4>
+                                <p style="color: var(--text-muted);">Complete analysis with final design. Basis for INSRB Safety Evaluation Report (SER) and launch authority decision.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Mission Phases Analyzed</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Phase</th><th>Description</th><th>Risk Contribution</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Prelaunch</strong></td><td>Ground handling, fueling, pad operations</td><td>Low</td></tr>
+                                <tr><td><strong style="color: var(--danger);">Early Launch</strong></td><td>Liftoff through max-Q, high propellant load</td><td><strong style="color: var(--danger);">~99% of total risk</strong></td></tr>
+                                <tr><td><strong>Late Launch</strong></td><td>Upper stage burns, orbital insertion</td><td>Moderate</td></tr>
+                                <tr><td><strong>Suborbital Reentry</strong></td><td>If launch fails before orbit achieved</td><td>Variable</td></tr>
+                                <tr><td><strong>Orbital Reentry</strong></td><td>Planned or unplanned deorbit</td><td>Low-Moderate</td></tr>
+                                <tr><td><strong>Long-term Reentry</strong></td><td>Orbital decay over years/decades</td><td>Low</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Key Safety Analysis Components</h3>
+                    <div class="grid-2">
+                        <div class="feature-box">
+                            <h4>Accident Model Document (AMD)</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>Potential accident scenarios</li>
+                                <li>Hardware response to accident environments</li>
+                                <li>Source terms (curies released, particle sizes)</li>
+                                <li>Release probabilities</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Nuclear Risk Analysis Document (NRAD)</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>Maximum individual dose estimates</li>
+                                <li>Collective dose calculations</li>
+                                <li>Health effects projections</li>
+                                <li>Land contamination area estimates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--text-muted); margin-top: 1rem;"><strong>Primary Contractor:</strong> Sandia National Laboratories leads space nuclear launch safety analysis (MSL 2011, Mars 2020 FSAR).</p>
+                </div>
+
+                <!-- ========== EMERGENCY RESPONSE ========== -->
+                <div class="card policy-card" id="policy-emergency" data-keywords="emergency response FEMA DOE radiological accident contingency FRMAC NIRT">
+                    <h2>&#128680; Radiological Emergency Response</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Federal coordination framework for radiological incidents, including space nuclear accidents.</p>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Key Response Organizations</h3>
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box">
+                            <h4>NIRT - Nuclear Incident Response Team</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Established by Homeland Security Act of 2002. Activated by DHS/FEMA for nuclear/radiological incidents.</p>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>13 DOE/NNSA and EPA specialized assets</li>
+                                <li>Operates under FEMA coordination</li>
+                                <li>Deployable within hours</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>FRMAC - Federal Radiological Monitoring</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Interagency consortium providing monitoring and assessment during radiological incidents.</p>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li>Verifies radiation measurements</li>
+                                <li>Interprets radiation distributions</li>
+                                <li>Characterizes overall conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Coordination Framework</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>FRPCC - Federal Radiological Preparedness Coordinating Committee</h4>
+                        <p style="color: var(--text-muted);">National-level forum for radiological policy coordination. Chaired by DHS/FEMA. Established 1982 under 44 CFR 351. Develops policies and procedures supporting state, tribal, and local emergency planning.</p>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>NASA/DOE-Specific Response</h4>
+                            <p>If Initial Response Force (IRF) deployed at DOE or NASA request as custodial agencies for radiological materials, IRF coordinates with DOE or NASA incident commander on-site.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== LIABILITY & INSURANCE ========== -->
+                <div class="card policy-card" id="policy-liability" data-keywords="liability insurance Price-Anderson indemnification FAA commercial launch">
+                    <h2>&#128176; Liability & Insurance Framework</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Financial protection mechanisms for nuclear incidents and space launch activities.</p>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Price-Anderson Act</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Overview</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Enacted 1957, most recently extended to December 31, 2065. Establishes no-fault insurance system for nuclear incidents.</p>
+                        <div class="stats-grid" style="margin-top: 1rem;">
+                            <div class="stat-card">
+                                <div class="stat-value">$16.6B</div>
+                                <div class="stat-label">DOE contractor liability limit (2023 adj.)</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">$500M</div>
+                                <div class="stat-label">Primary insurance per reactor site</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Commercial Space Launch Insurance</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>FAA-Licensed Launches</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Commercial Space Launch Act Amendments (1988) - modeled on Price-Anderson:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><strong>MPL Insurance:</strong> Based on FAA Maximum Probable Loss calculation</li>
+                            <li><strong>Statutory ceiling:</strong> $500M or max available at reasonable cost</li>
+                            <li><strong>Government indemnification:</strong> Additional $2.7B (inflation-adjusted) subject to Congressional appropriation</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <h4>Evolving Framework for Space Nuclear</h4>
+                            <p>Existing Price-Anderson provisions were designed for terrestrial, LEU-fueled large reactors. GAO has noted the $1.5B indemnification cap may be insufficient for growing commercial space launch volume. Framework for commercial space nuclear is still evolving.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">NASA Indemnification Authority</h3>
+                    <p style="color: var(--text-muted);">Under 51 U.S. Code § 20148, NASA contracts may provide U.S. indemnification for providers against third-party claims for death, injury, or property damage from launch services that are "unusually hazardous or nuclear in nature."</p>
+                </div>
+
+                <!-- ========== INTERNATIONAL FRAMEWORK ========== -->
+                <div class="card policy-card" id="policy-international" data-keywords="UN COPUOS outer space treaty international principles safety framework IAEA">
+                    <h2>&#127760; International Framework (UN/COPUOS)</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">International treaties and principles governing the use of nuclear power sources in outer space.</p>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Key International Instruments</h3>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Outer Space Treaty (1967)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Foundation of international space law. Key provisions:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Prohibits weapons of mass destruction in space</li>
+                            <li>Limits celestial body use to peaceful purposes</li>
+                            <li>Mandates space exploration for benefit of all countries</li>
+                            <li><strong>Does NOT prohibit nuclear power sources</strong> - only nuclear weapons</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Principles on Nuclear Power Sources in Space (1992)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">UN General Assembly adopted voluntary guidelines following 1978 Kosmos 954 incident (Soviet reactor re-entry over Canada):</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Pre-launch safety assessment requirements</li>
+                            <li>Notification to UN Secretary-General</li>
+                            <li>Dissemination of safety information to other states</li>
+                            <li>Voluntary, not legally binding</li>
+                        </ul>
+                        <a href="https://www.unoosa.org/oosa/en/ourwork/spacelaw/principles/nps-principles.html" target="_blank" style="color: var(--accent);">UNOOSA Principles &#8594;</a>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Safety Framework for NPS Applications (2009)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Joint COPUOS/IAEA framework providing high-level guidance:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Programmatic and technical safety aspects</li>
+                            <li>Design and application guidance</li>
+                            <li>Voluntary, not legally binding</li>
+                            <li>2023 report recommends enhancements for new 5-year workplan</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <div class="alert-icon">&#127758;</div>
+                        <div class="alert-content">
+                            <h4>U.S. Position</h4>
+                            <p>The U.S. has 30+ space nuclear missions over 60 years. U.S. government position: the Principles and Safety Framework provide comprehensive foundation for safe use of nuclear power in space. U.S. actively participates in COPUOS Working Group on NPS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== EXPORT CONTROLS ========== -->
+                <div class="card policy-card" id="policy-export" data-keywords="export control ITAR EAR Part 810 technology transfer foreign national">
+                    <h2>&#128274; Export Controls & Technology Transfer</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Three overlapping regulatory regimes govern export of nuclear and space technology.</p>
+
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Regulation</th><th>Agency</th><th>Scope</th><th>Space Nuclear Impact</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>10 CFR Part 810</strong></td>
+                                    <td>DOE/NNSA</td>
+                                    <td>Unclassified nuclear technology transfer</td>
+                                    <td>Reactor design, nuclear assistance to foreign entities</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ITAR (22 CFR 120-130)</strong></td>
+                                    <td>State Dept (DDTC)</td>
+                                    <td>Defense articles, space launch vehicles, some spacecraft</td>
+                                    <td>Launch vehicle integration, remote sensing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>EAR (15 CFR 730-774)</strong></td>
+                                    <td>Commerce (BIS)</td>
+                                    <td>Dual-use items and technologies</td>
+                                    <td>Non-military components, commercial items</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">10 CFR Part 810 Details</h3>
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>What Part 810 Controls</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Transfer of unclassified nuclear technology overseas</li>
+                            <li>Transfer to foreign nationals anywhere (including in U.S.)</li>
+                            <li>Technical assistance and technical data</li>
+                            <li><strong>Does NOT control:</strong> Classified information, nuclear propulsion technology, equipment/material exports</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>Authorization Types</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><strong>Generally Authorized:</strong> Transfers to Appendix A countries (allies)</li>
+                            <li><strong>Specific Authorization:</strong> Required for non-Appendix A countries</li>
+                            <li><strong>Always Requires Specific Auth:</strong> Sensitive nuclear technologies (enrichment, reprocessing, plutonium fuel, heavy water production)</li>
+                        </ul>
+                        <a href="https://www.energy.gov/nnsa/10-cfr-part-810" target="_blank" style="color: var(--accent);">DOE Part 810 Information &#8594;</a>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <h4>Radiant Implications</h4>
+                            <p>Space reactor technology likely falls under multiple regulatory regimes. International collaboration, foreign investors, or foreign national employees may require coordination between DOE, State, and Commerce. Consult export control counsel early.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== KEY LEGISLATION ========== -->
+                <div class="card policy-card" id="policy-legislation" data-keywords="legislation Congress NDAA ADVANCE Act NEIMA appropriations authorization">
+                    <h2>&#128220; Key Legislation</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Congressional acts shaping the space nuclear regulatory and funding landscape.</p>
+
+                    <div class="feature-box" style="border-color: var(--accent); margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4 style="color: var(--accent);">ADVANCE Act of 2024</h4>
+                            <span class="badge">Jul 2024</span>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;"><strong>Accelerating Deployment of Versatile, Advanced Nuclear for Clean Energy Act</strong></p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Bipartisan NRC modernization legislation</li>
+                            <li><strong>18-month deadline</strong> for NRC microreactor guidance</li>
+                            <li>Eliminates pre-application costs at DOE sites</li>
+                            <li>Expedites military microreactor projects (Eielson AFB by 2027)</li>
+                            <li>Efficient, timely, predictable license reviews</li>
+                        </ul>
+                        <a href="https://www.nrc.gov/about-nrc/governing-laws/advance-act/about-advance-act" target="_blank" style="color: var(--accent);">NRC ADVANCE Act Info &#8594;</a>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4>NEIMA - Nuclear Energy Innovation and Modernization Act</h4>
+                            <span class="badge">Jan 2019</span>
+                        </div>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Required NRC to establish technology-inclusive framework</li>
+                            <li>Basis for Part 53 rulemaking</li>
+                            <li>Final rule deadline: end of 2027</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4>NDAA FY2024 - Nuclear Fuel Security Act</h4>
+                            <span class="badge">Dec 2023</span>
+                        </div>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Creates Nuclear Fuel Security Program</li>
+                            <li><strong>LEU contracts:</strong> 100 MT/year by Dec 31, 2026</li>
+                            <li><strong>HALEU contracts:</strong> 20 MT/year by Dec 31, 2027</li>
+                            <li>Addresses domestic fuel supply chain gaps</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4>NDAA FY2026 - International Nuclear Energy Act</h4>
+                            <span class="badge badge-hot">Dec 2025</span>
+                        </div>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Section 8366: Supports U.S. civil nuclear industry abroad</li>
+                            <li>Nuclear Export Working Group established</li>
+                            <li>10-year civil nuclear trade strategy development</li>
+                            <li>Interagency cooperation and funding</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <h4>Price-Anderson Extension</h4>
+                            <span class="badge">Mar 2024</span>
+                        </div>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>Further Consolidated Appropriations Act, 2024</li>
+                            <li>Extended Price-Anderson to December 31, 2065</li>
+                            <li>40-year extension for newly licensed reactors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========== INTERAGENCY AGREEMENTS ========== -->
+                <div class="card policy-card" id="policy-interagency" data-keywords="MOU memorandum understanding NASA DOE interagency agreement partnership">
+                    <h2>&#129309; Interagency Agreements</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Key memoranda of understanding and interagency coordination mechanisms.</p>
+
+                    <div class="feature-box" style="border-color: var(--accent); margin-bottom: 1rem;">
+                        <h4 style="color: var(--accent);">NASA-DOE MOU on Fission Surface Power (2025)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Renewed commitment to lunar reactor development:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><strong>Goal:</strong> Lunar surface reactor operational by 2030</li>
+                            <li>Joint development, fueling, authorization, and deployment</li>
+                            <li>Safe, efficient, abundant power for years without refueling</li>
+                            <li>Builds on 2016 and 2020 MOUs</li>
+                        </ul>
+                        <a href="https://www.nasa.gov/news-release/nasa-department-of-energy-to-develop-lunar-surface-reactor-by-2030/" target="_blank" style="color: var(--accent);">NASA Announcement &#8594;</a>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h4>DOE-NRC MOU Addendum (May 2025)</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Implementing EO 14299-14302:</p>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li>DOE proceeds with non-commercial demonstrations</li>
+                            <li>Information sharing to facilitate NRC future licensing</li>
+                            <li>Expedited pathway for DOE/DoD-tested designs</li>
+                            <li>Roles, responsibilities, and process defined</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Historical MOU Timeline</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Year</th><th>Agreement</th><th>Purpose</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1991</td><td>NASA-DOE MOU</td><td>Initial space nuclear cooperation framework</td></tr>
+                                <tr><td>2016</td><td>NASA-DOE MOU Renewal</td><td>Moniz/Bolden - solidified interagency cooperation</td></tr>
+                                <tr><td>2020</td><td>NASA-DOE MOU Expansion</td><td>Created SNPP working groups</td></tr>
+                                <tr><td>2025</td><td>NASA-DOE MOU Renewal</td><td>2030 lunar reactor commitment</td></tr>
+                                <tr><td>2025</td><td>DOE-NRC MOU Addendum</td><td>EO 14299-14302 implementation</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ========== IMPLICATIONS FOR RADIANT ========== -->
+                <div class="card policy-card" style="border: 2px solid var(--accent); background: var(--gradient-subtle);" data-keywords="Radiant implications strategy BD positioning">
+                    <h2>&#127919; Policy Implications for Radiant BD</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">How the policy landscape creates opportunities and constraints for Radiant's space nuclear strategy.</p>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-color: var(--success);">
+                            <h4 style="color: var(--success);">&#10003; Favorable Policy Winds</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li><strong>2030 lunar reactor mandate</strong> creates urgent timeline</li>
+                                <li><strong>DoD September 2028 deadline</strong> accelerates microreactor deployment</li>
+                                <li><strong>DOME at DOE</strong> avoids NRC for initial testing</li>
+                                <li><strong>NSPM-20 tiered approach</strong> potentially faster approvals</li>
+                                <li><strong>ADVANCE Act</strong> streamlines future commercial path</li>
+                                <li><strong>New DOE CATEX</strong> simplifies NEPA for advanced reactors</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-color: var(--warning);">
+                            <h4 style="color: var(--warning);">&#9888; Key Considerations</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                                <li><strong>FSP Phase 1 participants</strong> have head start (Lockheed, Westinghouse)</li>
+                                <li><strong>HALEU supply</strong> still constrained despite legislation</li>
+                                <li><strong>Commercial space nuclear</strong> framework still evolving</li>
+                                <li><strong>Export controls</strong> may limit international partnerships</li>
+                                <li><strong>Safety analysis</strong> for new reactor designs is extensive</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Strategic Recommendations</h3>
+                    <ol style="color: var(--text-muted); margin-left: 1.25rem;">
+                        <li><strong>Leverage DOME testing</strong> - DOE authorization path avoids NRC timeline</li>
+                        <li><strong>Engage INSRB early</strong> - NSPM-20 encourages pre-launch safety coordination</li>
+                        <li><strong>Track FSP Phase 2</strong> - Position for teaming or follow-on opportunities</li>
+                        <li><strong>Monitor EO implementation</strong> - 60-day APST guidance creates near-term windows</li>
+                        <li><strong>Build DOE relationships</strong> - Safety analysis expertise at Sandia, INL essential</li>
+                        <li><strong>Prepare for commercial path</strong> - Part 53 and ADVANCE Act define future terrestrial market</li>
+                    </ol>
+                </div>
+
+                <!-- ========== QUICK REFERENCE ========== -->
+                <div class="card policy-card" data-keywords="quick reference links resources documents">
+                    <h2>&#128279; Quick Reference Links</h2>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Official Policy Documents</h3>
+                    <div class="grid-2" style="margin-bottom: 1rem;">
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><a href="https://www.whitehouse.gov/presidential-actions/2025/12/ensuring-american-space-superiority/" target="_blank" style="color: var(--accent);">Dec 2025 Space Superiority EO</a></li>
+                            <li><a href="https://www.presidency.ucsb.edu/documents/executive-order-14299-deploying-advanced-nuclear-reactor-technologies-for-national" target="_blank" style="color: var(--accent);">EO 14299 (DoD Microreactors)</a></li>
+                            <li><a href="https://www.whitehouse.gov/presidential-actions/2025/05/ordering-the-reform-of-the-nuclear-regulatory-commission/" target="_blank" style="color: var(--accent);">EO 14300 (NRC Reform)</a></li>
+                            <li><a href="https://trumpwhitehouse.archives.gov/presidential-actions/memorandum-national-strategy-space-nuclear-power-propulsion-space-policy-directive-6/" target="_blank" style="color: var(--accent);">SPD-6 (SNPP Strategy)</a></li>
+                        </ul>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                            <li><a href="https://www.nrc.gov/about-nrc/regulatory/research/space-nuclear-safety" target="_blank" style="color: var(--accent);">NRC Space Nuclear Safety (NSPM-20)</a></li>
+                            <li><a href="https://www.nasa.gov/wp-content/uploads/2024/07/nasa-nuclear-nepa-handbook-final-v2.pdf" target="_blank" style="color: var(--accent);">NASA Nuclear NEPA Handbook</a></li>
+                            <li><a href="https://www.nrc.gov/about-nrc/governing-laws/advance-act/about-advance-act" target="_blank" style="color: var(--accent);">NRC ADVANCE Act</a></li>
+                            <li><a href="https://www.energy.gov/nnsa/10-cfr-part-810" target="_blank" style="color: var(--accent);">DOE Part 810 Export Controls</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">International Resources</h3>
+                    <ul style="color: var(--text-muted); margin-left: 1.25rem;">
+                        <li><a href="https://www.unoosa.org/oosa/en/ourwork/spacelaw/principles/nps-principles.html" target="_blank" style="color: var(--accent);">UN Principles on NPS in Space</a></li>
+                        <li><a href="https://www.unoosa.org/oosa/en/ourwork/copuos/stsc/nps/index.html" target="_blank" style="color: var(--accent);">COPUOS Working Group on NPS</a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -9218,6 +10136,39 @@
 
             // Re-filter with current search term
             filterGlossary();
+        }
+
+        // Policy tab search functionality
+        function filterPolicyCards() {
+            const searchTerm = document.getElementById('policy-search').value.toLowerCase();
+            const cards = document.querySelectorAll('#policy .info-card, #policy .accordion-item, #policy .timeline-item, #policy .contract-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = '';
+                    card.classList.remove('hidden');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Also search within accordion content
+            const accordions = document.querySelectorAll('#policy .accordion-item');
+            accordions.forEach(accordion => {
+                const content = accordion.textContent.toLowerCase();
+                if (content.includes(searchTerm)) {
+                    accordion.style.display = '';
+                    // Expand accordion if it contains the search term
+                    if (searchTerm.length > 2) {
+                        const accordionContent = accordion.querySelector('.accordion-content');
+                        if (accordionContent) {
+                            accordionContent.classList.add('active');
+                        }
+                    }
+                }
+            });
         }
 
         // Count total glossary terms on load
