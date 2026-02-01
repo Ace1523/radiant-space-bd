@@ -1112,6 +1112,7 @@
             <div class="nav-tab" data-tab="deepdive">Contract Deep Dive</div>
             <div class="nav-tab" data-tab="glossary">Glossary</div>
             <div class="nav-tab" data-tab="policy">Policy & Industry Direction</div>
+            <div class="nav-tab" data-tab="news">News & Events</div>
         </div>
     </nav>
 
@@ -10067,6 +10068,574 @@
                 </div>
             </div>
 
+            <!-- ==================== NEWS & EVENTS TAB ==================== -->
+            <div id="news" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#128240; News & Events</h2>
+
+                <!-- Search and Quick Navigation -->
+                <div class="glossary-search-container">
+                    <div class="glossary-search-box">
+                        <input type="text" id="news-search" class="glossary-search-input" placeholder="Search news, events, announcements..." onkeyup="filterNewsCards()">
+                    </div>
+                </div>
+
+                <div class="quick-nav-row" style="margin-bottom: 2rem;">
+                    <div class="quick-nav-dropdown">
+                        <button class="quick-nav-btn">Jump to Section &#9662;</button>
+                        <div class="quick-nav-content">
+                            <a href="#news-current">Current News</a>
+                            <a href="#news-jan2026">January 2026</a>
+                            <a href="#news-dec2025">December 2025</a>
+                            <a href="#news-q3q4-2025">Q3-Q4 2025</a>
+                            <a href="#news-events">Industry Events</a>
+                            <a href="#news-conferences">Major Conferences</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== CURRENT NEWS SECTION ========== -->
+                <div class="card news-card" id="news-current" style="border: 2px solid var(--accent); background: var(--gradient-subtle);">
+                    <h2>&#128293; Current News Headlines</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Latest developments in space nuclear and advanced reactor programs. Updated regularly.</p>
+
+                    <!-- January 2026 -->
+                    <div id="news-jan2026">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128197; January 2026</h3>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--accent);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge badge-hot">HOT</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 15, 2026</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Congress Passes FY2026 Energy Funding: $3.1B for Nuclear</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Senate passes bipartisan Energy and Water Development appropriations (82 votes). Includes $3.1B for Office of Nuclear Energy, Advanced Reactor Deployment Program, and up to two Gen3+ SMR development awards.</p>
+                            <a href="https://www.hklaw.com/en/insights/publications/2026/01/congress-passes-fiscal-year-2026-energy-funding-bill" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Holland & Knight Analysis &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--accent);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge badge-hot">KEY</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 13, 2026</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">NASA-DOE Sign MOU: Lunar Reactor by 2030</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">NASA and DOE formalize commitment to deploy fission surface power on Moon by 2030. Agreement advances President's space superiority vision. Reactor will provide continuous power for years without refueling.</p>
+                            <a href="https://www.nasa.gov/news-release/nasa-department-of-energy-to-develop-lunar-surface-reactor-by-2030/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">NASA Press Release &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--success);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge" style="background: var(--success);">HALEU</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 2026</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">DOE Awards $2.7B for Domestic Uranium Enrichment</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Historic investment to strengthen domestic LEU and HALEU supply chains. American Centrifuge Operating, General Matter, and Orano Federal Services each receive $900M. Additional $28M to Global Laser Enrichment for next-gen technology.</p>
+                            <a href="https://www.energy.gov/articles/us-department-of-energy-awards-27-billion-restore-american-uranium-enrichment" target="_blank" style="color: var(--accent); font-size: 0.9rem;">DOE Announcement &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">HALEU</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 27, 2026</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Westinghouse & Nuclear Transport Solutions Partner on HALEU Transport</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Companies to co-develop transport package for high-assay low-enriched uranium, addressing critical supply chain gap for advanced reactors including eVinci microreactor.</p>
+                            <a href="https://www.ans.org/news/2026-01-27/article-7709/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">ANS Nuclear Newswire &#8594;</a>
+                        </div>
+                    </div>
+
+                    <!-- December 2025 -->
+                    <div id="news-dec2025" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128197; December 2025</h3>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--accent);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge badge-hot">RADIANT</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Dec 17, 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Radiant Raises $300M+ Series D at $1.8B Valuation</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Led by Draper Associates and Boost VC, with Founders Fund, ARK, and Chevron. Total raised now $518M+. Funds Oak Ridge factory groundbreaking and DOME test preparation for summer 2026.</p>
+                            <a href="https://www.radiantnuclear.com/blog/series-d-announcement/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Radiant Announcement &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--warning);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge" style="background: var(--warning);">POLICY</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Dec 18, 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Executive Order: "Ensuring American Space Superiority"</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">President Trump signs EO establishing strategic framework for U.S. space leadership. Key goals: astronauts to Moon by 2028, lunar outpost construction by 2030, lunar nuclear reactor by 2030, nuclear reactors in orbit.</p>
+                            <a href="https://www.hklaw.com/en/insights/publications/2025/12/white-house-releases-executive-order-on-ensuring-american-space" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Holland & Knight Analysis &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">SMR</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Dec 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">DOE Selects TVA & Holtec for $800M SMR Deployment</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Tennessee Valley Authority and Holtec Government Services selected to support early Gen3+ light-water SMR deployments in Tennessee and Michigan. Combined federal cost-share up to $800M.</p>
+                            <a href="https://www.energy.gov/articles/fact-sheet-energy-department-delivering-accelerating-deployment-nuclear-power" target="_blank" style="color: var(--accent); font-size: 0.9rem;">DOE Fact Sheet &#8594;</a>
+                        </div>
+                    </div>
+
+                    <!-- Q3-Q4 2025 -->
+                    <div id="news-q3q4-2025" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128197; Q3-Q4 2025 Highlights</h3>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--success);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge" style="background: var(--success);">INTUITIVE</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Oct 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Intuitive Machines Wins $8.2M AFRL Nuclear Power Contract Extension</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">U.S. Air Force Research Laboratory extends contract to develop next-gen nuclear power systems for spacecraft and lunar infrastructure. Builds on earlier $9.5M Stirling-based power conversion work.</p>
+                            <a href="https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-secures-82-million-afrl-contract-extension" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Intuitive Machines IR &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">NuScale</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Sep 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">TVA-ENTRA1 Partner on 6 GW of NuScale SMRs</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Tennessee Valley Authority signs landmark agreement with NuScale partner ENTRA1 Energy to deploy up to 6 GW of SMR capacity. ENTRA1 to finance, own, and operate plants; TVA to purchase output.</p>
+                            <a href="https://www.ans.org/news/2025-09-03/article-7342/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">ANS Nuclear Newswire &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">DOD</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Sep 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Project Pele Construction Begins at Idaho National Lab</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Department of Defense breaks ground on mobile microreactor demonstration. BWXT begins core fabrication. TRISO fuel delivered. On track for 2027 testing and 2028 operation per EO 14299 mandate.</p>
+                            <a href="https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor" target="_blank" style="color: var(--accent); font-size: 0.9rem;">DOE Announcement &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">RADIANT</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Aug 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Radiant Signs DIU/Air Force Agreement</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Defense Innovation Unit and Department of the Air Force contract with Radiant for microreactor development, expanding company's defense portfolio alongside existing commercial pipeline.</p>
+                            <a href="https://www.radiantnuclear.com/blog/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Radiant Blog &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">BWXT</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Aug 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">BWXT Begins Building Pele Microreactor Core</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">BWX Technologies commences reactor core fabrication at Lynchburg Innovation Campus. Partners include Rolls-Royce LibertyWorks, Northrop Grumman, and Torch Technologies. Shipment to INL planned for 2026.</p>
+                            <a href="https://www.ans.org/news/2025-08-03/article-7253/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">ANS Nuclear Newswire &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem; border-left: 3px solid var(--error);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge" style="background: var(--error);">CANCELLED</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jun 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">DARPA Cancels DRACO Nuclear Thermal Propulsion Program</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Program terminated due to declining ROI. DARPA Deputy Director McHenry cites falling launch costs (SpaceX/Starship) and underestimated ground testing challenges. FY2026 budget allocates zero funding for NTP/NEP.</p>
+                            <a href="https://spacenews.com/darpa-says-decreasing-launch-costs-new-analysis-led-it-to-cancel-draco-nuclear-propulsion-project/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">SpaceNews &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">CHINA-RUSSIA</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">May 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">China-Russia Sign Lunar Nuclear Reactor MoU</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">During ILRS summit in Shanghai, China and Russia formalize plans for joint lunar nuclear power plant by 2035-2036. 17 countries and 50+ institutions now part of ILRS. Roscosmos contracts Lavochkin Association.</p>
+                            <a href="https://www.scmp.com/news/china/science/article/3310315/china-and-russia-sign-nuclear-reactor-deal-fuel-lunar-research-station" target="_blank" style="color: var(--accent); font-size: 0.9rem;">South China Morning Post &#8594;</a>
+                        </div>
+                    </div>
+
+                    <!-- Earlier 2025 -->
+                    <div style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128197; Earlier 2025</h3>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">DOE</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Spring 2026 Target</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">DOME Test Bed on Track for First Experiments</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">World's first microreactor test facility nears completion at INL. Westinghouse eVinci and Radiant Kaleidos selected as first experiments. Defense Production Act authorization expedites construction.</p>
+                            <a href="https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026" target="_blank" style="color: var(--accent); font-size: 0.9rem;">DOE Article &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">Westinghouse</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Mar 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Westinghouse eVinci Achieves NRC Design Criteria Approval</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">NRC approves Principal Design Criteria Topical Report for eVinci microreactor. Milestone provides clear licensing pathway and streamlines customer adoption. Manufacturing targeted for 2029.</p>
+                            <a href="https://www.businesswire.com/news/home/20250331678087/en/Westinghouse-eVinci-Design-Reaches-Key-US-Licensing-Milestone" target="_blank" style="color: var(--accent); font-size: 0.9rem;">BusinessWire &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">Westinghouse</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Mar 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Penn State to Host Westinghouse eVinci Research Reactor</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">University submits letter of intent to NRC for eVinci microreactor on University Park campus. Partnership accelerates commercialization and provides research platform.</p>
+                            <a href="https://www.ans.org/news/2025-03-05/article-6829/" target="_blank" style="color: var(--accent); font-size: 0.9rem;">ANS Nuclear Newswire &#8594;</a>
+                        </div>
+
+                        <div class="feature-box news-item" style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="badge">FSP</span>
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 2025</span>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Westinghouse Awarded NASA-DOE FSP Phase 1 Continuation</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Selected to continue development of space microreactor concept leveraging eVinci technology. Joins Lockheed Martin and IX as FSP Phase 1 contractors.</p>
+                            <a href="https://info.westinghousenuclear.com/news/westinghouse-awarded-nasa-doe-contract-to-continue-development-of-space-microreactor-concept" target="_blank" style="color: var(--accent); font-size: 0.9rem;">Westinghouse News &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== GLOBAL DEVELOPMENTS ========== -->
+                <div class="card news-card" style="margin-top: 2rem;">
+                    <h2>&#127758; Global Nuclear Developments</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">International policy shifts and competitive landscape updates.</p>
+
+                    <div class="grid-2">
+                        <div class="feature-box" style="border-left: 3px solid var(--warning);">
+                            <h4 style="color: var(--warning);">&#127464;&#127475; China-Russia ILRS</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li>Lunar nuclear reactor by 2035-2036</li>
+                                <li>17 countries, 50+ institutions in ILRS</li>
+                                <li>Russia leads nuclear, China leads landing</li>
+                                <li>Chang'e-8 (2028) to test systems</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>&#127466;&#127482; European Union</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li>81.2 GW nuclear capacity by 2040</li>
+                                <li>Belgium reversed phase-out plans</li>
+                                <li>Italy lifted nuclear ban</li>
+                                <li>Germany recognizes nuclear as green</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>&#127470;&#127475; India</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li>Parliament amends nuclear liability law</li>
+                                <li>Private sector investment now allowed</li>
+                                <li>Major expansion of domestic program</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h4>&#127988; Global Finance</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li>World Bank now allows nuclear lending</li>
+                                <li>Asia Development Bank policy updated</li>
+                                <li>~15 reactors to come online in 2026</li>
+                                <li>12 GW capacity additions expected</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== INDUSTRY EVENTS SECTION ========== -->
+                <div class="card news-card" id="news-events" style="margin-top: 2rem; border: 2px solid var(--secondary); background: var(--gradient-subtle);">
+                    <h2>&#128197; Upcoming Industry Events</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Key conferences and events for space nuclear and advanced reactor BD. Plan your calendar.</p>
+
+                    <!-- Q1 2026 -->
+                    <div id="news-conferences">
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128198; Q1 2026 (Feb-Mar)</h3>
+
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table>
+                                <thead>
+                                    <tr><th>Date</th><th>Event</th><th>Location</th><th>Relevance</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Feb 9-11</strong></td>
+                                        <td><a href="https://nssaspace.org/event/disc26/" target="_blank" style="color: var(--accent);">Defense & Intelligence Space Conference (DISC)</a></td>
+                                        <td>Reston, VA / NGA Springfield</td>
+                                        <td>&#11088; Top defense space event. Theme: "Path to Persistence and Dominance." Title 10/50 missions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Feb 10-12</strong></td>
+                                        <td><a href="https://www.usnic.org/upcoming-events" target="_blank" style="color: var(--accent);">Advanced Reactors Summit XIII</a></td>
+                                        <td>Seattle, WA</td>
+                                        <td>Advanced reactor industry networking. Microreactor discussions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mar 10-12</strong></td>
+                                        <td><a href="https://www.nrc.gov/public-involve/conference-symposia/ric/" target="_blank" style="color: var(--accent);">NRC Regulatory Information Conference</a></td>
+                                        <td>Rockville, MD (Hybrid)</td>
+                                        <td>&#11088; Key for Part 53 updates, ADVANCE Act implementation, licensing insights.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mar 23-26</strong></td>
+                                        <td><a href="https://www.satshow.com/" target="_blank" style="color: var(--accent);">SATELLITE 2026 + GovMilSpace</a></td>
+                                        <td>Washington, DC</td>
+                                        <td>Largest satellite industry event. GovMilSpace track for defense/government.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mar 31 - Apr 1</strong></td>
+                                        <td><a href="https://www.darpa.mil/events/2025/on-orbit-nuclear-power-concepts-workshop" target="_blank" style="color: var(--accent);">DARPA On-Orbit Nuclear Power Workshop</a></td>
+                                        <td>Arlington, VA</td>
+                                        <td>&#11088;&#11088; CRITICAL for space nuclear BD. DARPA exploring NEP after DRACO. Response deadline: Feb 6, 2026.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128198; Q2 2026 (Apr-Jun)</h3>
+
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table>
+                                <thead>
+                                    <tr><th>Date</th><th>Event</th><th>Location</th><th>Relevance</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Apr 7-9</strong></td>
+                                        <td><a href="https://www.nei.org/conferences/" target="_blank" style="color: var(--accent);">NEI Nuclear Energy Conference</a></td>
+                                        <td>Washington, DC</td>
+                                        <td>&#11088; Premier NEI event. Policy, industry leaders, networking.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Apr 7-9</strong></td>
+                                        <td><a href="https://iaaspace.org/" target="_blank" style="color: var(--accent);">5th IAA Conference on Space Situational Awareness</a></td>
+                                        <td>Madrid, Spain</td>
+                                        <td>International space security, surveillance, tracking.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Apr 13-16</strong></td>
+                                        <td><a href="https://www.spacesymposium.org/" target="_blank" style="color: var(--accent);">41st Space Symposium</a></td>
+                                        <td>Colorado Springs, CO</td>
+                                        <td>&#11088;&#11088; THE premier global space event. 12,000+ attendees, 60 countries. Must-attend for BD.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Apr 27-30</strong></td>
+                                        <td><a href="https://www.ans.org/meetings/nets2026/" target="_blank" style="color: var(--accent);">Nuclear & Emerging Technologies for Space (NETS 2026)</a></td>
+                                        <td>Dayton, OH</td>
+                                        <td>&#11088;&#11088;&#11088; MOST RELEVANT for space nuclear. ANS topical meeting hosted by UDRI. Technical deep dives.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>May 11-12</strong></td>
+                                        <td><a href="https://events.reutersevents.com/nuclear/smr-usa" target="_blank" style="color: var(--accent);">Reuters SMR & Advanced Reactor 2026</a></td>
+                                        <td>Austin, TX</td>
+                                        <td>&#11088; 750+ leaders from utilities, tech, finance, regulators. Partnership opportunities.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>May 31 - Jun 3</strong></td>
+                                        <td><a href="https://www.ans.org/meetings/ac2026/" target="_blank" style="color: var(--accent);">2026 ANS Annual Conference</a></td>
+                                        <td>Denver, CO</td>
+                                        <td>Broad nuclear industry coverage. Submissions deadline: Jan 23, 2026.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128198; Q3-Q4 2026 (Jul-Dec)</h3>
+
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table>
+                                <thead>
+                                    <tr><th>Date</th><th>Event</th><th>Location</th><th>Relevance</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Aug 16-20</strong></td>
+                                        <td><a href="https://www.ans.org/meetings/global2026/" target="_blank" style="color: var(--accent);">Global 2026</a></td>
+                                        <td>Chicago, IL</td>
+                                        <td>Theme: "Deploying Sustainable Nuclear Fuel Cycles." HALEU, fuel supply focus.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aug 24-27</strong></td>
+                                        <td><a href="https://nuclearenergyconference.org/" target="_blank" style="color: var(--accent);">NECX 2026 (ANS + NEI)</a></td>
+                                        <td>Dallas, TX</td>
+                                        <td>&#11088; Joint ANS/NEI event. Industry leaders, regulators, engineers.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sep 2026</strong></td>
+                                        <td><a href="https://www.oecd-nea.org/" target="_blank" style="color: var(--accent);">Roadmaps to New Nuclear Conference</a></td>
+                                        <td>Paris, France</td>
+                                        <td>NEA/DOE co-hosted. Advanced nuclear deployment focus including SMRs.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nov 15-18</strong></td>
+                                        <td><a href="https://www.ans.org/meetings/" target="_blank" style="color: var(--accent);">2026 ANS Winter Conference & Expo</a></td>
+                                        <td>Phoenix, AZ</td>
+                                        <td>Embedded topicals: Advanced Reactor Safety, ICAPP, Thermal Hydraulics.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TBD</strong></td>
+                                        <td>ASCEND 2026</td>
+                                        <td>Texas (likely)</td>
+                                        <td>AIAA space commercialization. Off-world future focus.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== KEY DATES TO WATCH ========== -->
+                <div class="card news-card" style="margin-top: 2rem;">
+                    <h2>&#128680; Key Dates to Watch</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Critical milestones and deadlines for space nuclear programs.</p>
+
+                    <div class="grid-2">
+                        <div class="feature-box" style="border-left: 3px solid var(--error);">
+                            <h4 style="color: var(--error);">&#9888; Immediate (Q1 2026)</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li><strong>Feb 3:</strong> Space Symposium early registration ends</li>
+                                <li><strong>Feb 6:</strong> DARPA On-Orbit Nuclear Workshop response deadline</li>
+                                <li><strong>Early 2026:</strong> NASA FSP Phase 2 solicitation expected</li>
+                                <li><strong>Mar 2026:</strong> DOME construction complete target</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 3px solid var(--warning);">
+                            <h4 style="color: var(--warning);">&#128337; Near-Term (2026)</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li><strong>Spring 2026:</strong> First DOME experiments begin</li>
+                                <li><strong>Summer 2026:</strong> Radiant Kaleidos DOME test</li>
+                                <li><strong>Fall 2026:</strong> Radiant Oak Ridge factory groundbreaking</li>
+                                <li><strong>Dec 2026:</strong> DOME reactor installation target</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 3px solid var(--success);">
+                            <h4 style="color: var(--success);">&#127919; Program Milestones</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li><strong>2027:</strong> Project Pele testing begins</li>
+                                <li><strong>Sep 2028:</strong> EO 14299 DoD reactor deadline</li>
+                                <li><strong>2028:</strong> Radiant first customer delivery</li>
+                                <li><strong>2029:</strong> Westinghouse eVinci manufacturing</li>
+                                <li><strong>Q4 2029:</strong> NASA FSP launch window</li>
+                                <li><strong>2030:</strong> Lunar nuclear reactor goal</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 3px solid var(--accent);">
+                            <h4 style="color: var(--accent);">&#127759; Geopolitical</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
+                                <li><strong>2028:</strong> China Chang'e-8 ILRS precursor</li>
+                                <li><strong>2035:</strong> China-Russia ILRS basic model</li>
+                                <li><strong>2036:</strong> ILRS nuclear plant target</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== EVENT RECOMMENDATIONS ========== -->
+                <div class="card news-card" style="margin-top: 2rem; border: 2px solid var(--accent);">
+                    <h2>&#127919; Priority Events for Space Nuclear BD</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Recommended attendance based on space nuclear business development priorities.</p>
+
+                    <div class="feature-box" style="border: 2px solid var(--accent); margin-bottom: 1rem;">
+                        <h3 style="color: var(--accent);">&#11088; Tier 1: Must Attend</h3>
+                        <div class="grid-2" style="margin-top: 1rem;">
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">NETS 2026 (Apr 27-30, Dayton)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">THE space nuclear conference. Technical deep dives, NASA/DOE officials, academia, industry leaders. Present papers, build relationships.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Space Symposium (Apr 13-16, Colorado Springs)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Premier global space event. Senior government, military, industry. Critical for teaming, visibility, prime contractor relationships.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">DARPA Workshop (Mar 31-Apr 1, Arlington)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Direct engagement on on-orbit nuclear power concepts. Post-DRACO opportunity shaping. Response deadline Feb 6.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">NEI Conference (Apr 7-9, Washington DC)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Policy and industry leadership. Capitol Hill access. Interagency coordination insights.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-box" style="margin-bottom: 1rem;">
+                        <h3>&#11088; Tier 2: High Value</h3>
+                        <div class="grid-2" style="margin-top: 1rem;">
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">DISC (Feb 9-11, Reston/NGA)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Defense and intelligence space focus. Title 10/50 mission areas. Early career day Feb 9.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Reuters SMR (May 11-12, Austin)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Commercial partnerships, utility relationships, investment community.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">NECX 2026 (Aug 24-27, Dallas)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Joint ANS/NEI. Broad industry coverage, regulatory updates.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">NRC RIC (Mar 10-12, Rockville)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Licensing pathway clarity. Part 53, ADVANCE Act implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>&#11088; Tier 3: Consider</h3>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; margin-top: 0.5rem;">
+                            <li><strong>ANS Annual (May 31 - Jun 3, Denver)</strong> - Broad technical coverage</li>
+                            <li><strong>Global 2026 (Aug 16-20, Chicago)</strong> - Fuel cycle focus, HALEU supply chain</li>
+                            <li><strong>SATELLITE/GovMilSpace (Mar 23-26, DC)</strong> - If pursuing satcom/space power integration</li>
+                            <li><strong>Advanced Reactors Summit XIII (Feb 10-12, Seattle)</strong> - Microreactor industry networking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========== QUICK LINKS ========== -->
+                <div class="card news-card" style="margin-top: 2rem;">
+                    <h2>&#128279; News Sources & Resources</h2>
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Nuclear Industry News</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem;">
+                                <li><a href="https://www.ans.org/news/" target="_blank" style="color: var(--accent);">ANS Nuclear Newswire</a></li>
+                                <li><a href="https://www.world-nuclear-news.org/" target="_blank" style="color: var(--accent);">World Nuclear News</a></li>
+                                <li><a href="https://www.energy.gov/ne" target="_blank" style="color: var(--accent);">DOE Office of Nuclear Energy</a></li>
+                                <li><a href="https://www.nei.org/news" target="_blank" style="color: var(--accent);">Nuclear Energy Institute News</a></li>
+                                <li><a href="https://neutronbytes.com/" target="_blank" style="color: var(--accent);">Neutron Bytes</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Space Industry News</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem;">
+                                <li><a href="https://spacenews.com/" target="_blank" style="color: var(--accent);">SpaceNews</a></li>
+                                <li><a href="https://www.space.com/" target="_blank" style="color: var(--accent);">Space.com</a></li>
+                                <li><a href="https://breakingdefense.com/tag/space/" target="_blank" style="color: var(--accent);">Breaking Defense - Space</a></li>
+                                <li><a href="https://www.nasa.gov/news/" target="_blank" style="color: var(--accent);">NASA News</a></li>
+                                <li><a href="https://www.thespacereview.com/" target="_blank" style="color: var(--accent);">The Space Review</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Defense & Government</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem;">
+                                <li><a href="https://www.darpa.mil/news" target="_blank" style="color: var(--accent);">DARPA News</a></li>
+                                <li><a href="https://www.war.gov/News" target="_blank" style="color: var(--accent);">Department of War News</a></li>
+                                <li><a href="https://www.spaceforce.mil/News/" target="_blank" style="color: var(--accent);">U.S. Space Force News</a></li>
+                                <li><a href="https://www.govconwire.com/" target="_blank" style="color: var(--accent);">GovConWire</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Event Calendars</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1rem;">
+                                <li><a href="https://www.ans.org/meetings/" target="_blank" style="color: var(--accent);">ANS Conferences</a></li>
+                                <li><a href="https://www.nei.org/conferences/" target="_blank" style="color: var(--accent);">NEI Conferences</a></li>
+                                <li><a href="https://aiaa.org/events-learning/events/" target="_blank" style="color: var(--accent);">AIAA Events</a></li>
+                                <li><a href="https://www.usnic.org/upcoming-events" target="_blank" style="color: var(--accent);">USNIC Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -10167,6 +10736,34 @@
                             accordionContent.classList.add('active');
                         }
                     }
+                }
+            });
+        }
+
+        // News & Events tab search functionality
+        function filterNewsCards() {
+            const searchTerm = document.getElementById('news-search').value.toLowerCase();
+            const newsItems = document.querySelectorAll('#news .news-card, #news .news-item, #news .feature-box, #news table tbody tr');
+
+            newsItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = '';
+                    item.classList.remove('hidden');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Keep parent cards visible if any child matches
+            const cards = document.querySelectorAll('#news .card');
+            cards.forEach(card => {
+                const visibleItems = card.querySelectorAll('.news-item:not(.hidden), .feature-box:not(.hidden), tbody tr:not(.hidden)');
+                if (visibleItems.length > 0 || card.textContent.toLowerCase().includes(searchTerm)) {
+                    card.style.display = '';
+                } else if (searchTerm.length > 2) {
+                    card.style.display = 'none';
                 }
             });
         }

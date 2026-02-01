@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~780KB, ~10,400+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~835KB, ~11,000+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -17,7 +17,7 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 
 ## Website Structure
 
-### Navigation Tabs (10 total)
+### Navigation Tabs (11 total)
 1. **Contract Hub** (priority tab) - Active opportunities, contract types, alert setup, search keywords
 2. **Agencies** - NASA, DARPA, Space Force/SpaceWERX, DIU, DOE, DoW SBIR guidance
 3. **Strategy & Playbook** - Comprehensive BD strategy including OKRs, white paper guides, capture templates
@@ -28,6 +28,7 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 8. **Contract Deep Dive** - Federal contracting 101, vehicle comparison, SBIR guide, practical tips
 9. **Glossary** - Comprehensive 160+ term searchable glossary with category filtering
 10. **Policy** - Comprehensive regulatory framework, executive orders, launch approval, export controls, legislation
+11. **News & Events** - Current industry news, upcoming conferences, key dates, event recommendations
 
 ### Key Features
 - Global search across all content
@@ -192,6 +193,31 @@ Comprehensive policy and regulatory framework with searchable interface:
 - **Implications for Radiant BD** - Practical guidance on regulatory engagement strategy
 - **Quick Reference Links** - Direct links to SAM.gov, NRC, DOE, White House, Congress.gov
 
+## News & Events Tab Content
+Comprehensive news tracking and event calendar with searchable interface:
+- **Search functionality** - Real-time filtering across all news and events
+- **Current News Headlines** - Recent developments organized by date (Jan 2026, Dec 2025, Q3-Q4 2025)
+  - NASA-DOE MOU lunar reactor announcement (Jan 2026)
+  - Radiant $300M+ Series D funding (Dec 2025)
+  - Space Superiority Executive Order (Dec 2025)
+  - DOE $2.7B uranium enrichment investment (Jan 2026)
+  - Congress FY2026 nuclear energy funding ($3.1B)
+  - Project Pele construction progress
+  - DRACO cancellation (Jun 2025)
+  - China-Russia ILRS lunar nuclear plans
+- **Global Nuclear Developments** - International policy shifts (EU, India, global finance)
+- **Upcoming Industry Events** - Conferences organized by quarter (Q1-Q4 2026)
+  - NETS 2026 (Apr 27-30, Dayton) - THE space nuclear conference
+  - Space Symposium (Apr 13-16, Colorado Springs) - Premier global space event
+  - DARPA On-Orbit Nuclear Workshop (Mar 31-Apr 1, Arlington)
+  - NEI Conference (Apr 7-9, Washington DC)
+  - Reuters SMR & Advanced Reactor (May 11-12, Austin)
+  - NECX 2026 (Aug 24-27, Dallas) - Joint ANS/NEI
+  - ANS Annual, Global 2026, Winter Conference
+- **Key Dates to Watch** - Critical milestones and deadlines
+- **Priority Events for Space Nuclear BD** - Tiered recommendations (Tier 1-3)
+- **News Sources & Resources** - Links to nuclear and space industry news outlets
+
 ## Technical Details
 
 ### Styling
@@ -209,6 +235,7 @@ Comprehensive policy and regulatory framework with searchable interface:
 - Quick navigation dropdowns
 - Glossary search and category filtering
 - Policy search functionality
+- News & Events search functionality
 
 ## Development Notes
 
