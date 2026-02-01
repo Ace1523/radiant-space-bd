@@ -10079,16 +10079,82 @@
                     </div>
                 </div>
 
-                <div class="quick-nav-row" style="margin-bottom: 2rem;">
-                    <div class="quick-nav-dropdown">
-                        <button class="quick-nav-btn">Jump to Section &#9662;</button>
-                        <div class="quick-nav-content">
-                            <a href="#news-current">Current News</a>
-                            <a href="#news-jan2026">January 2026</a>
-                            <a href="#news-dec2025">December 2025</a>
-                            <a href="#news-q3q4-2025">Q3-Q4 2025</a>
-                            <a href="#news-events">Industry Events</a>
-                            <a href="#news-conferences">Major Conferences</a>
+                <!-- Quick Navigation Bar -->
+                <div class="strategy-nav">
+                    <div class="strategy-nav-header">
+                        <h3>&#9889; Quick Navigation</h3>
+                        <span style="color: var(--text-dim); font-size: 0.75rem;">Hover categories for links</span>
+                    </div>
+                    <div class="strategy-nav-categories">
+                        <!-- Category 1: Current News -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128240;</span> Current News
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-current" class="strategy-nav-link">&#128293; News Headlines</a>
+                                <a href="#news-jan2026" class="strategy-nav-link">&#128197; January 2026</a>
+                                <a href="#news-dec2025" class="strategy-nav-link">&#128197; December 2025</a>
+                                <a href="#news-q3q4-2025" class="strategy-nav-link">&#128197; Q3-Q4 2025</a>
+                            </div>
+                        </div>
+
+                        <!-- Category 2: Global -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#127758;</span> Global
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-global" class="strategy-nav-link">&#127758; Global Developments</a>
+                                <a href="#news-china-russia" class="strategy-nav-link">&#127464;&#127475; China-Russia ILRS</a>
+                            </div>
+                        </div>
+
+                        <!-- Category 3: Events -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128197;</span> Events
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-events" class="strategy-nav-link">&#128197; Upcoming Events</a>
+                                <a href="#news-conferences" class="strategy-nav-link">&#128198; Q1-Q2 Conferences</a>
+                                <a href="#news-q3q4-events" class="strategy-nav-link">&#128198; Q3-Q4 Conferences</a>
+                            </div>
+                        </div>
+
+                        <!-- Category 4: Key Dates -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128680;</span> Key Dates
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-dates" class="strategy-nav-link">&#128680; Dates to Watch</a>
+                                <a href="#news-deadlines" class="strategy-nav-link">&#9888; Deadlines</a>
+                                <a href="#news-milestones" class="strategy-nav-link">&#127919; Program Milestones</a>
+                            </div>
+                        </div>
+
+                        <!-- Category 5: Priorities -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#11088;</span> Priorities
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-priority" class="strategy-nav-link">&#11088; Priority Events</a>
+                                <a href="#news-tier1" class="strategy-nav-link">&#127942; Tier 1: Must Attend</a>
+                                <a href="#news-tier2" class="strategy-nav-link">&#129351; Tier 2: High Value</a>
+                            </div>
+                        </div>
+
+                        <!-- Category 6: Resources -->
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128279;</span> Resources
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#news-sources" class="strategy-nav-link">&#128279; News Sources</a>
+                                <a href="#news-calendars" class="strategy-nav-link">&#128197; Event Calendars</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -10300,12 +10366,12 @@
                 </div>
 
                 <!-- ========== GLOBAL DEVELOPMENTS ========== -->
-                <div class="card news-card" style="margin-top: 2rem;">
+                <div class="card news-card" id="news-global" style="margin-top: 2rem;">
                     <h2>&#127758; Global Nuclear Developments</h2>
                     <p style="color: var(--text-muted); margin-bottom: 1.5rem;">International policy shifts and competitive landscape updates.</p>
 
                     <div class="grid-2">
-                        <div class="feature-box" style="border-left: 3px solid var(--warning);">
+                        <div class="feature-box" id="news-china-russia" style="border-left: 3px solid var(--warning);">
                             <h4 style="color: var(--warning);">&#127464;&#127475; China-Russia ILRS</h4>
                             <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
                                 <li>Lunar nuclear reactor by 2035-2036</li>
@@ -10440,7 +10506,7 @@
                             </table>
                         </div>
 
-                        <h3 style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128198; Q3-Q4 2026 (Jul-Dec)</h3>
+                        <h3 id="news-q3q4-events" style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">&#128198; Q3-Q4 2026 (Jul-Dec)</h3>
 
                         <div class="table-container" style="margin-bottom: 2rem;">
                             <table>
@@ -10485,12 +10551,12 @@
                 </div>
 
                 <!-- ========== KEY DATES TO WATCH ========== -->
-                <div class="card news-card" style="margin-top: 2rem;">
+                <div class="card news-card" id="news-dates" style="margin-top: 2rem;">
                     <h2>&#128680; Key Dates to Watch</h2>
                     <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Critical milestones and deadlines for space nuclear programs.</p>
 
                     <div class="grid-2">
-                        <div class="feature-box" style="border-left: 3px solid var(--error);">
+                        <div class="feature-box" id="news-deadlines" style="border-left: 3px solid var(--error);">
                             <h4 style="color: var(--error);">&#9888; Immediate (Q1 2026)</h4>
                             <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
                                 <li><strong>Feb 3:</strong> Space Symposium early registration ends</li>
@@ -10508,7 +10574,7 @@
                                 <li><strong>Dec 2026:</strong> DOME reactor installation target</li>
                             </ul>
                         </div>
-                        <div class="feature-box" style="border-left: 3px solid var(--success);">
+                        <div class="feature-box" id="news-milestones" style="border-left: 3px solid var(--success);">
                             <h4 style="color: var(--success);">&#127919; Program Milestones</h4>
                             <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
                                 <li><strong>2027:</strong> Project Pele testing begins</li>
@@ -10531,11 +10597,11 @@
                 </div>
 
                 <!-- ========== EVENT RECOMMENDATIONS ========== -->
-                <div class="card news-card" style="margin-top: 2rem; border: 2px solid var(--accent);">
+                <div class="card news-card" id="news-priority" style="margin-top: 2rem; border: 2px solid var(--accent);">
                     <h2>&#127919; Priority Events for Space Nuclear BD</h2>
                     <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Recommended attendance based on space nuclear business development priorities.</p>
 
-                    <div class="feature-box" style="border: 2px solid var(--accent); margin-bottom: 1rem;">
+                    <div class="feature-box" id="news-tier1" style="border: 2px solid var(--accent); margin-bottom: 1rem;">
                         <h3 style="color: var(--accent);">&#11088; Tier 1: Must Attend</h3>
                         <div class="grid-2" style="margin-top: 1rem;">
                             <div>
@@ -10557,7 +10623,7 @@
                         </div>
                     </div>
 
-                    <div class="feature-box" style="margin-bottom: 1rem;">
+                    <div class="feature-box" id="news-tier2" style="margin-bottom: 1rem;">
                         <h3>&#11088; Tier 2: High Value</h3>
                         <div class="grid-2" style="margin-top: 1rem;">
                             <div>
@@ -10591,7 +10657,7 @@
                 </div>
 
                 <!-- ========== QUICK LINKS ========== -->
-                <div class="card news-card" style="margin-top: 2rem;">
+                <div class="card news-card" id="news-sources" style="margin-top: 2rem;">
                     <h2>&#128279; News Sources & Resources</h2>
                     <div class="grid-2">
                         <div>
@@ -10623,7 +10689,7 @@
                                 <li><a href="https://www.govconwire.com/" target="_blank" style="color: var(--accent);">GovConWire</a></li>
                             </ul>
                         </div>
-                        <div>
+                        <div id="news-calendars">
                             <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Event Calendars</h4>
                             <ul style="color: var(--text-muted); margin-left: 1rem;">
                                 <li><a href="https://www.ans.org/meetings/" target="_blank" style="color: var(--accent);">ANS Conferences</a></li>
