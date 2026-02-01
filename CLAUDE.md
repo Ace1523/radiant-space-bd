@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~920KB, ~12,200+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~1MB, ~13,300+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -17,8 +17,9 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 
 ## Website Structure
 
-### Navigation Tabs (11 total)
-1. **Contract Hub** (priority tab) - Active opportunities, contract types, alert setup, search keywords
+### Navigation Tabs (12 total)
+1. **Home** (landing page) - Hero section, why space needs nuclear, 2026-2030 window, emerging landscape, navigation guide, quick start actions
+2. **Contract Hub** (priority tab) - Active opportunities with deadlines, opportunity summary table, contract types, alert setup, search keywords (verified Feb 2026)
 2. **Agencies** - NASA, DARPA, Space Force/SpaceWERX, DIU, DOE, DoW, Air Force/AFWERX, NRO, other defense stakeholders, SBIR guidance
 3. **Strategy & Playbook** - Comprehensive BD strategy including OKRs, white paper guides, capture templates
 4. **Technical** - Space nuclear technology deep dive (fission, HALEU, power conversion, use cases)
@@ -43,11 +44,16 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 
 ## Current Program Status (as of Feb 2026)
 
+### Immediate Deadlines
+- **DARPA On-Orbit Nuclear** - White papers due Feb 6, 2026 (DARPA-SN-26-21)
+- **NASA FSP Phase 2** - Final AFPP release imminent, awards expected Mar 2026
+
 ### Active Programs
 - **NASA FSP** - 100 kWe lunar reactor, 2030 goal, Phase 2 solicitation early 2026
-- **DOE DOME** - First microreactor test bed, construction complete Mar 2026
+- **DOE DOME** - First microreactor test bed, testing Spring 2026, Radiant Kaleidos selected
 - **Project Pele** - DoD 1.5 MW mobile reactor, operation deadline Sep 2028
 - **Army Janus** - Microreactors at 9 military bases, EO 14299 deadline Sep 2028
+- **DIU ANPI** - Radiant selected April 2025, OT awards available
 - **AFRL JETSON** - Space Force nuclear electric power ($33.7M to Lockheed)
 - **DARPA Rads to Watts** - Direct radiation-to-electricity conversion (active)
 - **DARPA On-Orbit Nuclear** - Workshop Mar-Apr 2026
@@ -61,6 +67,48 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 - DOME Test: Fall 2026 / 2027 (first new US reactor design tested in 50+ years)
 - Oak Ridge Factory: Groundbreaking 2026
 - First Customer Delivery: 2028
+
+## Home Tab Content (Landing Page)
+The main entry point for the website, designed to orient visitors and convey the opportunity:
+
+### Hero Section - "The Space Nuclear Opportunity"
+- Compelling opening statement about the 2030 lunar reactor goal
+- CTAs to Contract Hub and Strategy tabs
+
+### Why Space Needs Nuclear Power
+- The Lunar Night Problem (14-day nights, shadowed craters)
+- Mars Dust Storms (Opportunity rover lesson)
+- Power Density (3 football fields of solar vs shipping container reactor)
+- Persistent Operations (military/commercial requirements)
+- Energy density comparison (1 kg uranium = 3 million kg coal)
+
+### The 2026-2030 Critical Window
+- Timeline table showing key milestones (2026-2030)
+- DOME testing, FSP Phase 2, Pele, Janus, lunar deployment
+- Geopolitical imperative (Russia-China ILRS partnership warning)
+
+### The Emerging Landscape
+- Stats: $3.1B+ budget, 7+ programs, 2030 goal
+- Key government agencies and their roles
+- Industry leaders and their positions
+- Active programs status table
+
+### Navigate This Resource
+Role-based navigation guide:
+- **For Contract Hunters:** Contract Hub, Agencies, Contract Deep Dive
+- **For Strategists:** Strategy & Playbook, Programs & Timeline, Policy
+- **For Technical Learning:** Technical Overview, History, Radiant Nuclear
+- **For Staying Current:** News & Events, Glossary
+- Interactive clickable cards that switch tabs
+
+### Why This Resource Exists
+- Context on space nuclear market formation
+- What visitors will find
+- Last updated date
+
+### Quick Start Actions
+- Immediate deadlines (DARPA RFI Feb 6, NASA FSP imminent)
+- Clickable action cards
 
 ## Agencies Tab Content
 Comprehensive agency profiles with sub-tabs for each major stakeholder:
@@ -181,9 +229,14 @@ Complete timeline from 1954-present including:
 Detailed contracting guidance:
 - Federal Contracting 101 overview
 - The Real Workflow (how programs actually happen)
-- Contract Vehicles Explained (OTA, FAR, BAA, SBIR)
+- Contract Vehicles Explained (OTA, FAR, BAA, RFI, CSO, SBIR, IDIQ, CRADA)
+- **Contract Payment Structures** (NEW - comprehensive section):
+  - Milestone-Based Contracts (DOE style) - Kairos example, built-in oversight
+  - COTS Contracts (NASA/SpaceX model) - fixed-price, minimal oversight
+  - Cost-Plus/Cost-Based - traditional, risks and downsides
+  - Comparison table: payment trigger, cost risk, cancellation risk, oversight level
 - What Agencies Evaluate
-- Contract Vehicle Comparison Matrix
+- Contract Vehicle Comparison Matrix (updated with payment structures)
 - Typical Acquisition Path for Space Nuclear
 - The Contract Ladder (Phase 0-4)
 - SBIR/STTR Cross-Agency Guide
@@ -191,16 +244,18 @@ Detailed contracting guidance:
 - Practical Tips for new entrants
 
 ## Programs Tab Content
-Verified program details with sources:
-- Program Status at a Glance (quick reference)
-- NASA FSP timeline and requirements
-- DOME facility status and test schedule
-- Project Pele milestones
-- Army Janus program and 9 candidate sites
-- AFRL JETSON contracts
-- DARPA programs (DRACO cancelled, Rads to Watts active)
-- Radiant milestones
-- Comprehensive 2026-2035 timeline
+Comprehensive verified program details with sources:
+- **Program Status at a Glance** - Three tables: Space Programs, Terrestrial Programs, International Competition
+- **NASA FSP** - Full timeline from 2021-2030, Phase 1 contractors (Lockheed, Westinghouse, IX), requirements update to 100 kWe
+- **DOME Facility** - Status, first users, test schedule
+- **Project Pele** - BWXT 1.5 MW mobile reactor milestones
+- **Army Janus** - 9 candidate sites, ANPI program, EO 14299 deadline
+- **AFRL JETSON** - Contracts (Lockheed $33.7M, Westinghouse $16.9M, Intuitive Machines $17.6M), SPAR Institute ($35M, 8 universities)
+- **DARPA Programs** - DRACO cancelled (May 2025), Rads to Watts active, On-Orbit Nuclear workshop (Mar-Apr 2026)
+- **Radiant Milestones** - Series C/D funding, DOME selection, FSP DEEP, Oak Ridge factory
+- **Other Commercial Players** (NEW) - Aalo Atomics, Antares Nuclear, X-Energy, Intuitive Machines, DOE Reactor Pilot Program
+- **International Competition** (NEW) - Russia-China MOU (May 2025), ILRS nuclear power (2033-2035), Russia lunar station (2036), Chang'e-7/8
+- **Comprehensive Timeline 2026-2036** - Extended with HALEU distribution, Chang'e missions, China crewed landing (2030), Russia lunar station (2036)
 
 ## Glossary Tab Content
 Comprehensive 160+ term searchable glossary organized by category:

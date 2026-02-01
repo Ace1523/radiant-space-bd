@@ -1102,7 +1102,8 @@
     <!-- Navigation -->
     <nav class="nav-tabs">
         <div class="nav-tabs-inner">
-            <div class="nav-tab priority active" data-tab="contracts">&#128293; CONTRACT HUB</div>
+            <div class="nav-tab active" data-tab="home">Home</div>
+            <div class="nav-tab priority" data-tab="contracts">Contract Hub</div>
             <div class="nav-tab" data-tab="agencies">Agencies</div>
             <div class="nav-tab" data-tab="strategy">Strategy & Playbook</div>
             <div class="nav-tab" data-tab="technical">Technical</div>
@@ -1119,29 +1120,29 @@
     <div class="main-container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h3>&#128279; Quick Contract Portals</h3>
+            <h3>Quick Contract Portals</h3>
             <ul class="quick-links">
-                <li><a href="https://sam.gov/" target="_blank">&#127919; SAM.gov <span class="badge">Primary</span></a></li>
-                <li><a href="https://www.nasa.gov/glenn/fsps/" target="_blank">&#128293; NASA FSP <span class="badge badge-hot">HOT</span></a></li>
-                <li><a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank">&#129302; DARPA Opportunities</a></li>
-                <li><a href="https://www.darpa.mil/work-with-us/opportunities/hr001125s0011" target="_blank">&#128736; DARPA TTO BAA 2025</a></li>
-                <li><a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank">&#9881; DIU Solicitations</a></li>
-                <li><a href="https://www.army.mil/article/289074" target="_blank">&#127981; Army Janus Program</a></li>
-                <li><a href="https://inl.gov/fsp/" target="_blank">&#9889; INL / DOME</a></li>
-                <li><a href="https://nspires.nasaprs.com/external/" target="_blank">&#128196; NASA NSPIRES</a></li>
-                <li><a href="https://www.energy.gov/ne" target="_blank">&#9889; DOE Nuclear Energy</a></li>
-                <li style="opacity: 0.6;"><a href="https://www.sbir.gov/" target="_blank">&#128640; SBIR.gov (paused)</a></li>
-                <li style="opacity: 0.6;"><a href="https://spacewerx.us/" target="_blank">&#127776; SpaceWERX (paused)</a></li>
+                <li><a href="https://sam.gov/" target="_blank">SAM.gov <span class="badge">Primary</span></a></li>
+                <li><a href="https://www.nasa.gov/glenn/fsps/" target="_blank">NASA FSP <span class="badge badge-hot">HOT</span></a></li>
+                <li><a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank">DARPA Opportunities</a></li>
+                <li><a href="https://www.darpa.mil/work-with-us/opportunities/hr001125s0011" target="_blank">DARPA TTO BAA 2025</a></li>
+                <li><a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank">DIU Solicitations</a></li>
+                <li><a href="https://www.army.mil/article/289074" target="_blank">Army Janus Program</a></li>
+                <li><a href="https://inl.gov/fsp/" target="_blank">INL / DOME</a></li>
+                <li><a href="https://nspires.nasaprs.com/external/" target="_blank">NASA NSPIRES</a></li>
+                <li><a href="https://www.energy.gov/ne" target="_blank">DOE Nuclear Energy</a></li>
+                <li style="opacity: 0.6;"><a href="https://www.sbir.gov/" target="_blank">SBIR.gov (paused)</a></li>
+                <li style="opacity: 0.6;"><a href="https://spacewerx.us/" target="_blank">SpaceWERX (paused)</a></li>
             </ul>
 
-            <h3>&#128203; Downloads</h3>
+            <h3>Downloads</h3>
             <ul class="quick-links">
-                <li><a href="#" onclick="downloadChecklist(); return false;">&#128196; Alert Setup Checklist (PDF)</a></li>
-                <li><a href="#" onclick="downloadRFITemplate(); return false;">&#128196; RFI Response Template</a></li>
-                <li><a href="#" onclick="downloadCaptureTemplate(); return false;">&#128196; Capture Plan Template</a></li>
+                <li><a href="#" onclick="downloadChecklist(); return false;">Alert Setup Checklist (PDF)</a></li>
+                <li><a href="#" onclick="downloadRFITemplate(); return false;">RFI Response Template</a></li>
+                <li><a href="#" onclick="downloadCaptureTemplate(); return false;">Capture Plan Template</a></li>
             </ul>
 
-            <h3>&#128337; Key Dates</h3>
+            <h3>Key Dates</h3>
             <div class="contact-card">
                 <p><strong>Summer 2026</strong> - Radiant DOME Test</p>
                 <p><strong>Sep 2028</strong> - EO 14299 Deadline</p>
@@ -1150,7 +1151,7 @@
                 <p><strong>2033-35</strong> - China/Russia ILRS</p>
             </div>
 
-            <h3 style="color: var(--warning);">&#9888; Alerts</h3>
+            <h3 style="color: var(--warning);">Alerts</h3>
             <div class="contact-card" style="border-left: 3px solid var(--warning); font-size: 0.75rem;">
                 <p style="color: var(--warning);"><strong>SBIR/STTR:</strong> Expired Oct 2025</p>
                 <p style="color: var(--danger);"><strong>DRACO:</strong> Cancelled Jun 2025</p>
@@ -1160,8 +1161,366 @@
         <!-- Main Content Area -->
         <main class="content">
 
+            <!-- ==================== HOME / LANDING PAGE TAB ==================== -->
+            <div id="home" class="tab-content active">
+
+                <!-- HERO SECTION - NASA Earthrise -->
+                <div class="card" style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(167, 139, 250, 0.2); padding: 0; margin-bottom: 2rem; min-height: 420px;">
+
+                    <!-- Earthrise Background Image -->
+                    <div style="position: absolute; inset: 0; background: url('earthrise.jpg') center center / cover no-repeat;"></div>
+
+                    <!-- Dark Overlay for Text Readability -->
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.7) 100%);"></div>
+
+                    <!-- Content Overlay -->
+                    <div style="position: relative; z-index: 20; padding: 4rem 2rem; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 420px;">
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 12px rgba(0,0,0,0.9);">A Radiant Nuclear Resource</p>
+                        <h1 style="font-size: 2.75rem; font-weight: 700; margin-bottom: 1.25rem; color: #ffffff; text-shadow: 0 3px 20px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.5);">The Space Nuclear Opportunity</h1>
+                        <div style="background: rgba(0,0,0,0.4); padding: 1.25rem 2rem; border-radius: 12px; max-width: 750px; margin: 0 auto 2rem; backdrop-filter: blur(8px);">
+                            <p style="font-size: 1.15rem; color: #ffffff; line-height: 1.7; margin: 0;">The next frontier of space exploration runs on nuclear power. The United States is in a race to deploy fission reactors on the Moon by 2030 &mdash; and the business development window is open <em style="color: #a78bfa; font-style: normal; font-weight: 600;">right now</em>.</p>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                            <a href="#" onclick="switchTab('contracts'); return false;" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.8rem 1.25rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">Active Opportunities</a>
+                            <a href="#" onclick="switchTab('agencies'); return false;" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.8rem 1.25rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">Agency Guide</a>
+                            <a href="#" onclick="switchTab('radiant'); return false;" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.8rem 1.25rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">Why Radiant</a>
+                        </div>
+                        <p style="margin-top: 2rem; font-size: 0.7rem; color: rgba(255,255,255,0.4);">Image: NASA Apollo 8 "Earthrise" (1968) &mdash; Public Domain</p>
+                    </div>
+                </div>
+
+                <!-- WHY SPACE NEEDS NUCLEAR -->
+                <div class="card" id="home-why-nuclear">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#9889; Why Space Needs Nuclear Power</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Solar power has taken humanity far, but the next phase of space exploration demands something more. Nuclear fission is the only technology that can reliably power humanity's permanent presence beyond Earth. <strong style="color: var(--accent);">This is exactly why Radiant was founded.</strong></p>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent);">The Lunar Night Problem</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">The Moon experiences 14-day nights where solar panels are useless. Permanently shadowed craters &mdash; where water ice exists &mdash; never see sunlight. Nuclear provides continuous power regardless of lighting conditions.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid #e05d44;">
+                            <h4 style="color: #e05d44;">Mars Dust Storms</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Global dust storms on Mars can block sunlight for months. The Opportunity rover was killed by a 2018 dust storm. Nuclear reactors operate regardless of atmospheric conditions &mdash; a reality that drove Radiant's founding vision.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--accent-tertiary);">
+                            <h4 style="color: var(--accent-tertiary);">Power Density</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">To power a lunar base with solar would require 3 football fields of panels. Radiant's Kaleidos microreactor fits in a shipping container and provides the same power for 10+ years without refueling.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--success);">
+                            <h4 style="color: var(--success);">Persistent Operations</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Military and commercial satellites need reliable power for decades. Nuclear enables stealth operations (no large solar arrays), deep space missions, and always-on infrastructure.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box" style="text-align: center;">
+                        <h3 style="margin-bottom: 0.5rem;">The Math is Simple</h3>
+                        <p style="color: var(--text-light); font-size: 1.1rem;"><strong>1 kg of uranium</strong> contains the same energy as <strong>3 million kg of coal</strong>. For deep space, where every kilogram costs $10,000+ to launch, nuclear is the only answer &mdash; and Radiant is building the reactors to make it happen.</p>
+                    </div>
+                </div>
+
+                <!-- THE 2026-2030 WINDOW -->
+                <div class="card" id="home-window">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#9200; The 2026-2030 Critical Window</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">After 50 years without a new US reactor design tested, space nuclear is suddenly happening. The next four years will determine who leads this market for decades. <strong style="color: var(--accent);">Radiant is positioned at the center of this transformation.</strong></p>
+
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Milestone</th>
+                                    <th>Significance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(167, 139, 250, 0.1);">
+                                    <td><strong>2026</strong></td>
+                                    <td>DOME Testing Begins, NASA FSP Phase 2 Awards</td>
+                                    <td>First US microreactor tests in 50+ years; major contracts awarded</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2027</strong></td>
+                                    <td>Radiant DOME Test, FSP Hardware Development</td>
+                                    <td>Proof of commercial microreactor technology</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2028</strong></td>
+                                    <td>Project Pele Operational, Army Janus Deadline</td>
+                                    <td>First DoD microreactors demonstrate military viability</td>
+                                </tr>
+                                <tr style="background: rgba(56, 189, 248, 0.1);">
+                                    <td><strong>2030</strong></td>
+                                    <td>NASA Lunar Reactor Deployment Goal</td>
+                                    <td>US nuclear power on the Moon &mdash; Artemis enabled</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <h4>The Geopolitical Imperative</h4>
+                            <p>Russia and China signed an MOU in May 2025 to jointly develop nuclear power for the International Lunar Research Station (ILRS), targeting 2033-2035 deployment. The US cannot afford to cede this strategic capability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THE EMERGING LANDSCAPE -->
+                <div class="card" id="home-landscape">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#127758; The Emerging Landscape</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">A multi-agency, multi-billion dollar ecosystem is forming around space nuclear power. Understanding the players and programs is essential for strategic positioning &mdash; and <strong style="color: var(--accent);">Radiant is actively engaged across this entire ecosystem</strong>.</p>
+
+                    <div class="grid-3" style="margin-bottom: 1.5rem;">
+                        <div class="stat-card" style="text-align: center;">
+                            <div class="stat-value" style="font-size: 2rem;">$3.1B+</div>
+                            <div class="stat-label">FY2026 Nuclear Energy Budget</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center;">
+                            <div class="stat-value" style="font-size: 2rem;">7+</div>
+                            <div class="stat-label">Active Federal Programs</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center;">
+                            <div class="stat-value" style="font-size: 2rem;">2030</div>
+                            <div class="stat-label">Lunar Reactor Target</div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Key Players</h3>
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--text); margin-bottom: 0.5rem;">Government Agencies</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.5rem; font-size: 0.9rem;">
+                                <li><strong>NASA</strong> &mdash; Fission Surface Power, lunar/Mars missions</li>
+                                <li><strong>DOE</strong> &mdash; DOME facility, HALEU supply, national labs</li>
+                                <li><strong>DARPA</strong> &mdash; On-Orbit Nuclear, advanced concepts</li>
+                                <li><strong>Space Force</strong> &mdash; JETSON, SpaceWERX, cislunar ops</li>
+                                <li><strong>Army (DoW)</strong> &mdash; Pele, Janus, base microreactors</li>
+                                <li><strong>DIU</strong> &mdash; ANPI, rapid commercial acquisition</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--text); margin-bottom: 0.5rem;">Industry Leaders</h4>
+                            <ul style="color: var(--text-muted); margin-left: 1.5rem; font-size: 0.9rem;">
+                                <li style="color: var(--accent);"><strong>Radiant Nuclear</strong> &mdash; Kaleidos microreactor, DOME selected, DIU ANPI, $500M+ raised</li>
+                                <li><strong>BWXT</strong> &mdash; Project Pele reactor, nuclear heritage</li>
+                                <li><strong>Lockheed Martin</strong> &mdash; FSP Phase 1, JETSON $33.7M</li>
+                                <li><strong>Westinghouse</strong> &mdash; eVinci, FSP Phase 1</li>
+                                <li><strong>Intuitive Machines</strong> &mdash; JETSON power systems</li>
+                                <li><strong>X-Energy, Kairos, Oklo</strong> &mdash; Advanced reactors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Active Programs</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Program</th>
+                                    <th>Agency</th>
+                                    <th>Focus</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Fission Surface Power</strong></td>
+                                    <td>NASA/DOE</td>
+                                    <td>100 kWe lunar reactor by 2030</td>
+                                    <td style="color: var(--warning);">Phase 2 Imminent</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DOME</strong></td>
+                                    <td>DOE/INL</td>
+                                    <td>Microreactor test facility</td>
+                                    <td style="color: var(--success);">Testing Spring 2026</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Pele</strong></td>
+                                    <td>DoD/BWXT</td>
+                                    <td>1.5 MW mobile reactor</td>
+                                    <td style="color: var(--success);">Construction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Army Janus</strong></td>
+                                    <td>DoW/DIU</td>
+                                    <td>9 base microreactors</td>
+                                    <td style="color: var(--success);">Active</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>JETSON</strong></td>
+                                    <td>AFRL</td>
+                                    <td>In-space nuclear power</td>
+                                    <td style="color: var(--success);">Active</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>On-Orbit Nuclear</strong></td>
+                                    <td>DARPA</td>
+                                    <td>Satellite nuclear power</td>
+                                    <td style="color: #ff4444;">RFI Due Feb 6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- NAVIGATE THIS RESOURCE -->
+                <div class="card" id="home-navigate">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#128205; Navigate This Resource</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Radiant built this comprehensive hub to consolidate everything needed to understand and pursue space nuclear opportunities. Whether you're tracking contracts, planning strategy, or learning the technology &mdash; find your path below.</p>
+
+                    <!-- For Contract Hunters -->
+                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid #ff6b6b; padding: 1.5rem;">
+                        <h3 style="color: #ff6b6b; margin-bottom: 1rem;">For Contract Hunters</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Find and pursue active opportunities across all agencies.</p>
+                        <div class="grid-3">
+                            <div onclick="switchTab('contracts')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Contract Hub</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Active RFIs, BAAs, solicitations. Opportunity summary table. Deadline tracking.</p>
+                            </div>
+                            <div onclick="switchTab('agencies')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Agencies</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Deep dive on each agency. Contracting processes. Key contacts. How to win.</p>
+                            </div>
+                            <div onclick="switchTab('deepdive')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Contract Deep Dive</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Federal contracting 101. OTA vs FAR. Payment structures. Practical tips.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Strategists -->
+                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid var(--accent); padding: 1.5rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">For Strategists</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Plan your approach and understand the competitive landscape.</p>
+                        <div class="grid-3">
+                            <div onclick="switchTab('strategy')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Strategy & Playbook</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">BD roadmaps. Capture planning. OKRs. White paper guides. Win strategies.</p>
+                            </div>
+                            <div onclick="switchTab('programs')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Programs & Timeline</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">All active programs. Timeline 2026-2036. Commercial players. International competition.</p>
+                            </div>
+                            <div onclick="switchTab('policy')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Policy & Regulation</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Executive orders. Launch approval. Export controls. Legislative landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Technical Learning -->
+                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid var(--accent-tertiary); padding: 1.5rem;">
+                        <h3 style="color: var(--accent-tertiary); margin-bottom: 1rem;">For Technical Learning</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Understand the technology and history of space nuclear power.</p>
+                        <div class="grid-3">
+                            <div onclick="switchTab('technical')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Technical Overview</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Fission 101. How microreactors work. HALEU fuel. Power conversion. Kaleidos deep dive.</p>
+                            </div>
+                            <div onclick="switchTab('history')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">History</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">1954-present. SNAP program. Soviet reactors. RTG heritage. Lessons learned.</p>
+                            </div>
+                            <div onclick="switchTab('radiant')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Radiant Nuclear</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Company overview. Why Radiant in Space. Kaleidos technology. Leadership team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Staying Current -->
+                    <div class="feature-box" style="margin-bottom: 1rem; border-left: 4px solid var(--warning); padding: 1.5rem;">
+                        <h3 style="color: var(--warning); margin-bottom: 1rem;">For Staying Current</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Track industry developments and reference key terms.</p>
+                        <div class="grid-2">
+                            <div onclick="switchTab('news')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--warning); margin-bottom: 0.5rem;">News & Events</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">Industry news. Conference calendar. NETS 2026. Key dates to watch.</p>
+                            </div>
+                            <div onclick="switchTab('glossary')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <h4 style="color: var(--warning); margin-bottom: 0.5rem;">Glossary</h4>
+                                <p style="color: var(--text-dim); font-size: 0.85rem;">160+ terms. Searchable. Categories: contracting, agencies, programs, nuclear tech.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WHY THIS RESOURCE EXISTS -->
+                <div class="card" id="home-about" style="border: 1px solid rgba(167, 139, 250, 0.3); background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(56, 189, 248, 0.03) 100%);">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#128161; Why This Resource Exists</h2>
+                    <div class="grid-2">
+                        <div>
+                            <p style="color: var(--text-light); margin-bottom: 1rem;"><strong style="color: var(--accent);">The space nuclear microreactor market is emerging rapidly</strong> &mdash; but the business development landscape is fragmented and complex. Multiple federal agencies, overlapping programs, diverse contract vehicles, and evolving technical requirements create a challenging environment for companies seeking to participate in this transformational sector.</p>
+                            <p style="color: var(--text-light); margin-bottom: 1rem;">Radiant Nuclear built this resource to consolidate the critical information needed to navigate this landscape effectively. As a company actively engaged across NASA, DOE, DARPA, DIU, and DoD programs, we've developed deep institutional knowledge of how space nuclear opportunities emerge, evolve, and get awarded. <strong>This hub represents that knowledge, organized for action.</strong></p>
+                            <p style="color: var(--text-light); margin-bottom: 1rem;">Whether you're tracking active solicitations, understanding agency priorities, learning the technical foundations, or developing capture strategies &mdash; this resource provides the comprehensive foundation required for effective business development in space nuclear power.</p>
+                            <p style="color: var(--text-light);"><strong style="color: var(--accent-secondary);">Radiant is committed to advancing the entire space nuclear ecosystem.</strong> We believe that consolidated, accessible information accelerates the industry's growth and strengthens US leadership in this strategically vital domain. This resource reflects that commitment.</p>
+                        </div>
+                        <div>
+                            <div class="highlight-box" style="margin-bottom: 1rem; border-left: 4px solid var(--accent);">
+                                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Radiant's Perspective</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.9rem;">
+                                    <li><strong>Active across all major programs</strong> &mdash; FSP, DOME, DIU ANPI</li>
+                                    <li><strong>Deep agency relationships</strong> &mdash; NASA, DOE, DoD, DARPA</li>
+                                    <li><strong>$500M+ raised</strong> &mdash; Validated technology and approach</li>
+                                    <li><strong>First-mover positioning</strong> &mdash; Space nuclear microreactors</li>
+                                    <li><strong>Institutional BD knowledge</strong> &mdash; Captured in this resource</li>
+                                </ul>
+                            </div>
+                            <div class="highlight-box" style="margin-bottom: 1rem;">
+                                <h4 style="margin-bottom: 0.5rem;">What You'll Find Here</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.9rem;">
+                                    <li>Active contract opportunities with deadlines</li>
+                                    <li>Agency-specific contracting guidance</li>
+                                    <li>BD strategy frameworks and templates</li>
+                                    <li>Technical overview of space nuclear systems</li>
+                                    <li>Policy, regulatory, and competitive intelligence</li>
+                                </ul>
+                            </div>
+                            <div class="alert alert-info">
+                                <div class="alert-icon">&#128197;</div>
+                                <div class="alert-content">
+                                    <p><strong>Last Updated:</strong> February 1, 2026</p>
+                                    <p style="font-size: 0.85rem; margin-top: 0.25rem;">Content verified against official sources. Maintained by Radiant Nuclear BD.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK START ACTIONS -->
+                <div class="card" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%); border: 1px solid rgba(56, 189, 248, 0.3);">
+                    <h2 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">&#128293; Start Here</h2>
+                    <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                        <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('contracts')">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#9888;</div>
+                            <div class="stat-value" style="font-size: 1rem; color: #ff4444;">DARPA RFI</div>
+                            <div class="stat-label">Due Feb 6, 2026</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('contracts')">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128293;</div>
+                            <div class="stat-value" style="font-size: 1rem; color: var(--warning);">NASA FSP</div>
+                            <div class="stat-label">Phase 2 imminent</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('radiant')">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#9889;</div>
+                            <div class="stat-value" style="font-size: 1rem; color: var(--accent);">Why Radiant</div>
+                            <div class="stat-label">Our space nuclear story</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('strategy')">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128203;</div>
+                            <div class="stat-value" style="font-size: 1rem; color: var(--accent-secondary);">BD Playbook</div>
+                            <div class="stat-label">Strategy & capture</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- ==================== CONTRACT OPPORTUNITIES TAB ==================== -->
-            <div id="contracts" class="tab-content active">
+            <div id="contracts" class="tab-content">
                 <!-- Quick Navigation Bar -->
                 <div class="strategy-nav">
                     <div class="strategy-nav-header">
@@ -1198,12 +1557,29 @@
                     </div>
                 </div>
 
+                <div class="alert alert-warning" style="border-left-color: #ff4444;">
+                    <div class="alert-icon">&#128293;</div>
+                    <div class="alert-content">
+                        <h4>URGENT: DARPA On-Orbit Nuclear White Papers Due Feb 6, 2026</h4>
+                        <p>DARPA TTO seeking 8-page white papers for On-Orbit Nuclear Power workshop (Mar 31-Apr 1, 2026). Required for workshop attendance. Submit to: DARPA-SN-26-21@darpa.mil</p>
+                        <a href="https://www.darpa.mil/work-with-us/opportunities/darpa-sn-26-21" target="_blank" class="btn btn-warning" style="margin-top: 0.5rem;">View DARPA RFI &#8594;</a>
+                    </div>
+                </div>
+
                 <div class="alert alert-warning">
                     <div class="alert-icon">&#9888;</div>
                     <div class="alert-content">
-                        <h4>ACTIVE: NASA Fission Surface Power RFI</h4>
-                        <p>NASA is actively seeking industry input on lunar fission power systems. Responses shape future solicitations and position companies for follow-on awards.</p>
+                        <h4>NASA FSP Phase 2 AFPP: Final Release Imminent</h4>
+                        <p>Second Draft AFPP posted Dec 5, 2025. Final solicitation expected early 2026 with Phase 2 awards anticipated March 2026. 60-day proposal period from release.</p>
                         <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-warning" style="margin-top: 0.5rem;">View on SAM.gov &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="alert" style="background: rgba(255, 100, 100, 0.1); border-left: 4px solid #ff6666;">
+                    <div class="alert-icon">&#9888;</div>
+                    <div class="alert-content">
+                        <h4>SBIR/STTR Program Authorization Expired</h4>
+                        <p>Program authorization expired September 30, 2025. No new topics released until Congress reauthorizes. Existing awards continue. Watch H.R.3169/S.1573 for permanent reauthorization.</p>
                     </div>
                 </div>
 
@@ -1231,82 +1607,137 @@
                     <p>Federal contract opportunities for space nuclear power systems and related technologies. Monitor these portals and respond to shape future requirements.</p>
                 </div>
 
-                <!-- NASA FSP RFI -->
+                <!-- NASA FSP Phase 2 -->
                 <div class="opportunity-card hot">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">&#128293; Fission Surface Power System - RFI</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Lunar/planetary fission surface power system industry feedback</p>
+                            <div class="opportunity-title">&#128293; Fission Surface Power Phase 2 - AFPP</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Announcement for Partnership Proposals via Funded Space Act Agreements</p>
                         </div>
                         <span class="opportunity-agency">NASA</span>
                     </div>
-                    <p style="color: var(--text-light);">NASA seeking industry input to shape future contracts for 40-100+ kWe nuclear reactors for the Moon. Positions companies for follow-on awards. This is the anchor program for space nuclear - responses here influence future solicitation language.</p>
+                    <p style="color: var(--text-light);">NASA's anchor space nuclear program. Phase 2 solicitation imminent - second draft AFPP posted Dec 5, 2025. Final release expected early 2026 with awards in March 2026. Requires 100 kWe output with closed Brayton cycle. NASA-DOE MOU signed Jan 8, 2026 solidifies partnership for 2030 lunar deployment.</p>
                     <div class="opportunity-details">
                         <div class="opportunity-detail">
                             <label>Type</label>
-                            <span>RFI</span>
+                            <span>Space Act Agreement</span>
                         </div>
                         <div class="opportunity-detail">
                             <label>Status</label>
-                            <span style="color: var(--success);">OPEN</span>
+                            <span style="color: #ffcc00;">IMMINENT</span>
                         </div>
                         <div class="opportunity-detail">
                             <label>Target</label>
-                            <span>2030 Deployment</span>
+                            <span>Q1 FY2030</span>
                         </div>
                         <div class="opportunity-detail">
                             <label>Power Class</label>
-                            <span>40-100+ kWe</span>
+                            <span>100 kWe min</span>
                         </div>
                     </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Phase 2 Timeline</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
+                            <li><strong>Dec 5, 2025:</strong> Second Draft AFPP posted</li>
+                            <li><strong>Early 2026:</strong> Final AFPP release (imminent)</li>
+                            <li><strong>60 days:</strong> Proposal submission window</li>
+                            <li><strong>Mar 2026:</strong> Phase 2 awards expected</li>
+                        </ul>
+                    </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-primary">View RFI on SAM.gov &#8594;</a>
+                        <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-primary">View on SAM.gov &#8594;</a>
                         <a href="https://www.nasa.gov/glenn/fsps/" target="_blank" class="btn btn-secondary">FSP Program Page &#8594;</a>
                         <a href="https://inl.gov/fsp/" target="_blank" class="btn btn-secondary">INL FSP Portal &#8594;</a>
                     </div>
                 </div>
 
-                <!-- DARPA TTO Nuclear RFI -->
-                <div class="opportunity-card active-opp">
+                <!-- DARPA On-Orbit Nuclear RFI - URGENT -->
+                <div class="opportunity-card hot">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">On-Orbit Nuclear Power Concepts - RFI & Workshop</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">DARPA Tactical Technology Office space nuclear power systems</p>
+                            <div class="opportunity-title">&#128293; On-Orbit Nuclear Power Concepts - DARPA-SN-26-21</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">White papers due Feb 6, 2026 for workshop invitation</p>
                         </div>
                         <span class="opportunity-agency">DARPA TTO</span>
                     </div>
-                    <p style="color: var(--text-light);">DARPA TTO seeking technologies for producible, cost-effective nuclear reactors for on-orbit satellite power. Focus is on producible systems, not bespoke demos. Joint workshop with DOE planned to establish common understanding and identify key risk areas.</p>
+                    <p style="color: var(--text-light);">DARPA TTO seeking technologies for producible, cost-effective nuclear reactors for on-orbit satellite power. <strong>8-page white papers required for workshop attendance.</strong> Focus on producible systems (not bespoke demos), use cases over solar, power conversion, launch survivability. PM: James Shoemaker.</p>
                     <div class="opportunity-details">
                         <div class="opportunity-detail">
                             <label>Type</label>
-                            <span>RFI / Workshop</span>
+                            <span>RFI + Workshop</span>
                         </div>
                         <div class="opportunity-detail">
-                            <label>Focus</label>
-                            <span>Producible Reactors</span>
+                            <label>White Papers</label>
+                            <span style="color: #ff4444;">DUE FEB 6</span>
                         </div>
                         <div class="opportunity-detail">
-                            <label>Partners</label>
-                            <span>DOE</span>
+                            <label>Workshop</label>
+                            <span>Mar 31 - Apr 1</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Location</label>
+                            <span>Arlington, VA</span>
                         </div>
                     </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid #ff4444;">
+                        <h4 style="margin-bottom: 0.5rem;">Submission Requirements</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
+                            <li><strong>Format:</strong> 8-page white papers</li>
+                            <li><strong>Submit to:</strong> DARPA-SN-26-21@darpa.mil</li>
+                            <li><strong>Deadline:</strong> February 6, 2026</li>
+                            <li><strong>Workshop:</strong> March 31 - April 1, 2026 at DARPA Conference Center</li>
+                        </ul>
+                    </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://sam.gov/opp/4bc82ea5fe8941dba8f74364147d5631/view" target="_blank" class="btn btn-primary">View RFI &#8594;</a>
-                        <a href="https://sam.gov/opp/109aceb76198452b91f8ecce72b4890b/view" target="_blank" class="btn btn-secondary">TTO BAA &#8594;</a>
+                        <a href="https://www.darpa.mil/work-with-us/opportunities/darpa-sn-26-21" target="_blank" class="btn btn-primary">View RFI &#8594;</a>
+                        <a href="https://www.darpa.mil/events/2025/on-orbit-nuclear-power-concepts-workshop" target="_blank" class="btn btn-secondary">Workshop Info &#8594;</a>
                         <a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank" class="btn btn-secondary">All DARPA Opps &#8594;</a>
                     </div>
                 </div>
 
-                <!-- DoD SBIR/STTR -->
-                <div class="opportunity-card">
+                <!-- DARPA TTO BAA -->
+                <div class="opportunity-card active-opp">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">DoD SBIR/STTR Program</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Monthly releases across Army, Navy, Air Force, DARPA, Space Force</p>
+                            <div class="opportunity-title">DARPA TTO Office-Wide BAA - HR001125S0011</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Rolling submissions for breakthrough concepts</p>
+                        </div>
+                        <span class="opportunity-agency">DARPA TTO</span>
+                    </div>
+                    <p style="color: var(--text-light);">Tactical Technology Office open BAA for Design/Build/Buy, Surge and Sustain, Long Range Effects, and Disruptive Innovation. Space nuclear concepts fit under Disruptive Innovation focus area.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>BAA (Rolling)</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Exec Summary</label>
+                            <span>Apr 17, 2026</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Full Proposals</label>
+                            <span>Jun 22, 2026</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Status</label>
+                            <span style="color: var(--success);">OPEN</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.darpa.mil/work-with-us/opportunities/hr001125s0011" target="_blank" class="btn btn-primary">View TTO BAA &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DoD SBIR/STTR - EXPIRED -->
+                <div class="opportunity-card" style="opacity: 0.8; border-left: 4px solid #ff6666;">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">&#9888; DoD SBIR/STTR Program - AUTHORIZATION EXPIRED</div>
+                            <p style="color: #ff6666; font-size: 0.9rem; margin-top: 0.3rem;">Program expired Sep 30, 2025 - Awaiting Congressional reauthorization</p>
                         </div>
                         <span class="opportunity-agency">DoD-Wide</span>
                     </div>
-                    <p style="color: var(--text-light);">New topics released first Wednesday monthly. Search for: nuclear, space power, fission, reactor, HALEU, energy conversion, thermal management, shielding. Three pre-scheduled BAAs/CSOs per fiscal year.</p>
+                    <p style="color: var(--text-light);">No new SBIR/STTR topics being released until Congress reauthorizes the program. Existing awards continue under current terms. Watch H.R.3169/S.1573 (SBIR/STTR Reauthorization Act) for permanent authorization. Reauthorization likely in early 2026.</p>
                     <div class="opportunity-details">
                         <div class="opportunity-detail">
                             <label>Phase I</label>
@@ -1317,18 +1748,98 @@
                             <span>$1-2M+</span>
                         </div>
                         <div class="opportunity-detail">
-                            <label>Cycle</label>
-                            <span>Monthly Releases</span>
+                            <label>Status</label>
+                            <span style="color: #ff6666;">EXPIRED</span>
                         </div>
                         <div class="opportunity-detail">
-                            <label>Transition</label>
-                            <span>Phase III / PoR</span>
+                            <label>Watch</label>
+                            <span>H.R.3169/S.1573</span>
                         </div>
                     </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://www.sbir.gov/topics" target="_blank" class="btn btn-primary">Search SBIR Topics &#8594;</a>
-                        <a href="https://www.defensesbirsttr.mil/SBIR-STTR/Opportunities/" target="_blank" class="btn btn-secondary">DoD SBIR Portal &#8594;</a>
-                        <a href="https://www.sbir.gov/agency/nasa" target="_blank" class="btn btn-secondary">NASA SBIR &#8594;</a>
+                        <a href="https://www.congress.gov/bill/119th-congress/house-bill/3169" target="_blank" class="btn btn-primary">Track Reauthorization &#8594;</a>
+                        <a href="https://www.sbir.gov/" target="_blank" class="btn btn-secondary">SBIR.gov &#8594;</a>
+                        <a href="https://www.defensesbirsttr.mil/" target="_blank" class="btn btn-secondary">DoD SBIR Portal &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- Army Janus Program -->
+                <div class="opportunity-card active-opp">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">Army Janus Microreactor Program</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Microreactors at 9 military installations via DIU CSO</p>
+                        </div>
+                        <span class="opportunity-agency">DoW/DIU</span>
+                    </div>
+                    <p style="color: var(--text-light);">Army program to deploy microreactors at 9 candidate bases. Mandated by Executive Order 14299 to have Army-regulated reactor operational by Sep 30, 2028. Managed through DIU Commercial Solutions Opening (CSO). 30-year operating life, up to 20 MWe.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>OTA via DIU</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Power</label>
+                            <span>Up to 20 MWe</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Deadline</label>
+                            <span>EO: Sep 2028</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Sites</label>
+                            <span>9 Installations</span>
+                        </div>
+                    </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Candidate Sites</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Fort Benning (GA), Fort Bragg (NC), Fort Campbell (KY), Fort Drum (NY), Fort Hood (TX), Fort Wainwright (AK), Holston AAP (TN), JBLM (WA), Redstone Arsenal (AL)</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank" class="btn btn-primary">DIU Solicitations &#8594;</a>
+                        <a href="https://www.army.mil/article/289074" target="_blank" class="btn btn-secondary">Janus Announcement &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- AFRL JETSON -->
+                <div class="opportunity-card active-opp">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">AFRL JETSON Program</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Joint Emergent Technology Supplying On-orbit Nuclear Power</p>
+                        </div>
+                        <span class="opportunity-agency">Air Force</span>
+                    </div>
+                    <p style="color: var(--text-light);">Air Force Research Laboratory program for in-space nuclear power systems. Active contracts with Lockheed Martin ($33.7M), Westinghouse, and Intuitive Machines ($17.6M + $8.2M extension Oct 2025). Focus on stealth operations, sustained lunar PNT, and long-duration nuclear energy.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>Contracts</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Value</label>
+                            <span>$8-34M</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Status</label>
+                            <span style="color: var(--success);">ACTIVE</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Lead</label>
+                            <span>AFRL</span>
+                        </div>
+                    </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem;">
+                        <h4 style="margin-bottom: 0.5rem;">Current Contractors</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
+                            <li><strong>Lockheed Martin:</strong> $33.7M</li>
+                            <li><strong>Westinghouse:</strong> $16.9M</li>
+                            <li><strong>Intuitive Machines:</strong> $17.6M + $8.2M extension (Oct 2025)</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.intuitivemachines.com/post/intuitive-machines-secures-8-2-million-afrl-contract-extension" target="_blank" class="btn btn-primary">Latest Award &#8594;</a>
+                        <a href="https://afresearchlab.com/" target="_blank" class="btn btn-secondary">AFRL Home &#8594;</a>
                     </div>
                 </div>
 
@@ -1336,48 +1847,194 @@
                 <div class="opportunity-card">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">SpaceWERX SBIR/STTR & Challenges</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Space Force innovation arm - rapid prototyping focus</p>
+                            <div class="opportunity-title">SpaceWERX / Space Force Innovation</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">$470M budget - SBIR paused pending reauthorization</p>
                         </div>
                         <span class="opportunity-agency">Space Force</span>
                     </div>
-                    <p style="color: var(--text-light);">OTA opportunities for advanced power, energy conversion, and cislunar capabilities. Startup-friendly fast-track process. Includes Orbital Prime program for space logistics and servicing. OTA agreements enable fast prototyping.</p>
+                    <p style="color: var(--text-light);">SpaceWERX OTA opportunities for advanced power, energy conversion, and cislunar capabilities. <strong>SBIR/STTR paused</strong> due to program expiration. Orbital Prime program ($141M to date) focuses on in-space servicing. Watch for future nuclear power topics when SBIR reauthorized.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Budget</label>
+                            <span>$470M</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>SBIR Status</label>
+                            <span style="color: #ff6666;">PAUSED</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Orbital Prime</label>
+                            <span>$141M funded</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Focus</label>
+                            <span>OTAs Available</span>
+                        </div>
+                    </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://spacewerx.us/ventures/sbir-sttr/" target="_blank" class="btn btn-primary">SpaceWERX SBIR &#8594;</a>
-                        <a href="https://spacewerx.us/" target="_blank" class="btn btn-secondary">SpaceWERX Home &#8594;</a>
+                        <a href="https://spacewerx.us/" target="_blank" class="btn btn-primary">SpaceWERX Home &#8594;</a>
+                        <a href="https://spacewerx.us/ventures/sbir-sttr/" target="_blank" class="btn btn-secondary">SBIR (Paused) &#8594;</a>
                     </div>
                 </div>
 
                 <!-- DIU -->
-                <div class="opportunity-card">
+                <div class="opportunity-card active-opp">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">Commercial Solutions Openings (CSO)</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Fast OTA awards, often 60-90 days to contract</p>
+                            <div class="opportunity-title">DIU Advanced Nuclear Power for Installations (ANPI)</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Radiant selected - OT awards available to eligible companies</p>
                         </div>
                         <span class="opportunity-agency">DIU</span>
                     </div>
-                    <p style="color: var(--text-light);">Defense Innovation Unit runs rapid commercial acquisition. Excellent for VC-backed companies with near-commercial technology. Submit 5-10 page solution briefs, pitch-deck style. Also offers Challenges and Commercial Acceleration Opportunities.</p>
+                    <p style="color: var(--text-light);">Defense Innovation Unit program for 3-10 MW microreactors at military bases. <strong style="color: var(--success);">Radiant Industries selected as eligible company (April 2025).</strong> Goal: Two microreactors operational by 2030. OTA awards available to selected vendors for follow-on work.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>OTA</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Power</label>
+                            <span>3-10 MW</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Goal</label>
+                            <span>2 reactors by 2030</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Radiant</label>
+                            <span style="color: var(--success);">SELECTED</span>
+                        </div>
+                    </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--success);">
+                        <h4 style="margin-bottom: 0.5rem;">Selected Companies (April 2025)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Antares Nuclear, BWXT, General Atomics, Kairos Power, Oklo, <strong>Radiant Industries</strong>, Westinghouse, X-Energy</p>
+                        <p style="color: var(--accent); font-size: 0.85rem; margin-top: 0.5rem;"><strong>Radiant signed first-ever agreement to deliver mass-manufactured nuclear microreactor to US military base (Aug 2025)</strong></p>
+                    </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank" class="btn btn-primary">Open Solicitations &#8594;</a>
+                        <a href="https://www.diu.mil/latest/DOD-selects-eligible-companies-for-the-Advanced-Nuclear-Power-for-Installations-Program" target="_blank" class="btn btn-primary">ANPI Announcement &#8594;</a>
+                        <a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank" class="btn btn-secondary">Open Solicitations &#8594;</a>
                         <a href="https://www.diu.mil/" target="_blank" class="btn btn-secondary">DIU Home &#8594;</a>
                     </div>
                 </div>
 
-                <!-- DOE -->
-                <div class="opportunity-card">
+                <!-- DOE / DOME -->
+                <div class="opportunity-card active-opp">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">DOE / National Labs Programs</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Critical for reactor physics, fuel, and nuclear material testing</p>
+                            <div class="opportunity-title">DOE DOME Facility & National Labs</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">First US microreactor tests in 50+ years - Spring 2026</p>
                         </div>
                         <span class="opportunity-agency">DOE</span>
                     </div>
-                    <p style="color: var(--text-light);">DOE BAAs released first Wednesday monthly. Engagement via CRADAs (Cooperative R&D Agreements) and Work for Others agreements. Key labs: Idaho National Lab (DOME facility), Oak Ridge (fuel development), Los Alamos (weapons-derived tech).</p>
+                    <p style="color: var(--text-light);">DOME (Demonstration of Microreactor Experiments) at Idaho National Lab. Testing begins Spring 2026, reactor installation Dec 2026. <strong style="color: var(--success);">Radiant Kaleidos selected for testing.</strong> DOE BAAs released first Wednesday monthly. Engagement via CRADAs and Work for Others agreements.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Testing</label>
+                            <span>Spring 2026</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Installation</label>
+                            <span>Dec 2026</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>DEEP Award</label>
+                            <span>$5M (Nov 2024)</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Radiant</label>
+                            <span style="color: var(--success);">SELECTED</span>
+                        </div>
+                    </div>
+                    <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--success);">
+                        <h4 style="margin-bottom: 0.5rem;">DOME Developers</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
+                            <li><strong>Radiant Industries:</strong> Kaleidos Development Unit - DARK submitted Nov 2025</li>
+                            <li><strong>Westinghouse:</strong> eVinci Nuclear Test Reactor</li>
+                        </ul>
+                    </div>
                     <div style="margin-top: 1rem;">
-                        <a href="https://inl.gov/fsp/" target="_blank" class="btn btn-primary">INL FSP Program &#8594;</a>
+                        <a href="https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026" target="_blank" class="btn btn-primary">DOE DOME Updates &#8594;</a>
+                        <a href="https://inl.gov/fsp/" target="_blank" class="btn btn-secondary">INL FSP Portal &#8594;</a>
                         <a href="https://www.energy.gov/" target="_blank" class="btn btn-secondary">DOE Main &#8594;</a>
                     </div>
+                </div>
+
+                <!-- Opportunity Summary Table -->
+                <div class="card" id="contracts-upcoming" style="margin-top: 2rem;">
+                    <h2>&#128197; Opportunity Summary - February 2026</h2>
+                    <p>Quick reference for all active and upcoming space nuclear opportunities. <strong style="color: var(--success);">Green = Radiant selected/positioned.</strong></p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Program</th>
+                                    <th>Agency</th>
+                                    <th>Status</th>
+                                    <th>Key Date</th>
+                                    <th>Value/Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(255, 68, 68, 0.15);">
+                                    <td><strong>DARPA On-Orbit Nuclear</strong></td>
+                                    <td>DARPA TTO</td>
+                                    <td style="color: #ff4444;"><strong>URGENT</strong></td>
+                                    <td><strong>Feb 6, 2026</strong></td>
+                                    <td>White papers due for Mar-Apr workshop</td>
+                                </tr>
+                                <tr style="background: rgba(255, 204, 0, 0.15);">
+                                    <td><strong>NASA FSP Phase 2</strong></td>
+                                    <td>NASA</td>
+                                    <td style="color: #ffcc00;"><strong>IMMINENT</strong></td>
+                                    <td>Early 2026 release</td>
+                                    <td>Awards expected Mar 2026, 100 kWe</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DARPA TTO BAA</strong></td>
+                                    <td>DARPA</td>
+                                    <td style="color: var(--success);">OPEN</td>
+                                    <td>Apr 17, 2026</td>
+                                    <td>Rolling submissions, exec summaries</td>
+                                </tr>
+                                <tr style="background: rgba(0, 255, 136, 0.1);">
+                                    <td><strong>DIU ANPI</strong></td>
+                                    <td>DIU</td>
+                                    <td style="color: var(--success);"><strong>SELECTED</strong></td>
+                                    <td>OTs available</td>
+                                    <td>Radiant selected Apr 2025</td>
+                                </tr>
+                                <tr style="background: rgba(0, 255, 136, 0.1);">
+                                    <td><strong>DOE DOME</strong></td>
+                                    <td>DOE/INL</td>
+                                    <td style="color: var(--success);"><strong>SELECTED</strong></td>
+                                    <td>Spring 2026</td>
+                                    <td>Radiant Kaleidos testing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Army Janus</strong></td>
+                                    <td>DoW/DIU</td>
+                                    <td style="color: var(--success);">ACTIVE</td>
+                                    <td>EO: Sep 2028</td>
+                                    <td>9 military bases, up to 20 MWe</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>AFRL JETSON</strong></td>
+                                    <td>Air Force</td>
+                                    <td style="color: var(--success);">ACTIVE</td>
+                                    <td>Ongoing</td>
+                                    <td>$8-34M contracts, in-space power</td>
+                                </tr>
+                                <tr style="opacity: 0.6;">
+                                    <td><strong>SBIR/STTR</strong></td>
+                                    <td>DoD-Wide</td>
+                                    <td style="color: #ff6666;">EXPIRED</td>
+                                    <td>Watch H.R.3169</td>
+                                    <td>Awaiting reauthorization</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;"><em>Last updated: February 1, 2026. Verify all deadlines on official portals before submission.</em></p>
                 </div>
 
                 <!-- Contract Types Table -->
@@ -8111,34 +8768,75 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         </div>
                         <div class="strategy-nav-category">
                             <button class="strategy-nav-btn">
-                                <span class="nav-icon">&#9762;</span> Radiant
+                                <span class="nav-icon">&#9762;</span> Commercial
                             </button>
                             <div class="strategy-nav-dropdown">
-                                <a href="#programs-radiant" class="strategy-nav-link">&#9762; Radiant Nuclear Milestones</a>
+                                <a href="#programs-radiant" class="strategy-nav-link">&#9762; Radiant Nuclear</a>
+                                <a href="#programs-commercial" class="strategy-nav-link">&#128188; Other Commercial Players</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#127758;</span> International
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#programs-international" class="strategy-nav-link">&#127758; Russia-China Lunar Plans</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Verified program information as of January 2026. Space nuclear is experiencing unprecedented momentum across NASA, DOE, DoD, and commercial sectors.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Verified program information as of February 2026. Space nuclear is experiencing unprecedented momentum across NASA, DOE, DoD, and commercial sectors.</p>
 
                 <!-- Program Status Overview -->
                 <div class="card" id="programs-status">
                     <h2>&#128200; Program Status at a Glance</h2>
-                    <div class="table-container">
+
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Space Nuclear Programs</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
                         <table>
                             <thead>
                                 <tr><th>Program</th><th>Agency</th><th>Focus</th><th>Status</th><th>Key Date</th></tr>
                             </thead>
                             <tbody>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>FSP (Lunar)</strong></td><td>NASA + DOE</td><td>100 kWe lunar fission reactor</td><td style="color: var(--success);">Active - Phase 2 Solicitation</td><td>2030 deployment goal</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>DOME Testing</strong></td><td>DOE / INL</td><td>Microreactor test facility</td><td style="color: var(--success);">Active - Construction complete Mar 2026</td><td>First test Summer 2026</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Project Pele</strong></td><td>DoD SCO</td><td>1.5 MW mobile reactor demo</td><td style="color: var(--success);">Active - Core manufacturing</td><td>Operation Sep 2028</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Janus Program</strong></td><td>Army + DIU</td><td>Microreactors at military bases</td><td style="color: var(--success);">Active - Solicitation open</td><td>Reactor by Sep 2028</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>JETSON</strong></td><td>AFRL / Space Force</td><td>Nuclear electric spacecraft power</td><td style="color: var(--success);">Active - Phase 1</td><td>Contracts through Dec 2025</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>FSP (Lunar)</strong></td><td>NASA + DOE</td><td>100 kWe lunar fission reactor</td><td style="color: var(--success);">Active - Phase 1 Complete, Phase 2 Solicitation</td><td>2030 deployment</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>JETSON</strong></td><td>AFRL / Space Force</td><td>6-20 kWe nuclear electric spacecraft</td><td style="color: var(--success);">Active - CDR phase</td><td>Deliverables Dec 2025</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>SPAR Institute</strong></td><td>Space Force / AFRL</td><td>Nuclear propulsion R&D (8 universities)</td><td style="color: var(--success);">Active - $35M awarded</td><td>2-year program</td></tr>
                                 <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Rads to Watts</strong></td><td>DARPA</td><td>Direct radiation-to-electricity</td><td style="color: var(--success);">Active - Work began Dec 2025</td><td>30-month program</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>On-Orbit Nuclear Power</strong></td><td>DARPA TTO</td><td>Space reactor concepts</td><td style="color: var(--warning);">Exploration phase</td><td>Workshop Mar-Apr 2026</td></tr>
-                                <tr style="background: rgba(239, 68, 68, 0.1);"><td style="color: var(--danger);"><strong>DRACO</strong></td><td style="color: var(--danger);">DARPA + NASA</td><td style="color: var(--danger);">Nuclear thermal propulsion</td><td style="color: var(--danger);">CANCELLED (Jun 2025)</td><td style="color: var(--danger);">Program terminated</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>On-Orbit Nuclear</strong></td><td>DARPA TTO + DOE</td><td>Space reactor concepts</td><td style="color: var(--warning);">Exploration phase</td><td>Workshop Mar-Apr 2026</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>MARVL</strong></td><td>NASA Langley</td><td>Modular radiators for NEP</td><td style="color: var(--success);">Active - 2-year program</td><td>Ground demo ~2027</td></tr>
+                                <tr style="background: rgba(239, 68, 68, 0.1);"><td style="color: var(--danger);"><strong>DRACO</strong></td><td style="color: var(--danger);">DARPA + NASA</td><td style="color: var(--danger);">Nuclear thermal propulsion demo</td><td style="color: var(--danger);">CANCELLED (May 2025)</td><td style="color: var(--danger);">FY26 budget: $0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Terrestrial Programs (Space-Relevant Technology)</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Program</th><th>Agency</th><th>Focus</th><th>Status</th><th>Key Date</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>DOME Testing</strong></td><td>DOE / INL</td><td>Microreactor test facility</td><td style="color: var(--success);">Active - Construction complete Mar 2026</td><td>First test Summer 2026</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Project Pele</strong></td><td>DoD SCO + BWXT</td><td>1.5 MW mobile reactor demo</td><td style="color: var(--success);">Active - Core manufacturing</td><td>Operation Sep 2028</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Janus Program</strong></td><td>Army + DIU</td><td>Microreactors at 9 military bases</td><td style="color: var(--success);">Active - Solicitation open</td><td>Reactor by Sep 2028</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Reactor Pilot Program</strong></td><td>DOE</td><td>3 reactors critical by Jul 4, 2026</td><td style="color: var(--success);">Active - Aalo, Antares leading</td><td>Jul 4, 2026</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>HALEU Program</strong></td><td>DOE</td><td>21 MT fuel by Jun 2026</td><td style="color: var(--success);">Active - Distributing fuel</td><td>10 MT by Jun 2026</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>ARDP</strong></td><td>DOE</td><td>X-Energy, TerraPower demos</td><td style="color: var(--success);">Active - $2.5B program</td><td>Late 2020s</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">International Competition</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Program</th><th>Country</th><th>Focus</th><th>Status</th><th>Key Date</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(251, 191, 36, 0.1);"><td><strong>ILRS Nuclear Power</strong></td><td>China + Russia</td><td>Lunar nuclear power plant</td><td style="color: var(--warning);">MOU signed May 2025</td><td>2033-2035 construction</td></tr>
+                                <tr style="background: rgba(251, 191, 36, 0.1);"><td><strong>Lunar Power Station</strong></td><td>Russia</td><td>Permanent lunar power supply</td><td style="color: var(--warning);">Contract signed 2025</td><td>2036 operational</td></tr>
+                                <tr style="background: rgba(251, 191, 36, 0.1);"><td><strong>Chang'e-7/8</strong></td><td>China</td><td>ILRS foundation missions</td><td style="color: var(--warning);">Development</td><td>2026 / 2028</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -8418,29 +9116,44 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         </div>
                     </div>
 
-                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Contracts (Oct 2023)</h3>
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Contracts & Updates</h3>
                     <div class="table-container">
                         <table>
                             <thead>
-                                <tr><th>Contractor</th><th>Award</th><th>Focus</th><th>Partners</th></tr>
+                                <tr><th>Contractor</th><th>Award</th><th>Focus</th><th>Status</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong>Lockheed Martin</strong></td><td>$33.7M</td><td>High Power - spacecraft design & tech maturation</td><td>-</td></tr>
-                                <tr><td><strong>Westinghouse</strong></td><td>$16.9M</td><td>Analysis, trade studies, risk reduction</td><td>Northrop Grumman, Astrobotic</td></tr>
-                                <tr><td><strong>Intuitive Machines</strong></td><td>$9.4M</td><td>Compact radioisotope power system concept</td><td>-</td></tr>
+                                <tr><td><strong>Lockheed Martin</strong></td><td>$33.7M</td><td>High Power - spacecraft design & tech maturation</td><td>CDR phase</td></tr>
+                                <tr><td><strong>Westinghouse</strong></td><td>$16.9M</td><td>Analysis, trade studies, risk reduction</td><td>Active</td></tr>
+                                <tr><td><strong>Intuitive Machines</strong></td><td>$9.4M + $8.2M</td><td>Stirling power conversion from radioisotope</td><td>Extended Oct 2025</td></tr>
                             </tbody>
                         </table>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.8125rem; margin-top: 0.75rem;">Contracts run through December 2025. Option to advance to critical design review in 2025.</p>
+                    <p style="color: var(--text-muted); font-size: 0.8125rem; margin-top: 0.75rem;">Initial contracts run through December 2025. Intuitive Machines received $8.2M extension (October 2025) for next-generation nuclear power systems for spacecraft and lunar infrastructure.</p>
 
-                    <div class="alert alert-info" style="margin-top: 1rem;">
-                        <div class="alert-icon">&#128161;</div>
-                        <div class="alert-content">
-                            <h4>SPAR Institute (Late 2024)</h4>
-                            <p>Space Force established Space Power & Propulsion for Agility, Responsiveness & Resilience (SPAR) Institute with $35M - partnering with AFRL, 8 universities, and 14 industry partners to develop nuclear-powered spacecraft.</p>
+                    <div class="feature-box" style="margin-top: 1rem; border-left: 4px solid var(--accent);">
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">SPAR Institute (October 2024)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.75rem;">Space Power & Propulsion for Agility, Responsiveness & Resilience - a $35M Space Force initiative for nuclear propulsion R&D.</p>
+                        <div class="grid-2">
+                            <div>
+                                <h5 style="color: var(--text); margin-bottom: 0.25rem;">Research Focus</h5>
+                                <ul style="color: var(--text-muted); font-size: 0.8rem; margin-left: 1rem;">
+                                    <li>Nuclear Thermal Propulsion (NTP): 2x chemical rocket efficiency</li>
+                                    <li>Nuclear Electric Propulsion (NEP): 5-25x efficiency improvement</li>
+                                    <li>Novel prototype systems for in-space power</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="color: var(--text); margin-bottom: 0.25rem;">Participants</h5>
+                                <ul style="color: var(--text-muted); font-size: 0.8rem; margin-left: 1rem;">
+                                    <li><strong>8 universities:</strong> UMich, UW, Cornell, Western Michigan + 4 more</li>
+                                    <li><strong>14 industry partners</strong></li>
+                                    <li><strong>2-year program</strong> to advance key capabilities</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 1rem;">Sources: <a href="https://breakingdefense.com/2023/10/afrl-picks-3-contractors-for-jetson-effort-to-develop-fission-powered-spacecraft/" target="_blank">Breaking Defense</a>, <a href="https://www.lockheedmartin.com/en-us/news/features/2023/lockheed-martin-jets-into-nuclear-electrical-spacecraft-power.html" target="_blank">Lockheed Martin</a></p>
+                    <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 1rem;">Sources: <a href="https://breakingdefense.com/2023/10/afrl-picks-3-contractors-for-jetson-effort-to-develop-fission-powered-spacecraft/" target="_blank">Breaking Defense</a>, <a href="https://www.lockheedmartin.com/en-us/news/features/2023/lockheed-martin-jets-into-nuclear-electrical-spacecraft-power.html" target="_blank">Lockheed Martin</a>, <a href="https://www.aa.washington.edu/news/article/2025-09-02/" target="_blank">UW</a></p>
                 </div>
 
                 <!-- DARPA Programs -->
@@ -8566,6 +9279,111 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                     <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 1rem;">Sources: <a href="https://www.radiantnuclear.com/blog/series-d-announcement/" target="_blank">Radiant Series D</a>, <a href="https://www.radiantnuclear.com/blog/dome-selection/" target="_blank">Radiant DOME</a></p>
                 </div>
 
+                <!-- Other Commercial Players -->
+                <div class="card" id="programs-commercial">
+                    <h2>&#128188; Other Commercial Space Nuclear Players</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Beyond Radiant, several companies are developing technology relevant to space nuclear power.</p>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box">
+                            <h3 style="color: var(--accent);">Aalo Atomics</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Focus:</strong> Aalo-X microreactor</li>
+                                <li><strong>Status:</strong> Final Design Review complete (Jan 2026)</li>
+                                <li><strong>Milestone:</strong> First to begin construction at INL</li>
+                                <li><strong>Target:</strong> Criticality by July 4, 2026</li>
+                                <li><strong>Achievement:</strong> First commercial HALEU delivery contract</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h3 style="color: var(--accent);">Antares Nuclear</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Focus:</strong> Scalable reactors for strategic applications</li>
+                                <li><strong>Status:</strong> First approved Nuclear Safety Design Agreement</li>
+                                <li><strong>Milestone:</strong> Received HALEU allocation 2025</li>
+                                <li><strong>Target:</strong> Criticality by July 4, 2026</li>
+                                <li><strong>Space:</strong> HALEU allocation explicitly for space applications</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h3 style="color: var(--accent);">X-Energy</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Focus:</strong> Xe-100 reactor, TRISO fuel</li>
+                                <li><strong>Space:</strong> IX joint venture with Intuitive Machines for FSP</li>
+                                <li><strong>Status:</strong> DOE ARDP awardee ($2.5B program)</li>
+                                <li><strong>Relevance:</strong> TRISO fuel technology for space reactors</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box">
+                            <h3 style="color: var(--accent);">Intuitive Machines</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Focus:</strong> Lunar landers + nuclear power</li>
+                                <li><strong>Programs:</strong> IX (FSP), JETSON ($17.6M total)</li>
+                                <li><strong>Status:</strong> $8.2M AFRL extension (Oct 2025)</li>
+                                <li><strong>Tech:</strong> Stirling power conversion</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>DOE Reactor Pilot Program Race</h4>
+                            <p>DOE challenged companies to achieve criticality by July 4, 2026. Aalo Atomics and Antares Nuclear are the leading contenders. Both have completed major milestones in early 2026 and begun construction activities at INL. Success would validate microreactor technology directly applicable to space.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- International Competition -->
+                <div class="card" id="programs-international">
+                    <h2>&#127758; International Competition: Russia-China Lunar Nuclear</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">The US is in a race to deploy lunar nuclear power. Russia and China have announced aggressive plans.</p>
+
+                    <div class="alert alert-warning" style="margin-bottom: 1.5rem;">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <h4>Geopolitical Imperative</h4>
+                            <p>Russia and China signed a lunar nuclear power MOU in May 2025. Their ILRS program targets nuclear power by 2033-2035. The US target is 2030. Losing this race means ceding lunar infrastructure leadership.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid #ef4444;">
+                            <h3 style="color: #ef4444;">Russia: Lunar Power Station</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Contract:</strong> NPO Lavochkin, 2025-2026 term</li>
+                                <li><strong>Missions:</strong> 2033, 2034, 2035</li>
+                                <li><strong>Operational:</strong> 2036 target</li>
+                                <li><strong>Purpose:</strong> Power for rovers, observatories, ILRS</li>
+                                <li><strong>Status:</strong> Development phase beginning</li>
+                            </ul>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid #f59e0b;">
+                            <h3 style="color: #f59e0b;">China: ILRS Nuclear Power</h3>
+                            <ul style="color: var(--text-muted); font-size: 0.875rem;">
+                                <li><strong>Crewed landing:</strong> Confirmed 2030 target</li>
+                                <li><strong>Lunar base:</strong> 2030-2035 construction</li>
+                                <li><strong>Nuclear plant:</strong> 2033-2035 with Russia</li>
+                                <li><strong>Chang'e-7:</strong> 2026 (South Pole, 6 international payloads)</li>
+                                <li><strong>Chang'e-8:</strong> 2028 (ILRS foundation)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">ILRS Participation</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 0.75rem;">The International Lunar Research Station has attracted partners beyond the US-led Artemis program:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span style="background: rgba(239, 68, 68, 0.2); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text);">Russia</span>
+                        <span style="background: rgba(245, 158, 11, 0.2); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text);">China</span>
+                        <span style="background: var(--bg-tertiary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text-muted);">Pakistan</span>
+                        <span style="background: var(--bg-tertiary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text-muted);">UAE</span>
+                        <span style="background: var(--bg-tertiary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text-muted);">South Africa</span>
+                        <span style="background: var(--bg-tertiary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text-muted);">Belarus</span>
+                        <span style="background: var(--bg-tertiary); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; color: var(--text-muted);">+ 7 more countries</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.75rem;">Sources: <a href="https://world-nuclear-news.org/articles/russia-targeting-lunar-power-station-by-2036" target="_blank">World Nuclear News</a>, <a href="https://interestingengineering.com/energy/russia-to-build-nuclear-plant-on-moon" target="_blank">Interesting Engineering</a></p>
+                </div>
+
                 <!-- Comprehensive Timeline -->
                 <div class="card" id="programs-timeline">
                     <h2>&#128197; Verified Timeline: 2026-2035</h2>
@@ -8597,8 +9415,16 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                             <div class="timeline-content"><h4>Radiant Factory Groundbreaking</h4><p style="color: var(--text-light); font-size: 0.9rem;">Oak Ridge, Tennessee - 50 reactors/year capacity.</p></div>
                         </div>
                         <div class="timeline-item">
+                            <div class="timeline-date">Jun 2026</div>
+                            <div class="timeline-content"><h4>DOE HALEU Distribution Complete</h4><p style="color: var(--text-light); font-size: 0.9rem;">21 metric tons of HALEU fuel distributed to US companies (target: 10 MT by this date).</p></div>
+                        </div>
+                        <div class="timeline-item">
                             <div class="timeline-date">2026</div>
                             <div class="timeline-content"><h4>Project Pele Components to INL</h4><p style="color: var(--text-light); font-size: 0.9rem;">Reactor and fuel shipped for assembly and testing.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026</div>
+                            <div class="timeline-content"><h4>China Chang'e-7 Mission</h4><p style="color: var(--text-light); font-size: 0.9rem;">South Pole mission with 6 international payloads; searches for water ice.</p></div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-date" style="background: var(--warning);">Sep 30, 2028</div>
@@ -8610,15 +9436,23 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-date">2028</div>
-                            <div class="timeline-content"><h4>China Chang'e-8 Mission</h4><p style="color: var(--text-light); font-size: 0.9rem;">Tests systems needed for ILRS lunar base construction.</p></div>
+                            <div class="timeline-content"><h4>China Chang'e-8 Mission</h4><p style="color: var(--text-light); font-size: 0.9rem;">ILRS foundation mission - tests lunar base construction systems.</p></div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-date" style="background: var(--accent);">~2030</div>
                             <div class="timeline-content"><h4>NASA-DOE Lunar Reactor Goal</h4><p style="color: var(--text-light); font-size: 0.9rem;">100 kWe fission power system operating on lunar surface.</p></div>
                         </div>
                         <div class="timeline-item">
+                            <div class="timeline-date">2030</div>
+                            <div class="timeline-content"><h4>China Crewed Lunar Landing</h4><p style="color: var(--text-light); font-size: 0.9rem;">Confirmed target date for first Chinese astronauts on Moon.</p></div>
+                        </div>
+                        <div class="timeline-item">
                             <div class="timeline-date">2033-2035</div>
-                            <div class="timeline-content"><h4>China-Russia ILRS Nuclear Power</h4><p style="color: var(--text-light); font-size: 0.9rem;">International Lunar Research Station with nuclear reactor. 13+ countries participating.</p></div>
+                            <div class="timeline-content"><h4>China-Russia ILRS Nuclear Power</h4><p style="color: var(--text-light); font-size: 0.9rem;">International Lunar Research Station nuclear power plant construction.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2036</div>
+                            <div class="timeline-content"><h4>Russia Lunar Power Station Operational</h4><p style="color: var(--text-light); font-size: 0.9rem;">Target date for permanent Russian lunar nuclear power supply.</p></div>
                         </div>
                     </div>
 
@@ -9259,6 +10093,17 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         </div>
                         <div class="strategy-nav-category">
                             <button class="strategy-nav-btn">
+                                <span class="nav-icon">&#128176;</span> Payment Types
+                            </button>
+                            <div class="strategy-nav-dropdown">
+                                <a href="#dd-payment-types" class="strategy-nav-link">&#128176; Contract Payment Structures</a>
+                                <a href="#dd-milestone" class="strategy-nav-link">&#127919; Milestone-Based (DOE)</a>
+                                <a href="#dd-cots" class="strategy-nav-link">&#128640; COTS (NASA/SpaceX)</a>
+                                <a href="#dd-costplus" class="strategy-nav-link">&#128200; Cost-Plus Traditional</a>
+                            </div>
+                        </div>
+                        <div class="strategy-nav-category">
+                            <button class="strategy-nav-btn">
                                 <span class="nav-icon">&#128640;</span> SBIR & Formats
                             </button>
                             <div class="strategy-nav-dropdown">
@@ -9640,6 +10485,277 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                     </div>
                 </div>
 
+                <!-- ========== CONTRACT PAYMENT STRUCTURES ========== -->
+                <div class="card" id="dd-payment-types">
+                    <h2>&#128176; Contract Payment Structures: How Money Actually Flows</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Beyond the contract <em>vehicle</em> (OTA, BAA, FAR), the <em>payment structure</em> determines how you get paid, how much risk you take, and how easily a program can be cancelled. This is critical for startups.</p>
+
+                    <div class="highlight-box" style="margin-bottom: 1.5rem;">
+                        <h3>&#128161; Why Payment Structure Matters</h3>
+                        <p style="color: var(--text);">The same contract vehicle (e.g., FAR) can have completely different payment structures. A cost-plus FAR contract works nothing like a fixed-price milestone FAR contract. Understanding this distinction separates sophisticated BD from amateur hour.</p>
+                    </div>
+
+                    <!-- Milestone-Based Contracts -->
+                    <div class="feature-box" style="border-left: 4px solid var(--success); margin-bottom: 1.5rem;" id="dd-milestone">
+                        <h3>&#127919; Milestone-Based Contracts (DOE Style)</h3>
+                        <p style="color: var(--success); font-weight: 500; margin-bottom: 0.75rem;">Payment tied to achieving specific technical milestones. The gold standard for nuclear development.</p>
+
+                        <div class="grid-2" style="margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">How It Works</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Contract defines specific technical milestones</li>
+                                    <li>Payment released when milestone achieved</li>
+                                    <li>Built-in oversight: govt reviews each milestone</li>
+                                    <li>Progress is objectively measurable</li>
+                                    <li>Both parties aligned on outcomes, not activities</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">Example Milestones</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Preliminary Design Review (PDR)</li>
+                                    <li>Critical Design Review (CDR)</li>
+                                    <li>First fuel fabrication</li>
+                                    <li>Non-nuclear prototype complete</li>
+                                    <li>Safety analysis submitted</li>
+                                    <li>Initial criticality achieved</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success" style="margin-bottom: 1rem;">
+                            <div class="alert-icon">&#128161;</div>
+                            <div class="alert-content">
+                                <h4>Real Example: Kairos Power & DOE</h4>
+                                <p>DOE awarded Kairos Power a milestone-based contract for Hermes reactor development. Each payment is tied to achieving specific technical gates. Kairos can't just burn through cash—they have to deliver results. DOE gets built-in oversight without micromanaging daily work. This structure helped Kairos become one of the most credible advanced reactor companies.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Why Milestone-Based is Superior</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li><strong>Hard to cancel:</strong> Progress is visible and measurable</li>
+                                    <li><strong>Built-in accountability:</strong> No milestone = no payment</li>
+                                    <li><strong>Aligned incentives:</strong> Both parties want same outcomes</li>
+                                    <li><strong>Protects taxpayers:</strong> Money follows results</li>
+                                    <li><strong>Protects contractor:</strong> Clear deliverables, less scope creep</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--warning); margin-bottom: 0.5rem;">Challenges</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Requires well-defined milestones upfront</li>
+                                    <li>Less flexibility if scope changes</li>
+                                    <li>Contractor bears schedule risk</li>
+                                    <li>Needs mature enough technology to plan milestones</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COTS Contracts -->
+                    <div class="feature-box" style="border-left: 4px solid var(--accent); margin-bottom: 1.5rem;" id="dd-cots">
+                        <h3>&#128640; COTS — Commercial Orbital Transportation Services</h3>
+                        <p style="color: var(--accent); font-weight: 500; margin-bottom: 0.75rem;">Fixed-price, milestone-driven, minimal government oversight. How NASA enabled SpaceX.</p>
+
+                        <div class="grid-2" style="margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">How COTS Works</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li><strong>Fixed-price:</strong> Contractor bids total cost upfront</li>
+                                    <li><strong>Milestone payments:</strong> Pay for results, not effort</li>
+                                    <li><strong>Minimal oversight:</strong> Govt doesn't manage day-to-day</li>
+                                    <li><strong>Contractor autonomy:</strong> Company decides HOW to achieve goals</li>
+                                    <li><strong>Private investment required:</strong> Contractor has skin in game</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">COTS vs Traditional</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Traditional: Govt specifies exactly how to build</li>
+                                    <li>COTS: Govt specifies what capability needed</li>
+                                    <li>Traditional: Govt owns everything</li>
+                                    <li>COTS: Contractor keeps IP, can sell commercially</li>
+                                    <li>Traditional: Cost-plus means open checkbook</li>
+                                    <li>COTS: Fixed price means contractor eats overruns</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info" style="margin-bottom: 1rem;">
+                            <div class="alert-icon">&#128640;</div>
+                            <div class="alert-content">
+                                <h4>The SpaceX Example</h4>
+                                <p>NASA's COTS program gave SpaceX $396M in milestone payments to develop Falcon 9 and Dragon. SpaceX invested ~$450M of their own money. Total program cost: ~$850M. Traditional cost-plus approach would have cost $4-12B. SpaceX kept the IP, now sells launches commercially, and NASA gets cheaper access to space. Win-win.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Pros</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Dramatically lower cost to government</li>
+                                    <li>Faster development (less bureaucracy)</li>
+                                    <li>Contractor keeps IP → commercial market</li>
+                                    <li>Innovation incentivized (better margins if efficient)</li>
+                                    <li>Creates sustainable commercial capability</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Cons</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Contractor bears all cost overrun risk</li>
+                                    <li>Requires private capital (not all can raise)</li>
+                                    <li>Less government control over design</li>
+                                    <li>Program failure = contractor failure (no bailout)</li>
+                                    <li>Needs commercially viable end market</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.875rem;"><strong>Space Nuclear Relevance:</strong> A COTS-style approach for lunar reactors could dramatically reduce costs. Radiant's commercial focus and private funding make it a natural fit for this model.</p>
+                    </div>
+
+                    <!-- Cost-Plus Contracts -->
+                    <div class="feature-box" style="border-left: 4px solid var(--warning); margin-bottom: 1.5rem;" id="dd-costplus">
+                        <h3>&#128200; Cost-Plus / Cost-Based Contracts (Traditional)</h3>
+                        <p style="color: var(--warning); font-weight: 500; margin-bottom: 0.75rem;">Government reimburses all costs plus a fee. The traditional model for major defense programs.</p>
+
+                        <div class="grid-2" style="margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">How Cost-Plus Works</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Government reimburses all allowable costs</li>
+                                    <li>Contractor gets fee (typically 8-15%)</li>
+                                    <li>Requires extensive cost accounting (DCAA audits)</li>
+                                    <li>Government bears cost overrun risk</li>
+                                    <li>Detailed government oversight of spending</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text); margin-bottom: 0.5rem;">Cost-Plus Variants</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li><strong>CPFF:</strong> Cost Plus Fixed Fee</li>
+                                    <li><strong>CPIF:</strong> Cost Plus Incentive Fee</li>
+                                    <li><strong>CPAF:</strong> Cost Plus Award Fee</li>
+                                    <li><strong>T&M:</strong> Time & Materials (similar concept)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="color: var(--text); margin-bottom: 0.5rem;">When Cost-Plus is Used</h4>
+                        <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem; margin-bottom: 1rem;">
+                            <li>High technical uncertainty (can't estimate costs)</li>
+                            <li>R&D with unknown outcomes</li>
+                            <li>First-of-a-kind systems</li>
+                            <li>When government needs tight control over design</li>
+                            <li>Programs where failure risk is high</li>
+                        </ul>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Pros</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li>Low financial risk for contractor</li>
+                                    <li>Easier to get started (less upfront capital)</li>
+                                    <li>Flexibility to change scope</li>
+                                    <li>Appropriate for true R&D</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Cons (The Big Problems)</h4>
+                                <ul style="color: var(--text-muted); margin-left: 1.25rem; font-size: 0.875rem;">
+                                    <li><strong>Easy to cancel:</strong> Govt can walk away anytime</li>
+                                    <li><strong>Cost overruns:</strong> No incentive to be efficient</li>
+                                    <li><strong>Schedule slips:</strong> Delays just mean more billing</li>
+                                    <li><strong>Heavy oversight:</strong> Govt in your business daily</li>
+                                    <li><strong>Compliance burden:</strong> DCAA audits, FAR requirements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning" style="margin-top: 1rem;">
+                            <div class="alert-icon">&#9888;</div>
+                            <div class="alert-content">
+                                <h4>The Cancellation Problem</h4>
+                                <p>Cost-plus contracts can be terminated at government convenience with little penalty. Programs like DRACO got cancelled despite years of work. Milestone-based contracts create more "stickiness" because visible progress makes cancellation politically harder.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Contract Structure Comparison</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Factor</th>
+                                    <th>Milestone-Based</th>
+                                    <th>COTS (Fixed-Price)</th>
+                                    <th>Cost-Plus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Payment Trigger</strong></td>
+                                    <td>Technical milestones achieved</td>
+                                    <td>Milestones + fixed total</td>
+                                    <td>Costs incurred + fee</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cost Overrun Risk</strong></td>
+                                    <td>Shared</td>
+                                    <td style="color: var(--danger);">Contractor bears all</td>
+                                    <td style="color: var(--success);">Government bears all</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cancellation Risk</strong></td>
+                                    <td style="color: var(--success);">Lower (visible progress)</td>
+                                    <td style="color: var(--success);">Lower (private investment)</td>
+                                    <td style="color: var(--danger);">Higher (easy to walk away)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Government Oversight</strong></td>
+                                    <td>Moderate (milestone reviews)</td>
+                                    <td style="color: var(--success);">Minimal</td>
+                                    <td style="color: var(--danger);">Heavy (daily involvement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>IP Ownership</strong></td>
+                                    <td>Negotiable</td>
+                                    <td style="color: var(--success);">Contractor keeps</td>
+                                    <td style="color: var(--danger);">Usually government</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Private Capital Required</strong></td>
+                                    <td>Some</td>
+                                    <td style="color: var(--warning);">Significant</td>
+                                    <td style="color: var(--success);">Minimal</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Best For</strong></td>
+                                    <td>Nuclear development, demos</td>
+                                    <td>Commercial space, mature tech</td>
+                                    <td>Pure R&D, unknowns</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Example</strong></td>
+                                    <td>DOE + Kairos Power</td>
+                                    <td>NASA COTS + SpaceX</td>
+                                    <td>Traditional defense programs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>&#128161; Strategic Insight for Radiant</h3>
+                        <p style="color: var(--text);">Radiant's position—commercially funded, building a real product, with private investment—makes it ideal for milestone-based or COTS-style contracts. Push for these structures over cost-plus. The combination of visible technical progress and private skin-in-the-game makes programs much harder to cancel and creates better alignment with agency goals.</p>
+                    </div>
+                </div>
+
                 <!-- What Agencies Evaluate -->
                 <div class="card" id="dd-evaluation">
                     <h2>&#128269; What Agencies Actually Evaluate</h2>
@@ -9686,7 +10802,8 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                     <h2>&#128202; Contract Vehicle Comparison Matrix</h2>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">Quick reference for choosing the right path:</p>
 
-                    <div class="table-container">
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">By Contract Vehicle (How You Enter)</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
                         <table>
                             <thead>
                                 <tr><th>Vehicle</th><th>Speed</th><th>Flexibility</th><th>Startup-Friendly</th><th>Typical Size</th><th>Best For</th></tr>
@@ -9698,10 +10815,35 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                 <tr><td><strong>SBIR</strong></td><td style="color: var(--warning);">Medium</td><td style="color: var(--warning);">Medium</td><td style="color: var(--success);">Yes (required)</td><td>$150K-$1.7M</td><td>Early concepts</td></tr>
                                 <tr><td><strong>FAR RFP</strong></td><td style="color: var(--danger);">Slow</td><td style="color: var(--danger);">Low</td><td style="color: var(--danger);">No</td><td>$10M-$1B+</td><td>Production systems</td></tr>
                                 <tr><td><strong>IDIQ</strong></td><td style="color: var(--warning);">Medium*</td><td style="color: var(--warning);">Medium</td><td style="color: var(--danger);">No</td><td>Varies</td><td>Services, support</td></tr>
+                                <tr><td><strong>CRADA</strong></td><td style="color: var(--warning);">Medium</td><td style="color: var(--success);">High</td><td style="color: var(--success);">Yes</td><td>Varies</td><td>Lab partnerships</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">By Payment Structure (How You Get Paid)</h3>
+                    <div class="table-container" style="margin-bottom: 1rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Structure</th><th>Cancel Risk</th><th>Cost Risk</th><th>Oversight</th><th>Startup-Friendly</th><th>Best For</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Milestone-Based</strong></td><td style="color: var(--success);">Low</td><td style="color: var(--warning);">Shared</td><td style="color: var(--warning);">Medium</td><td style="color: var(--success);">Yes</td><td>Nuclear demos, DOE work</td></tr>
+                                <tr><td><strong>COTS/Fixed-Price</strong></td><td style="color: var(--success);">Low</td><td style="color: var(--danger);">Contractor</td><td style="color: var(--success);">Minimal</td><td style="color: var(--success);">Yes (if funded)</td><td>Commercial space</td></tr>
+                                <tr><td><strong>Cost-Plus</strong></td><td style="color: var(--danger);">High</td><td style="color: var(--success);">Government</td><td style="color: var(--danger);">Heavy</td><td style="color: var(--danger);">No</td><td>Pure R&D, unknowns</td></tr>
+                                <tr><td><strong>Firm Fixed-Price</strong></td><td style="color: var(--warning);">Medium</td><td style="color: var(--danger);">Contractor</td><td style="color: var(--success);">Low</td><td style="color: var(--warning);">Maybe</td><td>Well-defined scope</td></tr>
+                                <tr><td><strong>T&M</strong></td><td style="color: var(--danger);">High</td><td style="color: var(--success);">Government</td><td style="color: var(--danger);">Heavy</td><td style="color: var(--danger);">No</td><td>Services, studies</td></tr>
                             </tbody>
                         </table>
                     </div>
                     <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 0.5rem;">* IDIQ is slow to get on, but fast once you're on the contract vehicle.</p>
+
+                    <div class="alert alert-info" style="margin-top: 1rem;">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>Key Insight</h4>
+                            <p>The <em>vehicle</em> determines how you compete and enter. The <em>payment structure</em> determines how money flows and risk is allocated. Push for milestone-based or fixed-price structures when possible—they're harder to cancel and better aligned with delivering results.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Acquisition Path Visualization -->
@@ -11859,6 +13001,15 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                 document.getElementById(this.dataset.tab).classList.add('active');
             });
         });
+
+        // Tab Switching Function (for onclick handlers)
+        function switchTab(tabId) {
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         // Accordion
         function toggleAccordion(header) {
