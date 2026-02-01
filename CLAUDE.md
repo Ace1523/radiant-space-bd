@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~880KB, ~11,500+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~920KB, ~12,200+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -19,7 +19,7 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 
 ### Navigation Tabs (11 total)
 1. **Contract Hub** (priority tab) - Active opportunities, contract types, alert setup, search keywords
-2. **Agencies** - NASA, DARPA, Space Force/SpaceWERX, DIU, DOE, DoW SBIR guidance
+2. **Agencies** - NASA, DARPA, Space Force/SpaceWERX, DIU, DOE, DoW, Air Force/AFWERX, NRO, other defense stakeholders, SBIR guidance
 3. **Strategy & Playbook** - Comprehensive BD strategy including OKRs, white paper guides, capture templates
 4. **Technical** - Space nuclear technology deep dive (fission, HALEU, power conversion, use cases)
 5. **History** - Complete space nuclear history (1954-present), SNAP, Soviet programs, KRUSTY, RTG missions
@@ -61,6 +61,32 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 - DOME Test: Fall 2026 / 2027 (first new US reactor design tested in 50+ years)
 - Oak Ridge Factory: Groundbreaking 2026
 - First Customer Delivery: 2028
+
+## Agencies Tab Content
+Comprehensive agency profiles with sub-tabs for each major stakeholder:
+
+### Primary Agencies (Full Sub-Tab Structure)
+Each primary agency has Overview, Contracting Process, and Active Programs sub-tabs:
+- **NASA** - Fission Surface Power, lunar/Mars missions, Glenn Research Center
+- **DARPA** - DRACO (cancelled), Rads to Watts, On-Orbit Nuclear workshop
+- **Space Force/SpaceWERX** - SpaceWERX process, CSO focus areas, Space Prime
+- **DIU** - Commercial Solutions Openings, ANPI program, 60-90 day awards
+- **DOE** - National labs, HALEU supply, DOME facility, interagency coordination
+- **DoW (Department of War/Army)** - Project Pele (BWXT 1.5MW), Janus (9 base sites), ANPI (DIU), EO 14299
+- **Air Force/AFWERX** - JETSON program ($33.7M Lockheed), AFRL research, STRATFI/TACFI
+- **NRO** - Proliferated satellite architecture (200+ satellites), intelligence requirements
+
+### Secondary Stakeholders (Other Defense Section)
+Brief but actionable info on:
+- **MDA (Missile Defense Agency)** - Golden Dome, space sensor layer, high-power radar
+- **OUSD R&E** - DoD CTO, 14 Critical Technology Areas, oversees DARPA/DIU/SCO
+- **SDA (Space Development Agency)** - PWSA constellations, Transport/Tracking/Custody layers
+- **SSC (Space Systems Command)** - Front Door innovation portal, $14B+ budget
+
+### Supporting Content
+- **DOE/National Lab Stakeholders** - INL, NNSA, Office of Nuclear Energy
+- **Congressional Stakeholders** - Authorization & appropriations committees
+- **SBIR/STTR Cross-Agency Guide** - Phase I/II/III, Topic areas
 
 ## Radiant Tab Content
 The Radiant Nuclear tab includes:
