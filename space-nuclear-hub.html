@@ -610,24 +610,113 @@
         .phase-description { color: var(--text-muted); font-size: 0.8125rem; margin-bottom: 0.75rem; }
 
         /* Glossary */
+        .glossary-search-container {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .glossary-search-box {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .glossary-search-input {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .glossary-search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+        }
+
+        .glossary-search-input::placeholder { color: var(--text-dim); }
+
+        .glossary-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .glossary-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .glossary-stat-number {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .glossary-category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .glossary-category-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .glossary-category-btn:hover,
+        .glossary-category-btn.active {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-color: var(--accent);
+        }
+
         .glossary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 0.875rem;
         }
 
         .glossary-item {
             background: var(--bg-tertiary);
-            padding: 0.875rem 1rem;
+            padding: 1rem 1.25rem;
             border-radius: 10px;
             border-left: 3px solid var(--accent);
             transition: all 0.2s ease;
         }
 
         .glossary-item:hover { background: rgba(255, 255, 255, 0.04); }
+        .glossary-item.hidden { display: none; }
 
-        .glossary-term { color: var(--accent); font-weight: 600; font-size: 0.875rem; margin-bottom: 0.25rem; }
-        .glossary-definition { color: var(--text-muted); font-size: 0.8125rem; }
+        .glossary-term { color: var(--accent); font-weight: 600; font-size: 0.9375rem; margin-bottom: 0.375rem; }
+        .glossary-definition { color: var(--text-muted); font-size: 0.8125rem; line-height: 1.5; }
+        .glossary-category-tag {
+            display: inline-block;
+            background: rgba(167, 139, 250, 0.15);
+            color: var(--accent);
+            font-size: 0.6875rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
         /* Checklist */
         .checklist { list-style: none; }
@@ -8754,56 +8843,293 @@
 
             <!-- ==================== GLOSSARY TAB ==================== -->
             <div id="glossary" class="tab-content">
-                <h2 style="margin-bottom: 1.5rem;">&#128218; Glossary of Terms & Acronyms</h2>
+                <h2 style="margin-bottom: 1.5rem;">&#128218; Space Nuclear BD Glossary</h2>
 
-                <div class="card">
-                    <h2>Contract & Acquisition Terms</h2>
-                    <div class="glossary-grid">
-                        <div class="glossary-item"><div class="glossary-term">RFI</div><div class="glossary-definition">Request for Information - Market research, shapes future RFPs.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">BAA</div><div class="glossary-definition">Broad Agency Announcement - R&D funding, white paper first.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">OTA</div><div class="glossary-definition">Other Transaction Authority - Fast prototyping without FAR compliance.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">CSO</div><div class="glossary-definition">Commercial Solutions Opening - DIU's fast OTA variant.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">FAR</div><div class="glossary-definition">Federal Acquisition Regulation - Standard federal procurement rules.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">IDIQ</div><div class="glossary-definition">Indefinite Delivery/Indefinite Quantity - Pre-qualified vendor pool.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">SBIR/STTR</div><div class="glossary-definition">Small Business Innovation Research - R&D funding for small businesses.</div></div>
-                        <div class="glossary-item"><div class="glossary-term">CRADA</div><div class="glossary-definition">Cooperative R&D Agreement - Partnership with national labs.</div></div>
+                <!-- Search and Stats -->
+                <div class="glossary-search-container">
+                    <div class="glossary-search-box">
+                        <input type="text" id="glossary-search" class="glossary-search-input" placeholder="Search terms, acronyms, or definitions..." onkeyup="filterGlossary()">
+                    </div>
+                    <div class="glossary-stats">
+                        <div class="glossary-stat"><span class="glossary-stat-number" id="total-terms">150+</span> Total Terms</div>
+                        <div class="glossary-stat"><span class="glossary-stat-number">7</span> Categories</div>
+                        <div class="glossary-stat"><span class="glossary-stat-number" id="visible-terms">All</span> Showing</div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h2>Agency Acronyms</h2>
+                <!-- Category Navigation -->
+                <div class="glossary-category-nav">
+                    <button class="glossary-category-btn active" onclick="filterByCategory('all')">All Terms</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('contract')">Contracting</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('agency')">Agencies</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('program')">Programs</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('nuclear')">Nuclear Tech</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('space')">Space/Propulsion</button>
+                    <button class="glossary-category-btn" onclick="filterByCategory('policy')">Policy/Budget</button>
+                </div>
+
+                <!-- ========== CONTRACT & ACQUISITION TERMS ========== -->
+                <div class="card" id="glossary-contract">
+                    <h2>&#128220; Contract & Acquisition Terms</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Federal contracting terminology essential for space nuclear business development.</p>
                     <div class="glossary-grid">
-                        <div class="glossary-item"><div class="glossary-term">NASA</div><div class="glossary-definition">National Aeronautics and Space Administration</div></div>
-                        <div class="glossary-item"><div class="glossary-term">DOE</div><div class="glossary-definition">Department of Energy - Oversees nuclear tech and national labs</div></div>
-                        <div class="glossary-item"><div class="glossary-term">DARPA</div><div class="glossary-definition">Defense Advanced Research Projects Agency</div></div>
-                        <div class="glossary-item"><div class="glossary-term">DIU</div><div class="glossary-definition">Defense Innovation Unit - Fast commercial acquisition</div></div>
-                        <div class="glossary-item"><div class="glossary-term">TTO</div><div class="glossary-definition">Tactical Technology Office (DARPA)</div></div>
-                        <div class="glossary-item"><div class="glossary-term">INL</div><div class="glossary-definition">Idaho National Laboratory - Key reactor testing facility</div></div>
-                        <div class="glossary-item"><div class="glossary-term">AFRL</div><div class="glossary-definition">Air Force Research Laboratory</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">RFI</div><div class="glossary-definition"><strong>Request for Information</strong> - Government market research tool used to gather information about industry capabilities before issuing a formal solicitation. Responding shapes future RFPs but doesn't result in a contract.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">RFP</div><div class="glossary-definition"><strong>Request for Proposal</strong> - Formal solicitation asking for detailed technical and cost proposals. Results in competitive evaluation and contract award to the best-value offeror.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">RFQ</div><div class="glossary-definition"><strong>Request for Quote</strong> - Solicitation for pricing on specific items or services. Typically used for commercial items where technical requirements are well-defined.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">BAA</div><div class="glossary-definition"><strong>Broad Agency Announcement</strong> - Open solicitation for basic and applied R&D proposals. Typically requires white paper submission first, then invitation for full proposal. Not for specific systems.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">OTA</div><div class="glossary-definition"><strong>Other Transaction Authority</strong> - Flexible contracting mechanism outside FAR regulations. Enables fast prototyping (weeks vs years), negotiable IP terms, and startup-friendly processes. Key for defense-tech.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CSO</div><div class="glossary-definition"><strong>Commercial Solutions Opening</strong> - DIU's streamlined OTA variant for rapid commercial technology acquisition. 60-90 day award timeline typical. Focus on existing commercial solutions.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">FAR</div><div class="glossary-definition"><strong>Federal Acquisition Regulation</strong> - Primary regulation governing federal procurement. Establishes uniform policies for supplies and services acquisition. Complex compliance burden but stable funding.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">DFARS</div><div class="glossary-definition"><strong>Defense Federal Acquisition Regulation Supplement</strong> - DoD-specific supplement to FAR with additional requirements for defense contracts including cybersecurity (CMMC), export controls, and cost accounting.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">IDIQ</div><div class="glossary-definition"><strong>Indefinite Delivery/Indefinite Quantity</strong> - Contract vehicle establishing a pre-qualified vendor pool. Task orders issued against IDIQ for specific work. Reduces procurement time for repeat needs.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">BPA</div><div class="glossary-definition"><strong>Blanket Purchase Agreement</strong> - Simplified method for filling anticipated repetitive needs for supplies or services. Establishes pricing and terms for future orders.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">GWAC</div><div class="glossary-definition"><strong>Government-Wide Acquisition Contract</strong> - Multiple-award IDIQ contracts available to all federal agencies. Primarily for IT products and services. Examples: SEWP, CIO-SP3.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">SBIR</div><div class="glossary-definition"><strong>Small Business Innovation Research</strong> - Competitive R&D funding for small businesses. Phase I: feasibility ($50-275K, 6 months). Phase II: development ($750K-1.5M, 24 months). Phase III: commercialization (unlimited).</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">STTR</div><div class="glossary-definition"><strong>Small Business Technology Transfer</strong> - Like SBIR but requires partnership with a research institution (university or federal lab). Research institution must perform at least 30% of Phase I, 40% of Phase II.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CRADA</div><div class="glossary-definition"><strong>Cooperative Research and Development Agreement</strong> - Partnership mechanism between federal labs and private companies. No funds exchanged; lab provides facilities/expertise, company provides resources. Flexible IP sharing.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">SAM</div><div class="glossary-definition"><strong>System for Award Management</strong> - Official government database for vendor registration. Required for all federal contracts. Must maintain active registration with current CAGE code and banking info.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CAGE Code</div><div class="glossary-definition"><strong>Commercial and Government Entity Code</strong> - Five-character identifier for companies doing business with federal government. Required for SAM registration and all contract documentation.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">UEI</div><div class="glossary-definition"><strong>Unique Entity Identifier</strong> - Replaced DUNS number in 2022. 12-character alphanumeric ID assigned by SAM.gov for all entities doing business with the federal government.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">SOW</div><div class="glossary-definition"><strong>Statement of Work</strong> - Contract document specifying all work requirements for a contractor. Defines deliverables, milestones, acceptance criteria. Prescriptive approach - tells contractor how to do the work.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">PWS</div><div class="glossary-definition"><strong>Performance Work Statement</strong> - Describes required results in measurable outcomes rather than methods. Gives contractor flexibility on how to achieve objectives. Preferred for services acquisition.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">SOO</div><div class="glossary-definition"><strong>Statement of Objectives</strong> - High-level document stating overall performance objectives. Maximum flexibility for innovative solutions. Offerors develop their own PWS/SOW in proposals.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CLIN</div><div class="glossary-definition"><strong>Contract Line Item Number</strong> - Standard identifier for deliverables on defense contracts. Four-digit number (e.g., 0001) breaks contract into discrete items for pricing and tracking.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">FFP</div><div class="glossary-definition"><strong>Firm Fixed Price</strong> - Contract type where price is set and not subject to adjustment. Contractor bears full cost risk. Used when requirements are well-defined and risk is manageable.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CPFF</div><div class="glossary-definition"><strong>Cost Plus Fixed Fee</strong> - Government pays allowable costs plus negotiated fixed fee. Used for R&D when costs are uncertain. Requires certified cost accounting system.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CPIF</div><div class="glossary-definition"><strong>Cost Plus Incentive Fee</strong> - Like CPFF but fee varies based on cost performance against target. Incentivizes cost control while sharing risk between government and contractor.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">T&M</div><div class="glossary-definition"><strong>Time and Materials</strong> - Payment based on labor hours at fixed rates plus materials at cost. Used when scope is uncertain. Requires close government oversight.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">LPTA</div><div class="glossary-definition"><strong>Lowest Price Technically Acceptable</strong> - Evaluation method where contract goes to lowest-priced offeror meeting minimum requirements. Used for commodities, not complex R&D.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">TRL</div><div class="glossary-definition"><strong>Technology Readiness Level</strong> - 1-9 scale measuring technology maturity. TRL 1: basic principles. TRL 6: prototype demo. TRL 9: mission-proven. Critical metric in all proposals.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">MRL</div><div class="glossary-definition"><strong>Manufacturing Readiness Level</strong> - 1-10 scale assessing production readiness. MRL 4: proof of concept. MRL 6: prototype capability. MRL 8: pilot line ready. Complements TRL.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CRL</div><div class="glossary-definition"><strong>Commercial Readiness Level</strong> - Measures market readiness and commercialization potential. Increasingly used by DOE and ARPA-E to assess transition likelihood.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">Pwin</div><div class="glossary-definition"><strong>Probability of Win</strong> - Capture management metric estimating likelihood of winning a specific opportunity. Based on customer relationship, technical fit, price position, and competitive analysis.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">LRIP</div><div class="glossary-definition"><strong>Low-Rate Initial Production</strong> - Limited production to verify manufacturing processes before full-rate production. Typically follows successful developmental testing. Usually MRL 8+.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">CO</div><div class="glossary-definition"><strong>Contracting Officer</strong> - Government official with authority to award, administer, and terminate contracts. Only the CO can obligate government funds or modify contracts.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">COR</div><div class="glossary-definition"><strong>Contracting Officer's Representative</strong> - Technical expert designated to monitor contractor performance. Cannot modify contract terms but provides technical direction within scope.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">PM</div><div class="glossary-definition"><strong>Program Manager</strong> - Government official responsible for overall program execution. Key relationship for BD - influences requirements and funding decisions.</div></div>
+                        <div class="glossary-item" data-category="contract"><div class="glossary-term">TPOC</div><div class="glossary-definition"><strong>Technical Point of Contact</strong> - Government technical expert for a specific solicitation. Primary contact during proposal development for technical questions.</div></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h2>Program Names</h2>
+                <!-- ========== AGENCY ACRONYMS ========== -->
+                <div class="card" id="glossary-agencies">
+                    <h2>&#127970; Agency & Organization Acronyms</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Government agencies, military branches, and key organizations in the space nuclear ecosystem.</p>
                     <div class="glossary-grid">
-                        <div class="glossary-item"><div class="glossary-term">FSP</div><div class="glossary-definition">Fission Surface Power - NASA lunar nuclear power program</div></div>
-                        <div class="glossary-item"><div class="glossary-term">DRACO</div><div class="glossary-definition">Demonstration Rocket for Agile Cislunar Operations</div></div>
-                        <div class="glossary-item"><div class="glossary-term">JETSON</div><div class="glossary-definition">Air Force nuclear electric power program</div></div>
-                        <div class="glossary-item"><div class="glossary-term">Artemis</div><div class="glossary-definition">NASA program to return humans to Moon</div></div>
-                        <div class="glossary-item"><div class="glossary-term">ILRS</div><div class="glossary-definition">International Lunar Research Station (China-Russia)</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">NASA</div><div class="glossary-definition"><strong>National Aeronautics and Space Administration</strong> - Civilian space agency. Key offices: STMD (Space Technology), ESDMD (Exploration Systems), Glenn Research Center (nuclear power lead).</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">DOE</div><div class="glossary-definition"><strong>Department of Energy</strong> - Oversees nuclear technology, national labs, and HALEU production. Office of Nuclear Energy (NE) manages reactor programs. Key partner for all space nuclear.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">DoD</div><div class="glossary-definition"><strong>Department of Defense</strong> - Largest federal agency. Includes Army, Navy, Air Force, Space Force, and defense agencies. Multiple nuclear power programs (Pele, Janus, JETSON).</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">DARPA</div><div class="glossary-definition"><strong>Defense Advanced Research Projects Agency</strong> - High-risk, high-reward R&D. Tactical Technology Office (TTO) handles space/nuclear. Known for game-changing programs. 3-5 year project cycles.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">USSF</div><div class="glossary-definition"><strong>United States Space Force</strong> - Newest military branch (est. 2019). Responsible for space operations, satellite defense, and cislunar domain awareness. Under Department of the Air Force.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">SSC</div><div class="glossary-definition"><strong>Space Systems Command</strong> - USSF field command managing space acquisition, launch, and sustainment. Located at Los Angeles AFB. Manages NSSL and space nuclear programs.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">SDA</div><div class="glossary-definition"><strong>Space Development Agency</strong> - DoD agency building proliferated LEO satellite constellations. Under Space Force since 2022. Focus on resilient space architecture.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">NRO</div><div class="glossary-definition"><strong>National Reconnaissance Office</strong> - Intelligence agency operating reconnaissance satellites. Works with Space Force on launches. Potential customer for high-power space systems.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">AFRL</div><div class="glossary-definition"><strong>Air Force Research Laboratory</strong> - Air Force/Space Force R&D organization. Space Vehicles Directorate (RV) leads JETSON nuclear power program. Key customer for space nuclear.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">DIU</div><div class="glossary-definition"><strong>Defense Innovation Unit</strong> - DoD organization for rapid commercial tech adoption. Uses CSO (Commercial Solutions Opening) for fast contracting. Startup-friendly, Silicon Valley presence.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">SpaceWERX</div><div class="glossary-definition"><strong>Space Force Innovation Arm</strong> - USSF's component of AFWERX. Manages Space Force SBIR/STTR, Primes, and innovation challenges. Key entry point for space nuclear startups.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">AFWERX</div><div class="glossary-definition"><strong>Air Force Innovation Arm</strong> - Manages SBIR/STTR, Primes, and challenges. SpaceWERX is the Space Force component. Good entry point for defense-tech companies.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">SCO</div><div class="glossary-definition"><strong>Strategic Capabilities Office</strong> - DoD office accelerating deployment of existing tech in new ways. Reports directly to SecDef. Pursues near-term operational advantages.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">NRC</div><div class="glossary-definition"><strong>Nuclear Regulatory Commission</strong> - Independent agency regulating civilian nuclear materials and reactors. Does NOT regulate DoD or NASA space nuclear - see INSRB instead.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">NNSA</div><div class="glossary-definition"><strong>National Nuclear Security Administration</strong> - Semi-autonomous DOE agency managing nuclear weapons stockpile and naval reactors. Controls weapons-grade materials and certain HALEU pathways.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">INL</div><div class="glossary-definition"><strong>Idaho National Laboratory</strong> - DOE's lead nuclear R&D lab. Houses DOME test facility, ATR test reactor, and TREAT transient testing. Essential partner for reactor testing.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">ORNL</div><div class="glossary-definition"><strong>Oak Ridge National Laboratory</strong> - DOE lab with extensive nuclear expertise. HALEU processing, fuel fabrication, and materials research. Radiant's Oak Ridge factory nearby.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">ANL</div><div class="glossary-definition"><strong>Argonne National Laboratory</strong> - DOE lab near Chicago. Nuclear reactor design, simulation, and analysis expertise. Important for modeling and safety analysis support.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">LANL</div><div class="glossary-definition"><strong>Los Alamos National Laboratory</strong> - DOE/NNSA lab. Nuclear weapons expertise, plutonium science, and heat source production for RTGs. Key for nuclear materials.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">SNL</div><div class="glossary-definition"><strong>Sandia National Laboratories</strong> - DOE/NNSA lab managed by Honeywell. Nuclear safety, power conversion, and systems engineering. KRUSTY testing partner.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">PNNL</div><div class="glossary-definition"><strong>Pacific Northwest National Laboratory</strong> - DOE lab in Washington state. Nuclear materials, nonproliferation, and environmental cleanup expertise.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">JPL</div><div class="glossary-definition"><strong>Jet Propulsion Laboratory</strong> - NASA center managed by Caltech. Leads robotic planetary missions. Extensive RTG mission experience (Mars rovers, Voyager).</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">GRC</div><div class="glossary-definition"><strong>Glenn Research Center</strong> - NASA center in Cleveland. Leads Fission Surface Power program and space power research. Primary NASA contact for nuclear power.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">MSFC</div><div class="glossary-definition"><strong>Marshall Space Flight Center</strong> - NASA center in Huntsville. Propulsion systems expertise. Led DRACO nuclear thermal propulsion (cancelled) and SLS development.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">TTO</div><div class="glossary-definition"><strong>Tactical Technology Office</strong> - DARPA office managing space, tactical systems, and advanced platforms. Handles space nuclear programs like DRACO (cancelled) and Rads to Watts.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">STMD</div><div class="glossary-definition"><strong>Space Technology Mission Directorate</strong> - NASA organization funding technology development. Manages FSP, nuclear propulsion studies, and technology demonstration missions.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">ESDMD</div><div class="glossary-definition"><strong>Exploration Systems Development Mission Directorate</strong> - NASA organization managing Artemis program including SLS, Orion, Gateway, and lunar surface systems.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">OSTP</div><div class="glossary-definition"><strong>Office of Science and Technology Policy</strong> - White House office advising President on science/tech. Coordinates interagency space nuclear policy. Issued NSPM-20.</div></div>
+                        <div class="glossary-item" data-category="agency"><div class="glossary-term">NSC</div><div class="glossary-definition"><strong>National Security Council</strong> - White House body coordinating national security policy. Involved in space nuclear launch approvals for sensitive missions.</div></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h2>Technical Terms</h2>
+                <!-- ========== PROGRAM NAMES ========== -->
+                <div class="card" id="glossary-programs">
+                    <h2>&#128640; Program Names & Initiatives</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Active, historical, and international space nuclear programs and initiatives.</p>
                     <div class="glossary-grid">
-                        <div class="glossary-item"><div class="glossary-term">HALEU</div><div class="glossary-definition">High-Assay Low-Enriched Uranium (5-20% U-235)</div></div>
-                        <div class="glossary-item"><div class="glossary-term">TRISO</div><div class="glossary-definition">Tri-structural Isotropic fuel - ceramic-coated, meltdown-proof</div></div>
-                        <div class="glossary-item"><div class="glossary-term">kWe</div><div class="glossary-definition">Kilowatts electric - electrical power output</div></div>
-                        <div class="glossary-item"><div class="glossary-term">NTP</div><div class="glossary-definition">Nuclear Thermal Propulsion - reactor heats propellant</div></div>
-                        <div class="glossary-item"><div class="glossary-term">NEP</div><div class="glossary-definition">Nuclear Electric Propulsion - reactor powers ion thrusters</div></div>
-                        <div class="glossary-item"><div class="glossary-term">ISRU</div><div class="glossary-definition">In-Situ Resource Utilization - using local resources</div></div>
-                        <div class="glossary-item"><div class="glossary-term">RTG</div><div class="glossary-definition">Radioisotope Thermoelectric Generator - decay heat, low power</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">FSP</div><div class="glossary-definition"><strong>Fission Surface Power</strong> - NASA-DOE program to deploy 100 kWe nuclear reactor on Moon by 2030. Closed Brayton cycle. Phase 2 contracts to Lockheed and Westinghouse. Key opportunity.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">DOME</div><div class="glossary-definition"><strong>Demonstration of Microreactor Experiments</strong> - INL test facility for microreactor demonstrations. Construction complete March 2026. Radiant's Kaleidos testing scheduled for 2027.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Project Pele</div><div class="glossary-definition"><strong>DoD Mobile Microreactor</strong> - Army/DOE program for 1-5 MW transportable reactor. BWXT building prototype. Operational deadline September 2028 per EO 14299.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Janus</div><div class="glossary-definition"><strong>Army Microreactor Program</strong> - Plan to deploy microreactors at 9 military bases. Named for two-faced Roman god (power + heat). EO 14299 deadline September 2028.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">JETSON</div><div class="glossary-definition"><strong>Joint Emergent Technology Supplying On-Orbit Nuclear Power</strong> - AFRL/Space Force program for nuclear electric spacecraft power. $33.7M contract to Lockheed Martin. High-power ISR focus.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">DRACO</div><div class="glossary-definition"><strong>Demonstration Rocket for Agile Cislunar Operations</strong> - DARPA nuclear thermal propulsion program. CANCELLED June 2025 due to cost/benefit analysis vs. SpaceX's reduced launch costs.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Rads to Watts</div><div class="glossary-definition"><strong>DARPA Direct Conversion Program</strong> - Research into direct radiation-to-electricity conversion without thermal cycle. Potentially enables ultra-compact space power. Active R&D.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Artemis</div><div class="glossary-definition"><strong>NASA Lunar Exploration Program</strong> - Return humans to Moon, establish sustained presence. Artemis III: first landing. Base Camp requires nuclear power for 14-day lunar nights.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Gateway</div><div class="glossary-definition"><strong>Lunar Gateway Station</strong> - NASA-led space station in lunar orbit. Staging point for lunar surface missions. Power and Propulsion Element uses solar, but surface ops need nuclear.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">ILRS</div><div class="glossary-definition"><strong>International Lunar Research Station</strong> - China-Russia joint lunar base. Nuclear reactor planned 2033-2035. Direct competitor to Artemis. Key driver for US space nuclear urgency.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">KRUSTY</div><div class="glossary-definition"><strong>Kilopower Reactor Using Stirling Technology</strong> - 2018 demonstration at Nevada NNSS. 1-10 kWe prototype proved compact fission power feasible. Foundation for FSP program.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Kilopower</div><div class="glossary-definition"><strong>NASA Compact Fission Concept</strong> - 1-10 kWe reactor design using HEU fuel, Stirling conversion. KRUSTY was the demonstration. Basis for some FSP concepts.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">SNAP</div><div class="glossary-definition"><strong>Systems for Nuclear Auxiliary Power</strong> - 1955-1973 program. SNAP-10A: only US fission reactor launched (1965). SNAP-3 through SNAP-27: RTG heritage. Foundation of space nuclear.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">SNAP-10A</div><div class="glossary-definition"><strong>First US Space Reactor</strong> - Launched April 1965. 500 We thermoelectric. Operated 43 days before communications lost. Still in orbit. Only US fission reactor ever launched.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">SP-100</div><div class="glossary-definition"><strong>Space Power 100 kWe</strong> - 1983-1994 joint NASA/DOE/DoD program. Advanced space reactor concept. Cancelled due to end of Cold War and budget constraints. $500M spent.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Prometheus/JIMO</div><div class="glossary-definition"><strong>Jupiter Icy Moons Orbiter</strong> - 2002-2005 NASA nuclear electric mission concept. Would have orbited Callisto, Ganymede, Europa. Cancelled due to cost ($16B estimate).</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">TOPAZ</div><div class="glossary-definition"><strong>Soviet/Russian Space Reactor</strong> - Thermionic conversion reactors. TOPAZ-II tested at Sandia 1992-1995. More advanced than contemporary US designs. 5-40 kWe range.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">RORSAT/BES-5</div><div class="glossary-definition"><strong>Soviet Radar Ocean Reconnaissance Satellites</strong> - USSR launched 31 nuclear reactors 1970-1988. Powered by BES-5 (Buk) reactors. Kosmos 954 re-entry incident (1978).</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">MARVEL</div><div class="glossary-definition"><strong>Microreactor Applications Research Validation and Evaluation</strong> - INL program demonstrating microreactor at lab facilities. First US microreactor demo since 1960s. Supports Pele and commercial reactors.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">MAGNET</div><div class="glossary-definition"><strong>Microreactor Agile Non-Nuclear Experimental Test Bed</strong> - INL facility for microreactor component testing without nuclear fuel. Enables rapid iteration and de-risking.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">Oracle</div><div class="glossary-definition"><strong>AFRL Cislunar Awareness Spacecraft</strong> - Space Force mission for tracking objects between Earth and Moon. Supports Artemis and planetary defense. Demonstrates cislunar domain awareness.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">NSSL</div><div class="glossary-definition"><strong>National Security Space Launch</strong> - DoD program for launching national security payloads. Phase 3 contracts to ULA and SpaceX. May be needed for future space reactor launches.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">EO 14299</div><div class="glossary-definition"><strong>Executive Order on Microreactors</strong> - Trump administration order directing DoD microreactor deployment by September 2028. Establishes legal deadline for Pele and Janus.</div></div>
+                    </div>
+                </div>
+
+                <!-- ========== NUCLEAR TECHNICAL TERMS ========== -->
+                <div class="card" id="glossary-nuclear">
+                    <h2>&#9762; Nuclear Technology Terms</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Nuclear reactor, fuel, and safety terminology essential for understanding space nuclear systems.</p>
+                    <div class="glossary-grid">
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">HALEU</div><div class="glossary-definition"><strong>High-Assay Low-Enriched Uranium</strong> - Uranium enriched 5-20% U-235. Required for most advanced reactors. Enables smaller, more efficient designs. Limited US supply - key bottleneck. Not weapons-grade (&lt;20%).</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">LEU</div><div class="glossary-definition"><strong>Low-Enriched Uranium</strong> - Uranium with &lt;20% U-235. Commercial reactors use 3-5% LEU. HALEU is a subset (5-20%). Cannot be used for weapons without further enrichment.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">HEU</div><div class="glossary-definition"><strong>Highly Enriched Uranium</strong> - Uranium with ≥20% U-235 (typically 90%+ for weapons/naval). KRUSTY used HEU. New designs targeting HALEU to avoid proliferation concerns.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">TRISO</div><div class="glossary-definition"><strong>Tri-structural Isotropic Fuel</strong> - Fuel particles &lt;1mm with uranium kernel surrounded by carbon/ceramic layers. Withstands extreme temps without melting. Cannot release radioactivity. Meltdown-proof.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">CERMET</div><div class="glossary-definition"><strong>Ceramic-Metal Fuel</strong> - Uranium oxide in tungsten or molybdenum matrix. Excellent high-temperature performance. Used in nuclear thermal propulsion designs. Alternative to TRISO for some applications.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">UN Fuel</div><div class="glossary-definition"><strong>Uranium Nitride Fuel</strong> - High-density fuel form. Higher thermal conductivity than oxide. Promising for compact space reactors. Used in some advanced designs.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">U-235</div><div class="glossary-definition"><strong>Uranium-235</strong> - Fissile isotope of uranium. Only naturally occurring fissile material. 0.7% of natural uranium. Must be enriched for reactor use.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">U-238</div><div class="glossary-definition"><strong>Uranium-238</strong> - Dominant uranium isotope (99.3%). Not fissile but fertile - can absorb neutron to become plutonium. Provides some power in reactors.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Criticality</div><div class="glossary-definition"><strong>Self-Sustaining Chain Reaction</strong> - Condition where fission chain reaction maintains itself. Each fission produces enough neutrons for another fission. "Critical" = stable operation, not an accident.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Subcritical</div><div class="glossary-definition"><strong>Chain Reaction Declining</strong> - Neutron population decreasing. Reactor power falling. Safe shutdown condition. Fuel alone is always subcritical without proper geometry.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Supercritical</div><div class="glossary-definition"><strong>Chain Reaction Growing</strong> - Neutron population increasing. Used briefly during startup to raise power. Controlled supercriticality is normal operation, not an accident.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Moderator</div><div class="glossary-definition"><strong>Neutron Slowing Material</strong> - Slows fast neutrons to thermal energies for efficient fission. Water, graphite, beryllium, or zirconium hydride. Radiant uses ZrH2 (zirconium hydride).</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">ZrH2</div><div class="glossary-definition"><strong>Zirconium Hydride</strong> - Radiant's moderator material. Compact, efficient neutron moderation. Enables smaller reactor cores. Key differentiator in their design.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Coolant</div><div class="glossary-definition"><strong>Heat Transfer Fluid</strong> - Removes heat from reactor core. Options: water, helium, sodium, lead, molten salt. Radiant uses helium - inert, can't become radioactive, works in space vacuum.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Reflector</div><div class="glossary-definition"><strong>Neutron Bouncing Material</strong> - Surrounds core to reflect escaping neutrons back. Improves fuel efficiency. Beryllium or graphite common. Drum reflectors can control criticality.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Control Rod</div><div class="glossary-definition"><strong>Reactivity Control Device</strong> - Neutron-absorbing material inserted into core to control power. Inserting rods reduces power; withdrawing increases. Primary shutdown mechanism.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Control Drum</div><div class="glossary-definition"><strong>Rotating Reflector Control</strong> - Cylindrical reflector with absorber on one side. Rotating toward core increases reactivity. Common in space reactor designs. No penetrations into core.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Heat Pipe</div><div class="glossary-definition"><strong>Passive Heat Transfer Device</strong> - Sealed tube with working fluid. Evaporates at hot end, condenses at cold end, wicks back. Extremely reliable, no moving parts. Used in KRUSTY.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">kWe</div><div class="glossary-definition"><strong>Kilowatts Electric</strong> - Electrical power output. What you actually use. FSP targets 100 kWe. Radiant targets ~1,000 kWe (1 MWe). Always less than thermal due to conversion efficiency.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">kWt</div><div class="glossary-definition"><strong>Kilowatts Thermal</strong> - Total heat energy from reactor. Larger than kWe due to conversion losses. 100 kWe might require 400-500 kWt depending on efficiency. Waste heat must be rejected.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">MWe</div><div class="glossary-definition"><strong>Megawatts Electric</strong> - 1,000 kWe. Radiant's Kaleidos targets ~1 MWe. Large commercial reactors: 1,000+ MWe. Space nuclear currently focused on 100 kWe - 1 MWe range.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Decay Heat</div><div class="glossary-definition"><strong>Residual Radioactive Heat</strong> - Heat from radioactive decay of fission products after shutdown. Can't be turned off. Requires cooling even after reactor stops. Passive systems essential.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Fission Products</div><div class="glossary-definition"><strong>Nuclear Waste from Splitting</strong> - Radioactive elements created when uranium splits. Main source of radiation in spent fuel. Decay over time - most active isotopes short-lived.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Burnup</div><div class="glossary-definition"><strong>Fuel Utilization Measure</strong> - Energy extracted per unit fuel, typically MWd/kg. Higher burnup = more efficient fuel use. TRISO enables high burnup without failure.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Passive Safety</div><div class="glossary-definition"><strong>Inherent Safe Shutdown</strong> - Reactor shuts down automatically via physics without operator action or powered systems. Negative temperature coefficient: hotter = less reactive = self-limiting.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Shadow Shielding</div><div class="glossary-definition"><strong>Directional Radiation Protection</strong> - Shield positioned between reactor and payload/crew. Doesn't surround entire reactor - reduces mass. Uses geometry and distance for protection.</div></div>
+                        <div class="glossary-item" data-category="nuclear"><div class="glossary-term">Containment</div><div class="glossary-definition"><strong>Radioactive Material Barrier</strong> - Multiple barriers preventing release: fuel form, cladding, vessel, structure. TRISO provides containment at particle level. No release even in accidents.</div></div>
+                    </div>
+                </div>
+
+                <!-- ========== SPACE/PROPULSION TERMS ========== -->
+                <div class="card" id="glossary-space">
+                    <h2>&#127759; Space & Propulsion Terms</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Space mission, propulsion, and power conversion terminology for nuclear applications.</p>
+                    <div class="glossary-grid">
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">NTP</div><div class="glossary-definition"><strong>Nuclear Thermal Propulsion</strong> - Reactor heats propellant (hydrogen) directly for thrust. ~900s Isp (2× chemical). High thrust + high efficiency. DRACO was demonstrator (cancelled).</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">NEP</div><div class="glossary-definition"><strong>Nuclear Electric Propulsion</strong> - Reactor generates electricity for ion/plasma thrusters. Very high Isp (3000-5000s) but low thrust. Best for long-duration cargo missions.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Bimodal NTP</div><div class="glossary-definition"><strong>Dual-Mode Nuclear Propulsion</strong> - Single reactor provides both NTP thrust and NEP electrical power. Thrust for fast transits, electricity for coast phase. Maximizes capability per mass.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">RTG</div><div class="glossary-definition"><strong>Radioisotope Thermoelectric Generator</strong> - Uses Pu-238 decay heat with thermocouples for electricity. Low power (100-300 We) but extremely reliable. Voyager, Cassini, Mars rovers. Not a reactor.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">RHU</div><div class="glossary-definition"><strong>Radioisotope Heater Unit</strong> - Small Pu-238 device providing heat only (no electricity). Keeps electronics warm in cold environments. 1 watt thermal each. Used throughout spacecraft.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">MMRTG</div><div class="glossary-definition"><strong>Multi-Mission RTG</strong> - Current US RTG design. ~110 We at beginning of life. Used on Curiosity, Perseverance, Dragonfly. Pu-238 supply is limited.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Isp</div><div class="glossary-definition"><strong>Specific Impulse</strong> - Propulsion efficiency measure (seconds). Higher = more efficient. Chemical: 450s. NTP: 900s. NEP: 3000-5000s. Ion: 3000+s.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Delta-V</div><div class="glossary-definition"><strong>Velocity Change Budget</strong> - Total velocity change needed for a mission. Determines propellant requirements. Higher Isp = less propellant for same delta-v.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Stirling Conversion</div><div class="glossary-definition"><strong>Piston Heat Engine</strong> - Closed-cycle engine using gas expansion/compression. 25-30% efficiency. Used in KRUSTY. Good for 1-10 kWe range. Moving parts = reliability concern.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Brayton Cycle</div><div class="glossary-definition"><strong>Gas Turbine Conversion</strong> - Closed-loop turbine using gas (He, Xe-He mix). 20-25% efficiency. Scalable to MW range. NASA FSP baseline. Higher power than Stirling.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Thermoelectric</div><div class="glossary-definition"><strong>Direct Heat-to-Electricity</strong> - Solid-state conversion via Seebeck effect. No moving parts, extremely reliable. Low efficiency (5-7%). Used in RTGs. Good for low power, long life.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Thermionic</div><div class="glossary-definition"><strong>Hot Electron Emission</strong> - Electrons "boil off" hot surface, collected at cooler electrode. 10-15% efficiency. Soviet TOPAZ used this. Higher efficiency than thermoelectric.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Radiator</div><div class="glossary-definition"><strong>Waste Heat Rejection</strong> - Large panels radiating waste heat to space via Stefan-Boltzmann law. Major mass driver - 100 kWe may need 50+ m² radiator area. Limits power density.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">ISRU</div><div class="glossary-definition"><strong>In-Situ Resource Utilization</strong> - Using local resources (lunar ice, Martian CO2) instead of bringing from Earth. Requires significant power - nuclear enables ISRU at scale.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Sabatier Reaction</div><div class="glossary-definition"><strong>Mars Fuel Production</strong> - CO2 + H2 → CH4 + H2O. Makes methane from Martian atmosphere for Starship refueling. Requires ~100 kW scale power. Nuclear ideal for this.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Rodriguez Well</div><div class="glossary-definition"><strong>Ice Melting Technique</strong> - Use heat to melt permafrost, creating underground water reservoir. Proven at Camp Century (1958) with nuclear. Applicable to Moon/Mars poles.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Cislunar</div><div class="glossary-definition"><strong>Earth-Moon Space</strong> - Region between Earth and Moon including lunar orbit. Strategic domain for military and commercial. Nuclear power enables sustained cislunar operations.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">LEO</div><div class="glossary-definition"><strong>Low Earth Orbit</strong> - 200-2000 km altitude. Most satellites operate here. ISS is at ~400 km. Nuclear generally not needed for LEO - solar works fine.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">GEO</div><div class="glossary-definition"><strong>Geosynchronous/Geostationary Orbit</strong> - 35,786 km altitude. Satellites appear stationary over Earth. Communications, weather. Solar works but nuclear enables higher power.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">HEO</div><div class="glossary-definition"><strong>Highly Elliptical Orbit</strong> - Elongated orbit, often for northern hemisphere coverage. Long dwell time at apogee. Nuclear useful for extended eclipse tolerance.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">Lunar Night</div><div class="glossary-definition"><strong>14.5 Earth Days of Darkness</strong> - No sunlight for power or warmth. Solar arrays useless, batteries insufficient. Nuclear essential for permanent lunar bases.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">PSR</div><div class="glossary-definition"><strong>Permanently Shadowed Region</strong> - Crater areas near lunar poles with zero sunlight ever. Contain water ice. Nuclear required - solar impossible. Prime mining targets.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">NRHO</div><div class="glossary-definition"><strong>Near Rectilinear Halo Orbit</strong> - Stable orbit around Moon for Gateway station. Highly elliptical, passes over lunar poles. Enables surface access with minimal delta-v.</div></div>
+                        <div class="glossary-item" data-category="space"><div class="glossary-term">L1/L2 Lagrange</div><div class="glossary-definition"><strong>Gravitational Balance Points</strong> - Locations where gravitational forces balance. Earth-Moon L2 behind Moon. Sun-Earth L2 used by JWST. Strategic for cislunar operations.</div></div>
+                    </div>
+                </div>
+
+                <!-- ========== POLICY & BUDGET TERMS ========== -->
+                <div class="card" id="glossary-policy">
+                    <h2>&#128176; Policy, Budget & Regulatory Terms</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Government policy, budget process, and regulatory terminology affecting space nuclear programs.</p>
+                    <div class="glossary-grid">
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">NSPM-20</div><div class="glossary-definition"><strong>National Security Presidential Memorandum 20</strong> - 2019 policy establishing tiered launch approval framework for space nuclear. Created INSRB. Streamlined process for lower-risk systems.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">INSRB</div><div class="glossary-definition"><strong>Interagency Nuclear Safety Review Board</strong> - Standing board reviewing space nuclear launch safety. Replaced ad-hoc INSRP panels. Coordinates DOE, NASA, DoD, EPA safety reviews.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">INSRP</div><div class="glossary-definition"><strong>Interagency Nuclear Safety Review Panel</strong> - Historical ad-hoc panels for mission-specific safety review. Replaced by permanent INSRB under NSPM-20. Each RTG mission had its own INSRP.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">Launch Approval</div><div class="glossary-definition"><strong>Authorization to Launch Nuclear</strong> - Required for all space nuclear systems. Three tiers under NSPM-20: agency head, interagency, or Presidential depending on risk level.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">SAR</div><div class="glossary-definition"><strong>Safety Analysis Report</strong> - Comprehensive document analyzing all accident scenarios and consequences. Required for launch approval. Demonstrates acceptable risk levels.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">NEPA</div><div class="glossary-definition"><strong>National Environmental Policy Act</strong> - Requires environmental impact assessment for federal actions. Space nuclear launches need Environmental Impact Statements or Environmental Assessments.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">EIS</div><div class="glossary-definition"><strong>Environmental Impact Statement</strong> - Detailed environmental analysis required for major federal actions. Space nuclear typically requires EIS due to potential radiological impact.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">POM</div><div class="glossary-definition"><strong>Program Objective Memorandum</strong> - DoD's 5-year budget planning document. Submitted annually. Key indicator of program priorities. Space nuclear programs need POM inclusion for stability.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">PPBE</div><div class="glossary-definition"><strong>Planning, Programming, Budgeting, Execution</strong> - DoD budget process cycle. Programs compete for resources through this process. Understanding PPBE critical for BD timing.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">NDAA</div><div class="glossary-definition"><strong>National Defense Authorization Act</strong> - Annual law authorizing DoD programs and spending levels. Often includes space nuclear policy provisions. Must be enacted for programs to proceed.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">Appropriations</div><div class="glossary-definition"><strong>Actual Funding Allocation</strong> - Separate from authorization. Congress must appropriate funds for programs to receive money. Authorization without appropriation = no funding.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">CR</div><div class="glossary-definition"><strong>Continuing Resolution</strong> - Temporary funding when appropriations not passed. Maintains previous year levels. Prevents new program starts. Common budget uncertainty.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">RDT&E</div><div class="glossary-definition"><strong>Research, Development, Test & Evaluation</strong> - DoD budget category for R&D. Most space nuclear funding here. Separate from procurement (buying production units).</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">FFRDC</div><div class="glossary-definition"><strong>Federally Funded Research and Development Center</strong> - Government-sponsored R&D organizations. National labs (INL, ORNL, etc.) are FFRDCs. Special contracting rules apply.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">GOCO</div><div class="glossary-definition"><strong>Government-Owned, Contractor-Operated</strong> - Facility ownership model. National labs are GOCO - government owns, contractors (Battelle, UT-Battelle, etc.) operate.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">ITAR</div><div class="glossary-definition"><strong>International Traffic in Arms Regulations</strong> - Export controls on defense articles including space technology. Nuclear space systems typically ITAR-controlled. Limits international collaboration.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">EAR</div><div class="glossary-definition"><strong>Export Administration Regulations</strong> - Commerce Dept export controls for dual-use items. Some nuclear technology under EAR. Less restrictive than ITAR but still requires licenses.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">Part 810</div><div class="glossary-definition"><strong>DOE Nuclear Export Controls</strong> - 10 CFR 810 controls export of nuclear technology and assistance. Specific authorization required for sharing reactor technology internationally.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">QA/QC</div><div class="glossary-definition"><strong>Quality Assurance/Quality Control</strong> - Rigorous processes required for nuclear components. NQA-1 standard for nuclear. Adds cost but ensures reliability and safety.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">NQA-1</div><div class="glossary-definition"><strong>Nuclear Quality Assurance Standard</strong> - ASME standard for nuclear facility quality programs. Required for DOE nuclear work. Establishes documentation, testing, and traceability requirements.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">CMMC</div><div class="glossary-definition"><strong>Cybersecurity Maturity Model Certification</strong> - DoD cybersecurity requirement for contractors. Level 2+ typically required for space nuclear work. Must be certified before contract award.</div></div>
+                        <div class="glossary-item" data-category="policy"><div class="glossary-term">Space Policy Directive</div><div class="glossary-definition"><strong>Presidential Space Policy</strong> - Executive directives on space priorities. SPD-6 (2020) established space nuclear power/propulsion as national priority. Key policy foundation.</div></div>
+                    </div>
+                </div>
+
+                <!-- ========== QUICK REFERENCE ========== -->
+                <div class="card">
+                    <h2>&#128203; Quick Reference Tables</h2>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem; margin-top: 1.5rem;">Power Unit Conversions</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead><tr><th>Unit</th><th>Value</th><th>Typical Use</th></tr></thead>
+                            <tbody>
+                                <tr><td>1 We</td><td>1 watt electric</td><td>RTG output</td></tr>
+                                <tr><td>1 kWe</td><td>1,000 watts electric</td><td>Small space reactor</td></tr>
+                                <tr><td>1 MWe</td><td>1,000,000 watts electric</td><td>Radiant Kaleidos</td></tr>
+                                <tr><td>1 kWt</td><td>1,000 watts thermal</td><td>Reactor heat output</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem; margin-top: 1.5rem;">SBIR Phase Funding Limits</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead><tr><th>Phase</th><th>Purpose</th><th>Typical Funding</th><th>Duration</th></tr></thead>
+                            <tbody>
+                                <tr><td>Phase I</td><td>Feasibility</td><td>$50K - $275K</td><td>6 months</td></tr>
+                                <tr><td>Phase II</td><td>Development</td><td>$750K - $1.5M</td><td>24 months</td></tr>
+                                <tr><td>Phase III</td><td>Commercialization</td><td>Unlimited</td><td>Unlimited</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem; margin-top: 1.5rem;">TRL Scale Summary</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead><tr><th>TRL</th><th>Description</th><th>Stage</th></tr></thead>
+                            <tbody>
+                                <tr><td>1-2</td><td>Basic principles, concept</td><td>Research</td></tr>
+                                <tr><td>3-4</td><td>Proof of concept, lab validation</td><td>Development</td></tr>
+                                <tr><td>5-6</td><td>Component/system validation in relevant environment</td><td>Demonstration</td></tr>
+                                <tr><td>7-8</td><td>System prototype demo in operational environment</td><td>Qualification</td></tr>
+                                <tr><td>9</td><td>Actual system proven in mission</td><td>Deployment</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem; margin-top: 1.5rem;">Uranium Enrichment Levels</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead><tr><th>Type</th><th>U-235 %</th><th>Use</th></tr></thead>
+                            <tbody>
+                                <tr><td>Natural</td><td>0.7%</td><td>Heavy water reactors (CANDU)</td></tr>
+                                <tr><td>LEU</td><td>3-5%</td><td>Commercial power reactors</td></tr>
+                                <tr><td>HALEU</td><td>5-20%</td><td>Advanced reactors, space nuclear</td></tr>
+                                <tr><td>HEU</td><td>>20%</td><td>Naval reactors, research (weapons: 90%+)</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -8853,6 +9179,55 @@
                 el.innerHTML = '';
             }
         }
+
+        // Glossary Search and Filter
+        let currentGlossaryCategory = 'all';
+
+        function filterGlossary() {
+            const searchTerm = document.getElementById('glossary-search').value.toLowerCase();
+            const items = document.querySelectorAll('.glossary-item');
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const term = item.querySelector('.glossary-term').textContent.toLowerCase();
+                const definition = item.querySelector('.glossary-definition').textContent.toLowerCase();
+                const category = item.getAttribute('data-category');
+
+                const matchesSearch = term.includes(searchTerm) || definition.includes(searchTerm);
+                const matchesCategory = currentGlossaryCategory === 'all' || category === currentGlossaryCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('visible-terms').textContent = visibleCount === items.length ? 'All' : visibleCount;
+        }
+
+        function filterByCategory(category) {
+            currentGlossaryCategory = category;
+
+            // Update button states
+            document.querySelectorAll('.glossary-category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Re-filter with current search term
+            filterGlossary();
+        }
+
+        // Count total glossary terms on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const totalTerms = document.querySelectorAll('.glossary-item').length;
+            const totalTermsEl = document.getElementById('total-terms');
+            if (totalTermsEl) {
+                totalTermsEl.textContent = totalTerms;
+            }
+        });
 
         // Search
         const searchData = [

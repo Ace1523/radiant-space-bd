@@ -3,7 +3,7 @@
 ## Project Overview
 A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~636KB, ~9,000+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~680KB, ~9,500+ lines (self-contained HTML/CSS/JS)
 
 ## Project Files
 - **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
@@ -26,7 +26,7 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 6. **Programs & Timeline** - Verified current programs with sources (FSP, DOME, Pele, Janus, JETSON)
 7. **Radiant Nuclear** - Company information, master plan, **Why Radiant in Space origin story**, technology
 8. **Contract Deep Dive** - Federal contracting 101, vehicle comparison, SBIR guide, practical tips
-9. **Glossary** - Terms, acronyms, and definitions
+9. **Glossary** - Comprehensive 160+ term searchable glossary with category filtering
 10. **Policy** - Regulatory framework (placeholder for expansion)
 
 ### Key Features
@@ -161,6 +161,18 @@ Verified program details with sources:
 - DARPA programs (DRACO cancelled, Rads to Watts active)
 - Radiant milestones
 - Comprehensive 2026-2035 timeline
+
+## Glossary Tab Content
+Comprehensive 160+ term searchable glossary organized by category:
+- **Search functionality** - Real-time filtering across all terms and definitions
+- **Category filtering** - Filter by: Contracting, Agencies, Programs, Nuclear Tech, Space/Propulsion, Policy/Budget
+- **Contract & Acquisition Terms** (35+ terms) - RFI, RFP, BAA, OTA, CSO, FAR, IDIQ, SBIR/STTR, TRL, MRL, SOW, PWS, etc.
+- **Agency & Organization Acronyms** (28+ terms) - NASA, DOE, DARPA, USSF, NRO, DIU, national labs, NASA centers
+- **Program Names & Initiatives** (24+ terms) - FSP, DOME, Pele, Janus, JETSON, DRACO, Artemis, ILRS, historical programs
+- **Nuclear Technology Terms** (30+ terms) - HALEU, TRISO, criticality, moderator, coolant, kWe/kWt, passive safety
+- **Space & Propulsion Terms** (28+ terms) - NTP, NEP, RTG, Stirling, Brayton, ISRU, cislunar, Lagrange points
+- **Policy, Budget & Regulatory Terms** (22+ terms) - NSPM-20, INSRB, POM, NDAA, ITAR, NQA-1
+- **Quick Reference Tables** - Power conversions, SBIR phases, TRL scale, uranium enrichment levels
 
 ## Technical Details
 
