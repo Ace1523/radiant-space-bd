@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Nuclear Contracts & Technology Hub</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --accent-secondary: #ffd700;
+            --text: #ccd6f6;
+            --text-light: #8892b0;
+            --danger: #ff6b6b;
+            --success: #00d68f;
+            --warning: #ffaa00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo h1 {
+            font-size: 1.3rem;
+            color: var(--text);
+        }
+
+        .logo h1 span {
+            color: var(--accent);
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 25px;
+            background: rgba(10, 25, 47, 0.8);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: var(--secondary);
+            padding: 0 2rem;
+            margin-top: 70px;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .nav-tabs-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .nav-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .nav-tab:hover {
+            color: var(--accent);
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        .nav-tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .nav-tab.priority {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 107, 107, 0.2) 100%);
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+
+        .nav-tab.priority.active {
+            border-bottom-color: var(--accent-secondary);
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-top: 120px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--secondary);
+            padding: 1.5rem;
+            position: fixed;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            border-right: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .sidebar h3 {
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .quick-links {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .quick-links a:hover {
+            color: var(--accent);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .quick-links .badge {
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+
+        .contact-card {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .contact-card h4 {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 2rem;
+            min-height: calc(100vh - 120px);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: var(--text);
+            font-size: 1.3rem;
+        }
+
+        .card h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Opportunity Cards */
+        .opportunity-card {
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.05) 0%, rgba(10, 25, 47, 0.5) 100%);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .opportunity-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .opportunity-card.hot {
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-title {
+            color: var(--text);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .opportunity-agency {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .opportunity-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .opportunity-detail {
+            text-align: center;
+        }
+
+        .opportunity-detail label {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .opportunity-detail span {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #4dffc8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .btn-warning {
+            background: var(--accent-secondary);
+            color: var(--primary);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        th {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            color: var(--text-light);
+        }
+
+        td a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Phase Cards */
+        .phase-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary));
+        }
+
+        .phase-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(100, 255, 218, 0.1);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+        }
+
+        .phase-title {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Glossary */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            background: rgba(100, 255, 218, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .glossary-term {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .glossary-definition {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(100, 255, 218, 0.05);
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--accent);
+            border-radius: 5px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .checklist-check.checked {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .checklist-content h4 {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .checklist-content p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, var(--secondary) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Alert Box */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid rgba(255, 170, 0, 0.3);
+        }
+
+        .alert-success {
+            background: rgba(0, 214, 143, 0.1);
+            border: 1px solid rgba(0, 214, 143, 0.3);
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+        }
+
+        .alert-content h4 {
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .alert-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            background: var(--secondary);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        .accordion-header h4 {
+            color: var(--text);
+        }
+
+        .accordion-icon {
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+        }
+
+        .accordion-body {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .header-content { flex-direction: column; gap: 1rem; }
+            .search-container { width: 100%; }
+            .nav-tab { padding: 0.8rem 1rem; font-size: 0.8rem; }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar, .nav-tabs, header { display: none; }
+            .content { margin-left: 0; padding-top: 0; }
+            .main-container { padding-top: 0; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(100, 255, 218, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">&#9762;</div>
+                <h1>Space Nuclear <span>Contracts Hub</span></h1>
+            </div>
+            <div class="search-container">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="globalSearch" placeholder="Search contracts, agencies, terms...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="nav-tabs-inner">
+            <div class="nav-tab priority active" data-tab="contracts">&#128293; Contract Opportunities</div>
+            <div class="nav-tab" data-tab="agencies">Agencies</div>
+            <div class="nav-tab" data-tab="strategy">Strategy & Playbook</div>
+            <div class="nav-tab" data-tab="technical">Technical Overview</div>
+            <div class="nav-tab" data-tab="history">Historical Context</div>
+            <div class="nav-tab" data-tab="programs">Current Programs</div>
+            <div class="nav-tab" data-tab="radiant">Radiant Nuclear</div>
+            <div class="nav-tab" data-tab="glossary">Glossary</div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>&#128279; Quick Contract Portals</h3>
+            <ul class="quick-links">
+                <li><a href="https://sam.gov/" target="_blank">&#127919; SAM.gov <span class="badge">Primary</span></a></li>
+                <li><a href="https://www.sbir.gov/topics" target="_blank">&#128640; SBIR.gov Topics</a></li>
+                <li><a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank">&#129302; DARPA Opportunities</a></li>
+                <li><a href="https://spacewerx.us/ventures/sbir-sttr/" target="_blank">&#127776; SpaceWERX Portal</a></li>
+                <li><a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank">&#9881; DIU Solicitations</a></li>
+                <li><a href="https://www.nasa.gov/glenn/fsps/" target="_blank">&#127761; NASA FSP Program</a></li>
+                <li><a href="https://inl.gov/fsp/" target="_blank">&#9889; INL FSP Portal</a></li>
+                <li><a href="https://www.defensesbirsttr.mil/SBIR-STTR/Opportunities/" target="_blank">&#128737; DoD SBIR/STTR</a></li>
+            </ul>
+
+            <h3>&#128222; Key Contacts</h3>
+            <div class="contact-card">
+                <h4>NASA FSP Program</h4>
+                <p><strong>Matthew Evans</strong></p>
+                <p>Agreements Officer</p>
+                <a href="mailto:Matthew.T.Evans@nasa.gov">Matthew.T.Evans@nasa.gov</a>
+            </div>
+            <div class="contact-card">
+                <h4>NASA FSP Program</h4>
+                <p><strong>Linda Nabors</strong></p>
+                <p>Agreements Officer</p>
+                <a href="mailto:Linda.M.Nabors@nasa.gov">Linda.M.Nabors@nasa.gov</a>
+            </div>
+
+            <h3>&#128203; Downloads</h3>
+            <ul class="quick-links">
+                <li><a href="#" onclick="downloadChecklist()">&#128196; Alert Setup Checklist</a></li>
+                <li><a href="#" onclick="downloadRFITemplate()">&#128196; RFI Response Template</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <!-- CONTRACT OPPORTUNITIES TAB -->
+            <div id="contracts" class="tab-content active">
+                <div class="alert alert-warning">
+                    <div class="alert-icon">&#9888;</div>
+                    <div class="alert-content">
+                        <h4>Active Opportunity: NASA Fission Surface Power RFI</h4>
+                        <p>NASA is actively seeking industry input on lunar fission power systems. This shapes future solicitations.</p>
+                        <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-warning" style="margin-top: 0.5rem;">View on SAM.gov &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">$150K-$2M</div>
+                        <div class="stat-label">Phase I SBIR Awards</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$5-25M</div>
+                        <div class="stat-label">NASA/DOE Subsystem</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$20-100M+</div>
+                        <div class="stat-label">Demo Programs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2030</div>
+                        <div class="stat-label">Lunar Reactor Goal</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#127919; Active & Upcoming Opportunities</h2>
+                    <p>Federal contract opportunities for space nuclear power systems and related technologies.</p>
+                </div>
+
+                <!-- NASA Opportunities -->
+                <div class="opportunity-card hot">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">Fission Surface Power System - RFI</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Lunar/planetary fission surface power system industry feedback</p>
+                        </div>
+                        <span class="opportunity-agency">NASA</span>
+                    </div>
+                    <p style="color: var(--text-light);">NASA seeking industry input to shape future contracts for 40-100+ kWe nuclear reactors for the Moon. Positions companies for follow-on awards.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>RFI</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Status</label>
+                            <span style="color: var(--success);">OPEN</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Target</label>
+                            <span>2030 Deployment</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-primary">View Opportunity &#8594;</a>
+                        <a href="https://www.nasa.gov/glenn/fsps/" target="_blank" class="btn btn-secondary">Program Page &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DARPA Opportunities -->
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">On-Orbit Nuclear Power Concepts - RFI</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Tactical Technology Office space nuclear power systems</p>
+                        </div>
+                        <span class="opportunity-agency">DARPA TTO</span>
+                    </div>
+                    <p style="color: var(--text-light);">DARPA TTO seeking technologies for producible, cost-effective nuclear reactors for on-orbit satellite power. Joint workshop with DOE planned.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Type</label>
+                            <span>RFI / Workshop</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Focus</label>
+                            <span>Producible Reactors</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Partners</label>
+                            <span>DOE</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://sam.gov/opp/4bc82ea5fe8941dba8f74364147d5631/view" target="_blank" class="btn btn-primary">View RFI &#8594;</a>
+                        <a href="https://sam.gov/opp/109aceb76198452b91f8ecce72b4890b/view" target="_blank" class="btn btn-secondary">TTO BAA &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- SBIR/STTR -->
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">DoD SBIR/STTR Program</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Monthly releases across Army, Navy, Air Force, DARPA</p>
+                        </div>
+                        <span class="opportunity-agency">DoD-Wide</span>
+                    </div>
+                    <p style="color: var(--text-light);">New topics released first Wednesday monthly. Search for nuclear, space power, fission, reactor, HALEU, energy conversion topics.</p>
+                    <div class="opportunity-details">
+                        <div class="opportunity-detail">
+                            <label>Phase I</label>
+                            <span>$150K-$250K</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Phase II</label>
+                            <span>$1-2M+</span>
+                        </div>
+                        <div class="opportunity-detail">
+                            <label>Cycle</label>
+                            <span>Monthly Releases</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.sbir.gov/topics" target="_blank" class="btn btn-primary">Search Topics &#8594;</a>
+                        <a href="https://www.defensesbirsttr.mil/SBIR-STTR/Opportunities/" target="_blank" class="btn btn-secondary">DoD Portal &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- SpaceWERX -->
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">SpaceWERX SBIR/STTR & Challenges</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Space Force innovation arm - rapid prototyping focus</p>
+                        </div>
+                        <span class="opportunity-agency">Space Force</span>
+                    </div>
+                    <p style="color: var(--text-light);">OTA opportunities for advanced power, energy conversion, and cislunar capabilities. Startup-friendly fast-track process.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://spacewerx.us/ventures/sbir-sttr/" target="_blank" class="btn btn-primary">SpaceWERX Portal &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DIU -->
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <div>
+                            <div class="opportunity-title">Commercial Solutions Openings (CSO)</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">Fast OTA awards, often 60-90 days to contract</p>
+                        </div>
+                        <span class="opportunity-agency">DIU</span>
+                    </div>
+                    <p style="color: var(--text-light);">Defense Innovation Unit runs rapid commercial acquisition. Excellent for VC-backed companies with near-commercial technology.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank" class="btn btn-primary">Open Solicitations &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- Contract Types Section -->
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>&#128218; Contract Types Explained</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Full Name</th>
+                                    <th>Purpose</th>
+                                    <th>Typical Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>RFI</strong></td>
+                                    <td>Request for Information</td>
+                                    <td>Market research, shapes future RFPs. No contract yet.</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>BAA</strong></td>
+                                    <td>Broad Agency Announcement</td>
+                                    <td>R&D funding in loosely defined areas. White paper first.</td>
+                                    <td>$100K - $50M</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>OTA</strong></td>
+                                    <td>Other Transaction Authority</td>
+                                    <td>Fast prototyping without FAR compliance. Startup-friendly.</td>
+                                    <td>$500K - $100M</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CSO</strong></td>
+                                    <td>Commercial Solutions Opening</td>
+                                    <td>DIU's OTA variant. Near-commercial tech acquisition.</td>
+                                    <td>$1M - $20M</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FAR RFP</strong></td>
+                                    <td>Federal Acquisition Regulation RFP</td>
+                                    <td>Traditional full procurement. Heavy compliance.</td>
+                                    <td>$10M - $1B+</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>IDIQ</strong></td>
+                                    <td>Indefinite Delivery/Quantity</td>
+                                    <td>Pre-qualified vendor pool, task orders issued later.</td>
+                                    <td>Varies by order</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SBIR/STTR</strong></td>
+                                    <td>Small Business Innovation Research</td>
+                                    <td>Small business R&D funding, 3-phase ladder.</td>
+                                    <td>$150K - $2M</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Alert Setup Guide -->
+                <div class="card">
+                    <h2>&#128276; How to Set Up Contract Alerts</h2>
+                    <ul class="checklist" id="alertChecklist">
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>1. Register on SAM.gov</h4>
+                                <p>Create account at <a href="https://sam.gov/" target="_blank">sam.gov</a>. Get your UEI and CAGE code. Required for all federal contracts.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>2. Set Up SAM.gov Saved Searches</h4>
+                                <p>Keywords: "space nuclear", "fission surface power", "nuclear thermal", "reactor", "HALEU", "cislunar power". Enable email notifications.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>3. Register on SBIR.gov</h4>
+                                <p>Create account at <a href="https://www.sbir.gov/" target="_blank">sbir.gov</a>. Subscribe to topic areas: nuclear, space technology, power systems.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>4. Monitor DARPA Weekly</h4>
+                                <p>No automated alerts - manually check <a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank">DARPA opportunities</a> every Monday.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>5. Follow NASA FSP Program</h4>
+                                <p>Bookmark <a href="https://www.nasa.gov/glenn/fsps/" target="_blank">NASA Glenn FSP page</a>. Industry days announced before SAM.gov postings.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                            <div class="checklist-content">
+                                <h4>6. Register for DSIP</h4>
+                                <p>Defense SBIR/STTR Innovation Portal at <a href="https://www.dodsbirsttr.mil/" target="_blank">dodsbirsttr.mil</a> for DoD proposal submission.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AGENCIES TAB -->
+            <div id="agencies" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#127970; Agency-Specific Guidance</h2>
+
+                <!-- NASA -->
+                <div class="card">
+                    <h2>&#127761; NASA - Fission Surface Power Program</h2>
+                    <p>NASA's primary vehicle for lunar nuclear power. Partners with DOE on hardware development.</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem;">
+                        <div>
+                            <h3>Program Overview</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Target: 40-100+ kWe systems for lunar surface</li>
+                                <li>Timeline: 2030 deployment goal</li>
+                                <li>Partnership: NASA + DOE + Industry</li>
+                                <li>Phase 1 studies: ~$5M each (2022-2025)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Contacts</h3>
+                            <div class="contact-card">
+                                <p><strong>Matthew Evans</strong> - Agreements Officer</p>
+                                <a href="mailto:Matthew.T.Evans@nasa.gov">Matthew.T.Evans@nasa.gov</a>
+                            </div>
+                            <div class="contact-card">
+                                <p><strong>Linda Nabors</strong> - Agreements Officer</p>
+                                <a href="mailto:Linda.M.Nabors@nasa.gov">Linda.M.Nabors@nasa.gov</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.nasa.gov/glenn/fsps/" target="_blank" class="btn btn-primary">FSP Program Page &#8594;</a>
+                        <a href="https://sam.gov/opp/ff7181661cb94e6fa0fb14ca89013730/view" target="_blank" class="btn btn-secondary">Current RFI &#8594;</a>
+                        <a href="https://www.nasa.gov/sbir_sttr/" target="_blank" class="btn btn-secondary">NASA SBIR &#8594;</a>
+                        <a href="https://nspires.nasaprs.com/external/" target="_blank" class="btn btn-secondary">NSPIRES &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DARPA -->
+                <div class="card">
+                    <h2>&#129302; DARPA - Breakthrough R&D</h2>
+                    <p>High-risk, high-reward R&D. Funds breakthrough concepts via BAAs. Startup-friendly evaluation.</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem;">
+                        <div>
+                            <h3>Relevant Offices</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>TTO</strong> - Tactical Technology Office: On-orbit nuclear power</li>
+                                <li><strong>DSO</strong> - Defense Sciences Office: Advanced materials</li>
+                                <li>BAAs open continuously with rolling submissions</li>
+                                <li>White paper (5-8 pages) before full proposal</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Proposal Process</h3>
+                            <ol style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Submit short white paper (5-8 pages)</li>
+                                <li>If invited: full technical proposal (30-60 pages)</li>
+                                <li>Cost volume and schedule</li>
+                                <li>Phased awards: Phase 1/2/3</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.darpa.mil/work-with-us/opportunities" target="_blank" class="btn btn-primary">All Opportunities &#8594;</a>
+                        <a href="https://sam.gov/opp/4bc82ea5fe8941dba8f74364147d5631/view" target="_blank" class="btn btn-secondary">TTO Nuclear RFI &#8594;</a>
+                        <a href="https://sam.gov/opp/109aceb76198452b91f8ecce72b4890b/view" target="_blank" class="btn btn-secondary">TTO BAA &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- Space Force / SpaceWERX -->
+                <div class="card">
+                    <h2>&#127776; Space Force / SpaceWERX</h2>
+                    <p>Rapid prototyping and innovation programs. OTAs and SBIR/STTR for cislunar capabilities.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h3>SpaceWERX Programs</h3>
+                        <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                            <li><strong>SBIR/STTR</strong> - Small business innovation funding</li>
+                            <li><strong>Orbital Prime</strong> - Space logistics and servicing</li>
+                            <li><strong>Challenges</strong> - Rapid innovation competitions</li>
+                            <li>OTA agreements for fast prototyping</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://spacewerx.us/ventures/sbir-sttr/" target="_blank" class="btn btn-primary">SpaceWERX SBIR &#8594;</a>
+                        <a href="https://spacewerx.us/" target="_blank" class="btn btn-secondary">SpaceWERX Home &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DIU -->
+                <div class="card">
+                    <h2>&#9881; Defense Innovation Unit (DIU)</h2>
+                    <p>Fast commercial technology acquisition. Awards in 60-90 days. VC-backed startups welcome.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h3>DIU Process</h3>
+                        <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                            <li>Submit 5-10 page solution brief</li>
+                            <li>Pitch-deck style PDF format</li>
+                            <li>Cost estimate and company traction</li>
+                            <li>OT authority enables rapid contracting</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.diu.mil/work-with-us/open-solicitations" target="_blank" class="btn btn-primary">Open Solicitations &#8594;</a>
+                        <a href="https://www.diu.mil/" target="_blank" class="btn btn-secondary">DIU Home &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- DOE -->
+                <div class="card">
+                    <h2>&#9889; Department of Energy / National Labs</h2>
+                    <p>Critical for anything involving actual reactor physics, fuel, or nuclear material testing.</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem;">
+                        <div>
+                            <h3>Key Labs</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Idaho National Lab (INL)</strong> - DOME facility, reactor testing</li>
+                                <li><strong>Oak Ridge (ORNL)</strong> - Fuel development</li>
+                                <li><strong>Los Alamos (LANL)</strong> - Weapons-derived tech</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Engagement Methods</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>CRADAs (Cooperative R&D Agreements)</li>
+                                <li>Work for Others agreements</li>
+                                <li>BAAs released first Wednesday monthly</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://inl.gov/fsp/" target="_blank" class="btn btn-primary">INL FSP Program &#8594;</a>
+                        <a href="https://www.energy.gov/" target="_blank" class="btn btn-secondary">DOE Main &#8594;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STRATEGY TAB -->
+            <div id="strategy" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#9813; Contract Strategy & BD Playbook</h2>
+
+                <!-- 5-Phase Roadmap -->
+                <div class="card">
+                    <h2>&#128200; The 5-Phase BD Roadmap</h2>
+                    <p>How space nuclear programs progress from concept to production procurement.</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem; gap: 1rem;">
+                        <div class="phase-card">
+                            <div class="phase-number">0</div>
+                            <div class="phase-title">Market Creation & Mission Shaping</div>
+                            <div class="phase-description">Before programs exist. Create demand, define missions, influence requirements.</div>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Activities:</strong> White papers, lunar-night analyses, industry conferences, prime briefings</p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Vehicles:</strong> Study contracts, SBIR Phase I, Concept BAAs</p>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-number">1</div>
+                            <div class="phase-title">Concept & Risk Reduction</div>
+                            <div class="phase-description">First technical money. Show space-adaptable designs work on paper and in labs.</div>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Activities:</strong> Space-variant core designs, thermal-vacuum modeling, autonomy concepts</p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Vehicles:</strong> OTA prototypes, SBIR Phase II, BAAs</p>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-number">2</div>
+                            <div class="phase-title">Integrated Ground Prototype</div>
+                            <div class="phase-description">Full nuclear system on Earth. Run complete power system in test facilities.</div>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Activities:</strong> Reactor hardware, control systems, safety packages, prime teaming</p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Vehicles:</strong> Large OTAs, Prototype BAAs ($5-25M)</p>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-number">3</div>
+                            <div class="phase-title">Flight Demonstration Mission</div>
+                            <div class="phase-description">First real deployment in space. Launch and operate reactor in orbit or on surface.</div>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Activities:</strong> Flight core delivery, fuel coordination, nuclear safety inputs</p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Vehicles:</strong> Hybrid OTA to FAR demo ($20-100M+)</p>
+                        </div>
+
+                        <div class="phase-card" style="grid-column: span 2;">
+                            <div class="phase-number">4</div>
+                            <div class="phase-title">Operational Procurement</div>
+                            <div class="phase-description">Infrastructure, not experiments. Buy fleets and sustain for decades. Multi-billion dollar programs.</div>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Activities:</strong> Scale factories, secure HALEU supply, classified facilities, lifecycle ops</p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;"><strong>Vehicles:</strong> FAR-based production contracts, IDIQ vehicles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Federal Wins Look Like -->
+                <div class="card">
+                    <h2>&#127942; What Federal Wins Look Like</h2>
+
+                    <div class="grid-3" style="margin-top: 1rem;">
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent-secondary);">Win #1: SBIR/Study</h3>
+                            <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$150K - $2M</p>
+                            <ul style="color: var(--text-light); font-size: 0.85rem; margin-left: 1rem; margin-top: 1rem;">
+                                <li>Reactor core architecture studies</li>
+                                <li>Heat-pipe cooled concepts</li>
+                                <li>Shielding mass optimization</li>
+                                <li>Autonomous startup/shutdown logic</li>
+                            </ul>
+                            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 1rem;"><strong>Result:</strong> Gets you into working groups, PM relationships, acquisition planning docs</p>
+                        </div>
+
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent-secondary);">Win #2: Subsystem Contract</h3>
+                            <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$5M - $25M</p>
+                            <ul style="color: var(--text-light); font-size: 0.85rem; margin-left: 1rem; margin-top: 1rem;">
+                                <li>Nuclear island design</li>
+                                <li>Fuel mockups and neutronics</li>
+                                <li>Thermal vacuum tests</li>
+                                <li>Shielding qualification</li>
+                            </ul>
+                            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 1rem;"><strong>Result:</strong> Ties to Artemis infrastructure, flight requirements, "program supplier" status</p>
+                        </div>
+
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent-secondary);">Win #3: Demo Program</h3>
+                            <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$20M - $100M+</p>
+                            <ul style="color: var(--text-light); font-size: 0.85rem; margin-left: 1rem; margin-top: 1rem;">
+                                <li>Integrated reactor prototype</li>
+                                <li>Autonomous operations</li>
+                                <li>Deployment robotics</li>
+                                <li>Long-life endurance tests</li>
+                            </ul>
+                            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 1rem;"><strong>Result:</strong> Bridge from R&D to Program of Record. Nine-figure follow-ons become plausible.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Agencies Evaluate -->
+                <div class="card">
+                    <h2>&#128269; What Agencies Actually Evaluate</h2>
+                    <p>Across DARPA, Space Force, NASA, and DOE, proposals rise or fall on:</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem;">
+                        <div>
+                            <h3>Technical Criteria</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Clear mission relevance</li>
+                                <li>Technical novelty plus realism</li>
+                                <li>Credible scaling path</li>
+                                <li>Safety and regulatory awareness</li>
+                                <li>Test infrastructure access</li>
+                                <li>Schedule discipline</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Nuclear-Specific Must-Haves</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>DOE lab access/partnerships</li>
+                                <li>Fuel pathway understanding</li>
+                                <li>Launch-safety literacy</li>
+                                <li>Export-control awareness</li>
+                                <li>Named nuclear engineers on team</li>
+                                <li>Non-nuclear prototype data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success" style="margin-top: 1.5rem;">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>The Winning Statement</h4>
+                            <p>"We've already built and tested a non-nuclear prototype and are partnered with a national lab." - This puts you in the top tier.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RFI Response Structure -->
+                <div class="card">
+                    <h2>&#128221; Model RFI Response Structure</h2>
+                    <p>When agencies ask "How would industry provide nuclear power in space?"</p>
+
+                    <div class="accordion-item active">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 1: Executive Summary</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: var(--text-light);">Propose a scalable space micro-reactor architecture derived from terrestrial systems, optimized for vacuum cooling, autonomous operations, and sub-critical launch safety. 1-2 paragraphs max.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 2: Mission Applications</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <ul style="color: var(--text-light);">
+                                    <li>Lunar surface: 40-250 kWe</li>
+                                    <li>Orbital platforms: 20-100 kWe</li>
+                                    <li>Mars habitats: 250 kWe+</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 3: Technical Approach</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <ul style="color: var(--text-light);">
+                                    <li>Moderated HALEU core</li>
+                                    <li>Heat-pipe cooling</li>
+                                    <li>Radiator panels</li>
+                                    <li>Directional shielding</li>
+                                    <li>Brayton/Stirling conversion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 4: Development Plan</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <ul style="color: var(--text-light);">
+                                    <li>Year 1: Design & modeling</li>
+                                    <li>Year 2: Sub-scale hardware</li>
+                                    <li>Year 3-4: Ground prototype</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 5: Safety & Launch</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <ul style="color: var(--text-light);">
+                                    <li>Sub-critical launch state</li>
+                                    <li>Impact survivability</li>
+                                    <li>Regulatory review process</li>
+                                    <li>Treaty compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h4>Section 6-8: Teaming, Cost ROM, Why Us</h4>
+                            <span class="accordion-icon">&#9660;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <ul style="color: var(--text-light);">
+                                    <li><strong>Teaming:</strong> Reactor OEM + prime integrator + national labs</li>
+                                    <li><strong>Cost ROM:</strong> Concept study $5-15M, Ground demo $75-200M</li>
+                                    <li><strong>Differentiators:</strong> Mobile-reactor experience, moderator IP, autonomy focus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECHNICAL TAB -->
+            <div id="technical" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#9881; Technical Overview: Space Nuclear Reactors</h2>
+
+                <div class="card">
+                    <h2>&#127757; Why Space Reactors Are Different</h2>
+                    <p>Space reactors must operate in brutally hostile conditions that Earth-based systems never face.</p>
+
+                    <div class="grid-2" style="margin-top: 1.5rem;">
+                        <div>
+                            <h3>Environmental Challenges</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Vacuum</strong> - No convective cooling possible</li>
+                                <li><strong>Microgravity</strong> - Affects fluid dynamics</li>
+                                <li><strong>Temperature swings</strong> - Lunar day/night: +260F to -280F</li>
+                                <li><strong>Radiation & micrometeoroids</strong> - Constant bombardment</li>
+                                <li><strong>Abrasive dust</strong> - Lunar regolith is sharp and clingy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Design Implications</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Heat rejection relies on <strong>radiators only</strong></li>
+                                <li>Materials must survive massive thermal cycling</li>
+                                <li>Moving parts minimized - passive systems dominate</li>
+                                <li><strong>Reliability beats efficiency</strong> in space</li>
+                                <li>Mass is existential - every kg costs ~$5K-50K to orbit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#128293; How Fission Power Works</h2>
+                    <p>Fission is achieved by bombarding uranium atoms with neutrons. The uranium absorbs the neutron, becomes unstable, and splits apart - releasing energy plus more neutrons that continue the chain reaction.</p>
+
+                    <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                        <h3>Power Control</h3>
+                        <p style="color: var(--text-light);">The amount of power is set by the number of neutrons in flight. Control this by:</p>
+                        <ul style="color: var(--text-light); margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Boron blades</strong> - Absorb neutrons when inserted (like Radiant's design)</li>
+                            <li><strong>Graphite reflectors</strong> - Bounce neutrons back into core</li>
+                            <li>Slide boron in front of graphite to capture neutrons and reduce power</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#128171; Cooling & Power Conversion</h2>
+
+                    <div class="grid-2" style="margin-top: 1rem;">
+                        <div>
+                            <h3>Cooling Systems</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Liquid-metal coolants</strong> - Sodium, NaK, lithium</li>
+                                <li><strong>Heat pipes</strong> - Embedded in core (passive)</li>
+                                <li><strong>Helium gas</strong> - Radiant's approach (can't become radioactive)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Power Conversion</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Stirling engines</strong> - Good efficiency, moving parts</li>
+                                <li><strong>Brayton turbines</strong> - High power density</li>
+                                <li><strong>Thermoelectrics</strong> - Lower efficiency but ultra-reliable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#128737; Shielding Strategy</h2>
+                    <p>You can't encase a space reactor in concrete. Mass constraints demand creative solutions:</p>
+
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-top: 1rem;">
+                        <li><strong>Directional shielding</strong> - Only shield between reactor and crew/electronics</li>
+                        <li><strong>Distance</strong> - Deploy on a boom or separate lander</li>
+                        <li><strong>Lightweight absorbers</strong> - Lithium hydride, borated polymers</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>&#9762; Fuel Technologies</h2>
+
+                    <div class="grid-2" style="margin-top: 1rem;">
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent);">HALEU</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">High-Assay Low-Enriched Uranium (5-20% U-235). Higher enrichment than commercial reactors but still below weapons-grade. Enables compact cores.</p>
+                        </div>
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent);">TRISO</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Tri-structural isotropic particles. Tiny fuel kernels with multiple protective ceramic layers. Will not melt down - inherently safe even at extreme temperatures.</p>
+                        </div>
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent);">Zirconium Hydride</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Radiant's innovation. Moderator material that lets you pack fission physics into shipping-container-scale systems. Enables highly compact core designs.</p>
+                        </div>
+                        <div style="background: rgba(100, 255, 218, 0.05); padding: 1.5rem; border-radius: 10px;">
+                            <h3 style="color: var(--accent);">Helium Coolant</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Cannot become radioactive in the reactor (unlike water or liquid metals). Simplifies safety case and reduces activation concerns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#129302; Autonomy Requirements</h2>
+                    <p>Space reactors operate with:</p>
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>No operators</li>
+                        <li>No spare parts</li>
+                        <li>No quick repairs</li>
+                    </ul>
+
+                    <p style="margin-top: 1rem;">They must:</p>
+                    <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                        <li>Self-start and self-regulate</li>
+                        <li>Detect faults autonomously</li>
+                        <li>Scram (emergency shutdown) without human intervention</li>
+                        <li>Reconfigure loads automatically</li>
+                        <li>Run for a decade+ untouched</li>
+                    </ul>
+
+                    <p style="color: var(--accent); margin-top: 1rem;"><strong>Think: Nuclear plant + spacecraft flight computer in one box.</strong></p>
+                </div>
+
+                <div class="card">
+                    <h2>&#128640; Launch & Deployment</h2>
+                    <p>Unique to space nuclear - political as much as technical:</p>
+
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Reactor must be <strong>sub-critical during launch</strong></li>
+                        <li>Survive vibration and abort scenarios</li>
+                        <li>Only activate after safe deployment</li>
+                        <li>Pass <strong>Presidential-level nuclear approval</strong></li>
+                        <li>Comply with UN treaties and international agreements</li>
+                    </ul>
+
+                    <div class="alert alert-warning" style="margin-top: 1rem;">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <p>Launch approval is the long pole in the tent. Start this process early - it can take years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORY TAB -->
+            <div id="history" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#128218; Historical Context: Space Nuclear Programs</h2>
+
+                <div class="card">
+                    <h2>&#127482;&#127480; SNAP-10A (USA, 1965)</h2>
+                    <p>The only U.S. fission reactor flown in space.</p>
+
+                    <div class="grid-2" style="margin-top: 1rem;">
+                        <div>
+                            <h3>Mission Details</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Purpose:</strong> Prove fission-electric power in orbit</li>
+                                <li><strong>Power:</strong> ~600 watts electric</li>
+                                <li><strong>Duration:</strong> 43 days of operation</li>
+                                <li><strong>Status:</strong> Still in orbit today</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Outcome</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Started successfully - demonstrated the concept works</li>
+                                <li>Shut down due to high-voltage failure in spacecraft (not reactor)</li>
+                                <li>Intended to run ~1 year</li>
+                                <li><strong>Verdict:</strong> Technical success, duration failure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#127479;&#127482; Soviet/Russian Space Reactors (1967-1988)</h2>
+                    <p>The real "workhorse" history - over 30 fission reactors flown.</p>
+
+                    <h3 style="margin-top: 1rem;">BES-5 "Buk" Reactors (RORSAT Program)</h3>
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Purpose:</strong> Power ocean surveillance radar satellites</li>
+                        <li><strong>Why nuclear:</strong> Solar couldn't power radar, especially on night side</li>
+                        <li><strong>Count:</strong> 32 satellites launched with nuclear sources</li>
+                        <li><strong>Lifetimes:</strong> 44-131 days operational</li>
+                    </ul>
+
+                    <h3>TOPAZ Thermionic Reactors</h3>
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Higher efficiency than thermoelectric systems</li>
+                        <li>Kosmos-1818: ~6 months operation</li>
+                        <li>Kosmos-1867: ~1 year operation</li>
+                    </ul>
+
+                    <div class="alert alert-warning" style="margin-top: 1rem;">
+                        <div class="alert-icon">&#9888;</div>
+                        <div class="alert-content">
+                            <h4>The Kosmos 954 Incident (1978)</h4>
+                            <p>Soviet RORSAT satellite lost control, failed to boost to disposal orbit. Reentered over Canada, spreading radioactive debris across ~124,000 km2. Canada billed USSR $6 million for cleanup. Drove international liability framework for space nuclear.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#128165; Key Problems From Historical Programs</h2>
+
+                    <div class="grid-2" style="margin-top: 1rem;">
+                        <div>
+                            <h3>Technical Challenges</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>Power conversion:</strong> Getting useful electricity from reactor heat</li>
+                                <li><strong>Heat rejection:</strong> Dumping waste heat via radiators in vacuum</li>
+                                <li><strong>Reliability:</strong> Single failure = mission loss (SNAP-10A)</li>
+                                <li><strong>Coolant leakage:</strong> TOPAZ missions had post-mission issues</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Political/Operational</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li><strong>End-of-life disposal:</strong> Failed boost to burial orbit = disaster</li>
+                                <li><strong>International blowback:</strong> Reentry events create liability</li>
+                                <li><strong>Public fear:</strong> "Nuclear in space" is politically sensitive</li>
+                                <li><strong>Regulatory burden:</strong> Years of approval process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>&#127758; International Competition: Russia & China</h2>
+                    <p style="color: var(--danger); font-weight: 600;">This is a race. They are going to do it faster if we don't act.</p>
+
+                    <div class="grid-2" style="margin-top: 1rem;">
+                        <div>
+                            <h3>&#127479;&#127482; Russia</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>Publicly discussed lunar nuclear power station</li>
+                                <li>Target timeline: ~2036</li>
+                                <li>Tied to lunar base roadmap</li>
+                                <li>Partnership with China on ILRS</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>&#127464;&#127475; China</h3>
+                            <ul style="color: var(--text-light); margin-left: 1.5rem;">
+                                <li>International Lunar Research Station (ILRS) includes nuclear power</li>
+                                <li>Target: mid-2030s for lunar surface</li>
+                                <li>Megawatt-class space concepts discussed publicly</li>
+                                <li>High-power nuclear for space propulsion research</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CURRENT PROGRAMS TAB -->
+            <div id="programs" class="tab-content">
+                <h2 style="margin-bottom: 1.5rem;">&#128640; Current Programs & Timeline</h2>
+
+                <div class="card">
+                    <h2>&#127761; NASA-DOE Fission Surface Power (FSP)</h2>
+                    <p>MOU signed to deploy nuclear reactor on Moon by 2030.</p>
+
+                    <div class="alert alert-success">
+                        <div class="alert-icon">&#127919;</div>
+                        <div class="alert-content">
+                            <h4>2030 Goal: Lunar Surface Reactor</h4>
+                            <p>NASA and DOE committed to deploying fission power system capable of operating through lunar nights. This is THE anchor program for space nuclear contracts.</p>
+                        </div>
+                    </div>
+
+                    <ul style="color: var(--text-light); margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Phase 1 concept contracts (~$5M each) awarded 2022, extend through 2025</li>
+                        <li>Target: 40-100+ kWe continuous power</li>
+                        <li>Must operate for years without refueling</li>
+                        <li>Support Artemis missions, ISRU, habitats</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>&#128752; Active Space Nuclear Contracts</h2>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Program</th>
+                                    <th>Agency</th>
+                                    <th>Contractors</th>
+                                    <th>Focus</th>
+                                    <th>Timeline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>DRACO</strong></td>
+                                    <td>DARPA + NASA</td>
+                                    <td>Lockheed Martin, BWX Technologies</td>
+                                    <td>Nuclear thermal rocket engine demo</td>
+                                    <td>~2027 flight</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>JETSON</strong></td>
+                                    <td>Air Force (AFRL)</td>
+                                    <td>Lockheed Martin (~
