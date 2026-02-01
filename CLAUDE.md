@@ -26,9 +26,9 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 6. **Programs & Timeline** - Verified current programs with sources (FSP, DOME, Pele, Janus, JETSON)
 7. **Radiant Nuclear** - Company information, master plan, **Why Radiant in Space origin story**, technology
 8. **Contract Deep Dive** - Federal contracting 101, vehicle comparison, SBIR guide, practical tips
-9. **Glossary** - Comprehensive 160+ term searchable glossary with category filtering
-10. **Policy** - Comprehensive regulatory framework, executive orders, launch approval, export controls, legislation
-11. **News & Events** - Current industry news, upcoming conferences, key dates, event recommendations
+9. **Policy** - Comprehensive regulatory framework, executive orders, launch approval, export controls, legislation
+10. **News & Events** - Current industry news, upcoming conferences, key dates, event recommendations
+11. **Glossary** - Comprehensive 160+ term searchable glossary with category filtering
 
 ### Key Features
 - Global search across all content
