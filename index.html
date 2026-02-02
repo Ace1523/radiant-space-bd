@@ -344,12 +344,57 @@
         .contact-card a { color: var(--accent); text-decoration: none; font-size: 0.75rem; }
         .contact-card a:hover { text-decoration: underline; }
 
+        /* Sidebar Toggle */
+        .sidebar-toggle {
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 48px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+        .sidebar-toggle:hover {
+            background: var(--bg-secondary);
+            color: var(--text);
+        }
+        .sidebar {
+            transition: width 0.3s ease, padding 0.3s ease;
+        }
+        .sidebar.collapsed {
+            width: 48px;
+            padding: 1rem 0.5rem;
+        }
+        .sidebar.collapsed h3,
+        .sidebar.collapsed .quick-links,
+        .sidebar.collapsed .contact-card,
+        .sidebar.collapsed .sidebar-section {
+            display: none;
+        }
+        .sidebar.collapsed .sidebar-toggle {
+            right: -12px;
+        }
+
         /* Main Content */
         .content {
             flex: 1;
             margin-left: 280px;
             padding: 1.75rem 2rem;
             min-height: calc(100vh - 108px);
+            transition: margin-left 0.3s ease;
+        }
+        .content.sidebar-collapsed {
+            margin-left: 48px;
         }
 
         .tab-content { display: none; }
@@ -1124,6 +1169,7 @@
         @media (max-width: 992px) {
             .sidebar { display: none; }
             .content { margin-left: 0; }
+            .content.sidebar-collapsed { margin-left: 0; }
         }
 
         @media (max-width: 768px) {
@@ -1168,6 +1214,8 @@
             }
             .nav-tabs {
                 position: relative;
+                overflow: visible;
+                white-space: normal;
             }
             .nav-tabs-inner {
                 display: none;
@@ -1296,6 +1344,7 @@
     <div class="main-container">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar">◀</button>
             <h3>Quick Contract Portals</h3>
             <ul class="quick-links">
                 <li><a href="https://sam.gov/" target="_blank">SAM.gov <span class="badge">Primary</span></a></li>
@@ -13943,6 +13992,16 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
             const nav = btn.closest('.strategy-nav');
             nav.classList.toggle('collapsed');
             btn.textContent = nav.classList.contains('collapsed') ? '▼ Show' : '▲ Hide';
+        }
+
+        // Toggle Sidebar
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            const toggle = document.querySelector('.sidebar-toggle');
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('sidebar-collapsed');
+            toggle.textContent = sidebar.classList.contains('collapsed') ? '▶' : '◀';
         }
 
         // Toggle Mobile Menu
