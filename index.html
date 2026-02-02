@@ -1205,6 +1205,21 @@
                 <li style="opacity: 0.6;"><a href="https://spacewerx.us/" target="_blank">SpaceWERX (paused)</a></li>
             </ul>
 
+            <h3 style="color: var(--accent-secondary);">Upcoming Conferences</h3>
+            <div class="contact-card" style="border-left: 3px solid var(--accent-secondary); font-size: 0.75rem;">
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Mar 31-Apr 1</strong><br>DARPA On-Orbit Nuclear Workshop</p>
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Apr 13-16</strong><br>41st Space Symposium</p>
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Apr 27-30</strong><br>NETS 2026 (Dayton)</p>
+                <a href="#" onclick="switchTab('news'); setTimeout(() => { const el = document.getElementById('news-events'); if(el) el.scrollIntoView({behavior: 'smooth'}); }, 200); return false;" style="color: var(--accent); font-size: 0.7rem; display: block; margin-top: 0.5rem;">View All Events &rarr;</a>
+            </div>
+
+            <h3 style="color: var(--success);">Latest News</h3>
+            <div class="contact-card" style="border-left: 3px solid var(--success); font-size: 0.75rem;">
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--success);">Jan 15</strong><br>Congress Passes FY26 Nuclear Funding: $3.1B</p>
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--success);">Jan 13</strong><br>NASA-DOE Sign MOU: Lunar Reactor by 2030</p>
+                <a href="#" onclick="switchTab('news'); setTimeout(() => { const el = document.getElementById('news-current'); if(el) el.scrollIntoView({behavior: 'smooth'}); }, 200); return false;" style="color: var(--accent); font-size: 0.7rem; display: block; margin-top: 0.5rem;">View All News &rarr;</a>
+            </div>
+
             <h3>Downloads</h3>
             <ul class="quick-links">
                 <li><a href="#" onclick="downloadChecklist(); return false;">Alert Setup Checklist (PDF)</a></li>
@@ -1212,13 +1227,29 @@
                 <li><a href="#" onclick="downloadCaptureTemplate(); return false;">Capture Plan Template</a></li>
             </ul>
 
-            <h3>Key Dates</h3>
-            <div class="contact-card">
-                <p><strong>Summer 2026</strong> - Radiant DOME Test</p>
-                <p><strong>Sep 2028</strong> - EO 14299 Deadline</p>
-                <p><strong>2028</strong> - Radiant First Delivery</p>
-                <p><strong>~2030</strong> - NASA Lunar Reactor</p>
-                <p><strong>2033-35</strong> - China/Russia ILRS</p>
+            <h3>Key Dates Timeline</h3>
+            <div class="contact-card" style="font-size: 0.75rem; padding: 1rem;">
+                <div style="border-left: 2px solid var(--accent); padding-left: 0.75rem; margin-bottom: 0.75rem;">
+                    <p style="margin: 0;"><strong style="color: var(--accent);">2026</strong></p>
+                    <p style="margin: 0; color: var(--text-muted);">Radiant Kaleidos test at INL (DOME)</p>
+                </div>
+                <div style="border-left: 2px solid var(--accent-secondary); padding-left: 0.75rem; margin-bottom: 0.75rem;">
+                    <p style="margin: 0;"><strong style="color: var(--accent-secondary);">2028</strong></p>
+                    <p style="margin: 0; color: var(--text-muted);">First Radiant Kaleidos delivery</p>
+                    <p style="margin: 0; color: var(--text-muted);">EO 14299 deadline (DoD reactors)</p>
+                </div>
+                <div style="border-left: 2px solid var(--success); padding-left: 0.75rem; margin-bottom: 0.75rem;">
+                    <p style="margin: 0;"><strong style="color: var(--success);">2030</strong></p>
+                    <p style="margin: 0; color: var(--text-muted);">NASA-DOE lunar surface reactor</p>
+                </div>
+                <div style="border-left: 2px solid var(--warning); padding-left: 0.75rem; margin-bottom: 0.75rem;">
+                    <p style="margin: 0;"><strong style="color: var(--warning);">2033-35</strong></p>
+                    <p style="margin: 0; color: var(--text-muted);">China-Russia ILRS nuclear plant</p>
+                </div>
+                <div style="border-left: 2px solid var(--accent-tertiary); padding-left: 0.75rem;">
+                    <p style="margin: 0;"><strong style="color: var(--accent-tertiary);">2034</strong></p>
+                    <p style="margin: 0; color: var(--text-muted);">Radiant production ramp (50 units/yr)</p>
+                </div>
             </div>
 
             <h3 style="color: var(--warning);">Alerts</h3>
