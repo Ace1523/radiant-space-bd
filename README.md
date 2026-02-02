@@ -1,12 +1,12 @@
 # Radiant Space BD Hub
 
-A comprehensive business development resource for the space nuclear market, built by Radiant Nuclear.
+A comprehensive business development resource for the space nuclear market, built for Radiant Nuclear.
 
 **Live Site:** https://radiantspace.netlify.app
 
 ## What Is This?
 
-An internal BD tool consolidating everything needed to navigate space nuclear contract opportunities:
+A BD tool consolidating everything needed to navigate space nuclear contract opportunities:
 
 - **Contract Opportunities** - Active RFIs, BAAs, solicitations with deadlines
 - **Agency Guides** - NASA, DARPA, Space Force, DIU, DOE, Air Force, NRO
@@ -19,10 +19,15 @@ An internal BD tool consolidating everything needed to navigate space nuclear co
 
 ## Tech Stack
 
-Single-page static site:
+Currently a single-page static site:
 - HTML/CSS/JavaScript (all in one file)
 - No backend required
 - Hosted on Netlify + GitHub Pages
+
+**Future Plans:**
+- API integrations (SAM.gov, contract tracking)
+- Backend functionality
+- Database for dynamic content updates
 
 ## Deployment
 
@@ -36,4 +41,4 @@ Just open `index.html` in a browser - it's fully self-contained.
 
 ---
 
-*Built for Radiant Nuclear's space nuclear business development efforts.*
+*Built by Chad Wallace for Radiant Nuclear's space nuclear business development efforts.*
