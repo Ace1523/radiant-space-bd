@@ -920,6 +920,31 @@
             border-color: var(--accent);
             background: rgba(167, 139, 250, 0.1);
         }
+        .quicknav-toggle {
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            text-decoration: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            background: none;
+        }
+        .quicknav-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(167, 139, 250, 0.1);
+        }
+        .strategy-nav.collapsed .strategy-nav-categories {
+            display: none;
+        }
+        .strategy-nav.collapsed {
+            padding: 0.5rem 1.25rem;
+        }
+        .strategy-nav.collapsed .strategy-nav-header {
+            margin-bottom: 0;
+        }
         .strategy-nav-toggle {
             background: none;
             border: none;
@@ -1644,6 +1669,7 @@
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -2358,6 +2384,7 @@
                         <h3>&#9889; Jump to Agency</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Click to navigate</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -4891,6 +4918,7 @@
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover categories for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -7366,6 +7394,7 @@
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -8610,6 +8639,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -9388,6 +9418,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -10131,6 +10162,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -10720,6 +10752,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -12177,6 +12210,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Jump to section</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -13108,6 +13142,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <h3>&#9889; Quick Navigation</h3>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span style="color: var(--text-dim); font-size: 0.75rem;">Hover categories for links</span>
+                            <button class="quicknav-toggle" onclick="toggleQuickNav(this)">▲ Hide</button>
                             <a class="back-to-top" onclick="scrollToTop(); return false;">&#8593; Top</a>
                         </div>
                     </div>
@@ -13754,6 +13789,13 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle Quick Navigation
+        function toggleQuickNav(btn) {
+            const nav = btn.closest('.strategy-nav');
+            nav.classList.toggle('collapsed');
+            btn.textContent = nav.classList.contains('collapsed') ? '▼ Show' : '▲ Hide';
         }
 
         // Accordion
