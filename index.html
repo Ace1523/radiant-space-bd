@@ -1259,6 +1259,113 @@
                     </div>
                 </div>
 
+                <!-- ========== MAIN TABS SHOWCASE - THE FOCAL POINT ========== -->
+                <div class="card" id="home-tabs-showcase" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.08) 0%, rgba(56, 189, 248, 0.05) 100%); border: 1px solid rgba(167, 139, 250, 0.25); padding: 2rem;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Explore the Hub</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; max-width: 700px; margin: 0 auto;">Your comprehensive guide to space nuclear contracts, technology, and strategy. Click any section to dive in.</p>
+                    </div>
+
+                    <!-- Priority Tabs Row -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--accent-secondary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; font-weight: 600;">Priority Resources</p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                            <!-- Contract Hub -->
+                            <div onclick="switchTab('contracts')" style="cursor: pointer; padding: 1.25rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.05) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(56, 189, 248, 0.25)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                    <div style="width: 42px; height: 42px; background: rgba(56, 189, 248, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">&#128188;</div>
+                                    <h4 style="color: var(--accent-secondary); font-size: 1rem; margin: 0;">Contract Hub</h4>
+                                </div>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.5;">Active RFIs, BAAs, and solicitations. Opportunity tracker with deadlines. Search keywords for alerts.</p>
+                            </div>
+                            <!-- Agencies -->
+                            <div onclick="switchTab('agencies')" style="cursor: pointer; padding: 1.25rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.05) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(56, 189, 248, 0.25)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                    <div style="width: 42px; height: 42px; background: rgba(56, 189, 248, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">&#127970;</div>
+                                    <h4 style="color: var(--accent-secondary); font-size: 1rem; margin: 0;">Agencies</h4>
+                                </div>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.5;">NASA, DARPA, Space Force, DIU, DOE, DoD. How each agency contracts. Key programs and contacts.</p>
+                            </div>
+                            <!-- Strategy & Playbook -->
+                            <div onclick="switchTab('strategy')" style="cursor: pointer; padding: 1.25rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.05) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(56, 189, 248, 0.25)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                    <div style="width: 42px; height: 42px; background: rgba(56, 189, 248, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">&#128203;</div>
+                                    <h4 style="color: var(--accent-secondary); font-size: 1rem; margin: 0;">Strategy & Playbook</h4>
+                                </div>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.5;">BD roadmaps, capture planning, OKRs, teaming strategy, white paper guides. How to win.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Tabs Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                        <!-- Contract Deep Dive -->
+                        <div onclick="switchTab('deepdive')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128221;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Contract Deep Dive</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">Federal contracting 101. OTA vs FAR. Payment structures. SBIR guide.</p>
+                        </div>
+                        <!-- Technical -->
+                        <div onclick="switchTab('technical')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#9762;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Technical Overview</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">Fission 101, space reactors, HALEU, power conversion, Kaleidos design.</p>
+                        </div>
+                        <!-- Programs & Timeline -->
+                        <div onclick="switchTab('programs')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128197;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Programs & Timeline</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">All active programs. 2026-2036 timeline. International competition.</p>
+                        </div>
+                        <!-- Policy -->
+                        <div onclick="switchTab('policy')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128220;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Policy & Regulation</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">Executive orders, launch approval, export controls, legislation.</p>
+                        </div>
+                        <!-- Radiant Nuclear -->
+                        <div onclick="switchTab('radiant')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#9889;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Radiant Nuclear</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">Why Radiant in space. Company overview. Kaleidos. Leadership.</p>
+                        </div>
+                        <!-- News & Events -->
+                        <div onclick="switchTab('news')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128240;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">News & Events</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">Industry news, conference calendar, NETS 2026, key dates.</p>
+                        </div>
+                        <!-- History -->
+                        <div onclick="switchTab('history')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128218;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">History</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">1954-present. SNAP program. Soviet reactors. RTG missions.</p>
+                        </div>
+                        <!-- Glossary -->
+                        <div onclick="switchTab('glossary')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 10px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="font-size: 1.1rem;">&#128214;</span>
+                                <h4 style="color: var(--text); font-size: 0.9rem; margin: 0;">Glossary</h4>
+                            </div>
+                            <p style="color: var(--text-dim); font-size: 0.8rem; margin: 0;">160+ terms searchable by category. Acronyms decoded.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- WHY SPACE NEEDS NUCLEAR -->
                 <div class="card" id="home-why-nuclear">
                     <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#9889; Why Space Needs Nuclear Power</h2>
@@ -1433,88 +1540,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- NAVIGATE THIS RESOURCE -->
-                <div class="card" id="home-navigate">
-                    <h2 style="display: flex; align-items: center; gap: 0.75rem;">&#128205; Navigate This Resource</h2>
-                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Radiant built this comprehensive hub to consolidate everything needed to understand and pursue space nuclear opportunities. Whether you're tracking contracts, planning strategy, or learning the technology &mdash; find your path below.</p>
-
-                    <!-- For Contract Hunters -->
-                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid #ff6b6b; padding: 1.5rem;">
-                        <h3 style="color: #ff6b6b; margin-bottom: 1rem;">For Contract Hunters</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Find and pursue active opportunities across all agencies.</p>
-                        <div class="grid-3">
-                            <div onclick="switchTab('contracts')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Contract Hub</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Active RFIs, BAAs, solicitations. Opportunity summary table. Deadline tracking.</p>
-                            </div>
-                            <div onclick="switchTab('agencies')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Agencies</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Deep dive on each agency. Contracting processes. Key contacts. How to win.</p>
-                            </div>
-                            <div onclick="switchTab('deepdive')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Contract Deep Dive</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Federal contracting 101. OTA vs FAR. Payment structures. Practical tips.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- For Strategists -->
-                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid var(--accent); padding: 1.5rem;">
-                        <h3 style="color: var(--accent); margin-bottom: 1rem;">For Strategists</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Plan your approach and understand the competitive landscape.</p>
-                        <div class="grid-3">
-                            <div onclick="switchTab('strategy')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Strategy & Playbook</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">BD roadmaps. Capture planning. OKRs. White paper guides. Win strategies.</p>
-                            </div>
-                            <div onclick="switchTab('programs')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Programs & Timeline</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">All active programs. Timeline 2026-2036. Commercial players. International competition.</p>
-                            </div>
-                            <div onclick="switchTab('policy')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Policy & Regulation</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Executive orders. Launch approval. Export controls. Legislative landscape.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- For Technical Learning -->
-                    <div class="feature-box" style="margin-bottom: 1.5rem; border-left: 4px solid var(--accent-tertiary); padding: 1.5rem;">
-                        <h3 style="color: var(--accent-tertiary); margin-bottom: 1rem;">For Technical Learning</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Understand the technology and history of space nuclear power.</p>
-                        <div class="grid-3">
-                            <div onclick="switchTab('technical')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Technical Overview</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Fission 101. How microreactors work. HALEU fuel. Power conversion. Kaleidos deep dive.</p>
-                            </div>
-                            <div onclick="switchTab('history')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">History</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">1954-present. SNAP program. Soviet reactors. RTG heritage. Lessons learned.</p>
-                            </div>
-                            <div onclick="switchTab('radiant')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Radiant Nuclear</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Company overview. Why Radiant in Space. Kaleidos technology. Leadership team.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- For Staying Current -->
-                    <div class="feature-box" style="margin-bottom: 1rem; border-left: 4px solid var(--warning); padding: 1.5rem;">
-                        <h3 style="color: var(--warning); margin-bottom: 1rem;">For Staying Current</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Track industry developments and reference key terms.</p>
-                        <div class="grid-2">
-                            <div onclick="switchTab('news')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--warning); margin-bottom: 0.5rem;">News & Events</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">Industry news. Conference calendar. NETS 2026. Key dates to watch.</p>
-                            </div>
-                            <div onclick="switchTab('glossary')" style="cursor: pointer; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                                <h4 style="color: var(--warning); margin-bottom: 0.5rem;">Glossary</h4>
-                                <p style="color: var(--text-dim); font-size: 0.85rem;">160+ terms. Searchable. Categories: contracting, agencies, programs, nuclear tech.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
