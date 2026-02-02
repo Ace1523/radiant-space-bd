@@ -1133,6 +1133,79 @@
             .nav-tab { padding: 0.75rem 1rem; font-size: 0.75rem; }
             .opportunity-header { flex-direction: column; }
             .content { padding: 1rem; }
+
+            /* Hamburger Menu */
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                background: var(--bg-tertiary);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 8px;
+                margin-right: 1rem;
+            }
+            .hamburger span {
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: var(--text);
+                margin: 2px 0;
+                transition: all 0.3s ease;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -4px);
+            }
+            .nav-tabs {
+                position: relative;
+            }
+            .nav-tabs-inner {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                border-bottom: 1px solid var(--border);
+                z-index: 1000;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            .nav-tabs-inner.mobile-open {
+                display: flex;
+            }
+            .nav-tabs .nav-tab {
+                border-bottom: 1px solid var(--border);
+                border-radius: 0;
+                text-align: left;
+                padding: 1rem 1.5rem;
+            }
+            .mobile-nav-header {
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
+            }
+            .mobile-nav-title {
+                color: var(--text);
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+        }
+
+        /* Desktop - hide hamburger */
+        @media (min-width: 769px) {
+            .hamburger, .mobile-nav-header { display: none; }
         }
 
         /* Print */
@@ -1196,6 +1269,14 @@
 
     <!-- Navigation -->
     <nav class="nav-tabs">
+        <div class="mobile-nav-header">
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="mobile-nav-title">Navigation</span>
+        </div>
         <div class="nav-tabs-inner">
             <div class="nav-tab active" data-tab="home">Home</div>
             <div class="nav-tab priority" data-tab="contracts">Contract Hub</div>
@@ -13863,6 +13944,26 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
             nav.classList.toggle('collapsed');
             btn.textContent = nav.classList.contains('collapsed') ? '▼ Show' : '▲ Hide';
         }
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navInner = document.querySelector('.nav-tabs-inner');
+            hamburger.classList.toggle('active');
+            navInner.classList.toggle('mobile-open');
+        }
+
+        // Close mobile menu when tab is clicked
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const hamburger = document.querySelector('.hamburger');
+                    const navInner = document.querySelector('.nav-tabs-inner');
+                    hamburger.classList.remove('active');
+                    navInner.classList.remove('mobile-open');
+                }
+            });
+        });
 
         // Accordion
         function toggleAccordion(header) {
