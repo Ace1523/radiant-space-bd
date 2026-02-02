@@ -7114,7 +7114,7 @@
                             <div class="strategy-nav-dropdown">
                                 <a href="#tech-why-nuclear" class="strategy-nav-link">&#127775; Why Nuclear for Space</a>
                                 <a href="#tech-fission-101" class="strategy-nav-link">&#128218; Fission 101 (Start Here)</a>
-                                <a href="#tech-fission" class="strategy-nav-link">&#9762; Fission Physics Deep Dive</a>
+                                <a href="#tech-space-reactors" class="strategy-nav-link">&#128640; Space Reactor Considerations</a>
                                 <a href="#tech-haleu" class="strategy-nav-link">&#9889; HALEU Fuel</a>
                             </div>
                         </div>
@@ -7400,6 +7400,151 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         </div>
                         <p style="color: var(--text-muted); text-align: center; margin-top: 1rem; font-size: 0.875rem;"><strong>Neutron absorbers</strong> (boron, cadmium) capture neutrons. <strong>Reflectors</strong> (graphite, beryllium) bounce them back into the core.</p>
                     </div>
+
+                    <!-- Criticality States -->
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">&#9762; Criticality States</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 0.75rem;">The "k" value (multiplication factor) describes whether a chain reaction is growing, stable, or dying:</p>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead><tr><th>State</th><th>k Value</th><th>What Happens</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Subcritical</strong></td><td>k &lt; 1</td><td>Chain reaction dies out - reactor shutting down</td></tr>
+                                <tr><td style="color: var(--success);"><strong>Critical</strong></td><td style="color: var(--success);">k = 1</td><td style="color: var(--success);">Self-sustaining - normal operation</td></tr>
+                                <tr><td><strong>Supercritical</strong></td><td>k &gt; 1</td><td>Power increasing - used briefly during startup</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">k = neutrons produced / neutrons lost. Reactors are designed to maintain k ≈ 1 during operation. <strong>Negative temperature coefficient</strong> means if fuel overheats, fission rate naturally decreases—runaway reactions are physically impossible in well-designed reactors.</p>
+
+                    <!-- Common Moderator Materials -->
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">&#128260; Common Moderator Materials</h4>
+                    <div class="grid-4" style="margin-bottom: 1.5rem;">
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.25rem;">H₂O</div>
+                            <div class="stat-label">Light Water - Most common</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.25rem;">C</div>
+                            <div class="stat-label">Graphite - Solid moderator</div>
+                        </div>
+                        <div class="stat-card" style="border-color: var(--accent);">
+                            <div class="stat-value" style="font-size: 1.25rem; color: var(--accent);">ZrH₂</div>
+                            <div class="stat-label">Zirconium Hydride - Radiant's choice</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.25rem;">Be</div>
+                            <div class="stat-label">Beryllium - Excellent but expensive</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== SPACE REACTOR CONSIDERATIONS ========== -->
+                <div class="card" id="tech-space-reactors" style="border: 2px solid var(--secondary); background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);">
+                    <h2>&#128640; Space Reactor Considerations: From Terrestrial to Orbit</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Space nuclear power systems face unique challenges that terrestrial reactors don't encounter. Understanding these differences is key to evaluating designs—and seeing why Kaleidos architecture translates well to space.</p>
+
+                    <div class="alert alert-info" style="margin-bottom: 1.5rem;">
+                        <div class="alert-icon">&#128161;</div>
+                        <div class="alert-content">
+                            <h4>Kaleidos as the Baseline</h4>
+                            <p>While Kaleidos was designed for terrestrial deployment, its core architecture addresses many space reactor challenges. Below we show what space demands—and how Kaleidos features translate.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Key Space Reactor Design Challenges</h3>
+                    <div class="grid-2" style="margin-bottom: 1.5rem;">
+                        <div class="feature-box" style="border-left: 4px solid var(--danger);">
+                            <h4>Heat Rejection in Vacuum</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">No air = no convection. Heat must be radiated away via large radiator panels.</p>
+                            <p style="color: var(--accent); font-size: 0.85rem;"><strong>Kaleidos advantage:</strong> Helium coolant operates at high temperatures (750°C+), improving radiator efficiency via Stefan-Boltzmann law (T⁴ relationship).</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--warning);">
+                            <h4>Mass Constraints</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Every kg costs $5K-50K to launch. Reactor + shielding + power conversion must be ultra-compact.</p>
+                            <p style="color: var(--accent); font-size: 0.85rem;"><strong>Kaleidos advantage:</strong> Designed for transportability (70 tonnes terrestrial). HALEU fuel enables smaller cores. ZrH₂ moderator is more compact than graphite.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--secondary);">
+                            <h4>Autonomous Operations</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">No astronauts to monitor. Must self-start, self-regulate, and safely shutdown without human intervention.</p>
+                            <p style="color: var(--accent); font-size: 0.85rem;"><strong>Kaleidos advantage:</strong> Built for remote operation from day one. Digital twin (SimEngine) enables autonomous monitoring. Passive safety = no active intervention needed.</p>
+                        </div>
+                        <div class="feature-box" style="border-left: 4px solid var(--accent);">
+                            <h4>Launch Survival</h4>
+                            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Must survive vibration, acceleration, and potential launch abort. Launched cold (subcritical) then started in space.</p>
+                            <p style="color: var(--accent); font-size: 0.85rem;"><strong>Kaleidos advantage:</strong> Solid-state core with TRISO fuel (tested to extreme conditions). Helium coolant = no fluid management issues during launch.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Space vs. Terrestrial: Key Differences</h3>
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Factor</th><th>Terrestrial Reactor</th><th>Space Reactor</th><th>Kaleidos Alignment</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Heat Rejection</strong></td>
+                                    <td>Air/water cooling</td>
+                                    <td>Radiator panels only</td>
+                                    <td style="color: var(--success);">&#10004; High-temp helium optimizes radiator size</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Coolant</strong></td>
+                                    <td>Water, gas, or liquid metal</td>
+                                    <td>Gas or heat pipes preferred</td>
+                                    <td style="color: var(--success);">&#10004; Helium gas - non-activating, vacuum-compatible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shielding</strong></td>
+                                    <td>360° protection</td>
+                                    <td>Shadow shielding (one direction)</td>
+                                    <td style="color: var(--success);">&#10004; Already uses shadow shielding concept</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Control</strong></td>
+                                    <td>Operator-managed</td>
+                                    <td>Fully autonomous</td>
+                                    <td style="color: var(--success);">&#10004; Designed for remote/autonomous operation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Maintenance</strong></td>
+                                    <td>Regular access</td>
+                                    <td>Zero maintenance for mission life</td>
+                                    <td style="color: var(--success);">&#10004; 10+ year life without intervention</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Safety Approach</strong></td>
+                                    <td>Active + passive systems</td>
+                                    <td>Must be 100% passive</td>
+                                    <td style="color: var(--success);">&#10004; Inherent passive safety (negative temp coefficient)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">Critical Space Reactor Subsystems</h3>
+                    <div class="grid-3" style="margin-bottom: 1.5rem;">
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.5rem;">&#127777;</div>
+                            <div class="stat-label"><strong>Heat Rejection</strong></div>
+                            <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem;">Radiator panels, heat pipes. Size driven by operating temperature.</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.5rem;">&#128171;</div>
+                            <div class="stat-label"><strong>Power Conversion</strong></div>
+                            <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem;">Stirling, Brayton, or thermoelectric. Converts heat to electricity.</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" style="font-size: 1.5rem;">&#128737;</div>
+                            <div class="stat-label"><strong>Shadow Shielding</strong></div>
+                            <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem;">Protects payload in one direction only. Boom separates reactor from spacecraft.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4 style="color: var(--accent);">Why This Matters for BD</h4>
+                        <p style="color: var(--text);">When talking to NASA, Space Force, or primes about space nuclear, understand that <strong>Radiant isn't proposing to fly Kaleidos as-is</strong>. The pitch is: "We've proven the core technology terrestrially. The architecture translates. We can develop a space-optimized variant faster than competitors starting from scratch."</p>
+                    </div>
                 </div>
 
                 <!-- ========== HOW RADIANT'S KALEIDOS WORKS ========== -->
@@ -7658,74 +7803,6 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                 <tr><td>Safety</td><td>Passive (air cooling)</td><td>No pumps or power needed for emergency cooling</td></tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- Nuclear Fission Physics -->
-                <div class="card" id="tech-fission">
-                    <h2>&#9762; Nuclear Fission: How It Works</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Understanding fission physics is essential for evaluating reactor designs and talking to technical stakeholders.</p>
-
-                    <div class="grid-2" style="margin-bottom: 1.5rem;">
-                        <div>
-                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">The Fission Process</h3>
-                            <ol style="color: var(--text-muted); font-size: 0.875rem; margin-left: 1.25rem;">
-                                <li>A neutron strikes a uranium-235 atom</li>
-                                <li>The U-235 nucleus absorbs the neutron and becomes unstable</li>
-                                <li>The nucleus splits into two lighter "fission fragments"</li>
-                                <li>Energy is released (~200 MeV per fission)</li>
-                                <li>2-3 new neutrons are released</li>
-                                <li>Those neutrons can cause more fissions → <strong>chain reaction</strong></li>
-                            </ol>
-                            <p style="color: var(--accent); font-size: 0.875rem; margin-top: 0.75rem;"><strong>Key fact:</strong> Fission releases ~2 million times more energy per kg than burning coal.</p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Criticality States</h3>
-                            <div class="table-container">
-                                <table>
-                                    <thead><tr><th>State</th><th>k Value</th><th>Meaning</th></tr></thead>
-                                    <tbody>
-                                        <tr><td><strong>Subcritical</strong></td><td>k &lt; 1</td><td>Chain reaction dies out</td></tr>
-                                        <tr><td><strong>Critical</strong></td><td>k = 1</td><td>Self-sustaining (normal operation)</td></tr>
-                                        <tr><td><strong>Supercritical</strong></td><td>k &gt; 1</td><td>Power increasing</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p style="color: var(--text-muted); font-size: 0.8125rem; margin-top: 0.5rem;">k = multiplication factor (neutrons produced / neutrons lost). Reactors are designed to maintain k ≈ 1 during operation.</p>
-                        </div>
-                    </div>
-
-                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Neutron Moderation: Why It Matters</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Neutrons from fission are "fast" (~20,000 km/s). But U-235 fissions <strong>hundreds of times more efficiently</strong> with "slow" (thermal) neutrons. Moderators slow neutrons down through collisions.</p>
-                    <div class="grid-4" style="margin-bottom: 1.5rem;">
-                        <div class="stat-card">
-                            <div class="stat-value" style="font-size: 1.25rem;">H₂O</div>
-                            <div class="stat-label">Light Water - Most common moderator</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="font-size: 1.25rem;">C</div>
-                            <div class="stat-label">Graphite - Solid moderator</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="font-size: 1.25rem;">ZrH₂</div>
-                            <div class="stat-label">Zirconium Hydride - Radiant's innovation</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" style="font-size: 1.25rem;">Be</div>
-                            <div class="stat-label">Beryllium - Excellent but expensive</div>
-                        </div>
-                    </div>
-
-                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Power Control Mechanisms</h3>
-                    <div class="grid-2">
-                        <div class="feature-box">
-                            <h3>Control Rods</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Neutron-absorbing materials (boron, cadmium, hafnium) inserted/withdrawn to control neutron population. Insert rods → absorb neutrons → reduce power. Withdraw → increase power.</p>
-                        </div>
-                        <div class="feature-box">
-                            <h3>Inherent Feedback</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;"><strong>Negative temperature coefficient:</strong> As fuel heats up, fission rate naturally decreases. This is a critical safety feature—runaway reactions are physically impossible in well-designed reactors.</p>
-                        </div>
                     </div>
                 </div>
 
