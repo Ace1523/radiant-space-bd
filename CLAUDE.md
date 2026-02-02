@@ -6,8 +6,9 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 **Current Size:** ~1MB, ~13,500+ lines (self-contained HTML/CSS/JS)
 
 **Deployment:** Hosted on Netlify via GitHub
+- **Live Site:** https://radiantspace.netlify.app
 - **Repo:** github.com/Ace1523/radiant-space-bd
-- **Live Site:** Deployed via Netlify (continuous deployment from main branch)
+- **Deploys:** Continuous deployment from main branch (or manual trigger in Netlify dashboard)
 
 ## Project Files
 - **index.html** - Main website (self-contained HTML/CSS/JS)
