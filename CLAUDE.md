@@ -1,12 +1,18 @@
 # Radiant Space BD Hub
 
 ## Project Overview
-A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`space-nuclear-hub.html`) that serves as Radiant's internal BD tool for the space nuclear market.
+A comprehensive business development resource hub for Radiant Nuclear, focused on space nuclear contract opportunities, technology, and competitive positioning. The main deliverable is a single-page web application (`index.html`) that serves as Radiant's internal BD tool for the space nuclear market.
 
-**Current Size:** ~1MB, ~13,300+ lines (self-contained HTML/CSS/JS)
+**Current Size:** ~1MB, ~13,500+ lines (self-contained HTML/CSS/JS)
+
+**Deployment:** Hosted on Netlify via GitHub
+- **Repo:** github.com/Ace1523/radiant-space-bd
+- **Live Site:** Deployed via Netlify (continuous deployment from main branch)
 
 ## Project Files
-- **space-nuclear-hub.html** - Main website (self-contained HTML/CSS/JS)
+- **index.html** - Main website (self-contained HTML/CSS/JS)
+- **earthrise.jpg** - Hero section background image
+- **space-nuclear-hub.html** - Earlier version (deprecated)
 - **space-nuclear-contracts.html** - Earlier/alternate version
 - **Krusty.docx** - Project KRUSTY background and FSP program details
 - **Radiant_BD_Research.docx** - Background research on Radiant
@@ -33,14 +39,18 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 
 ### Key Features
 - Global search across all content
-- Sidebar with quick links to government portals
-- Downloadable templates (checklists, RFI templates, capture plans)
-- Key dates timeline
-- Interactive checklist for alert setup
+- Sidebar with:
+  - Quick links to government portals (SAM.gov, SBIR.gov, NASA FSP, DARPA, DIU, etc.)
+  - Upcoming Conferences section (next 3 events with "View All" link)
+  - Latest News section (2 recent headlines with "View All" link)
+  - Downloads (checklists, RFI templates, capture plans)
+  - Key Dates Timeline (visual format: 2026 DOME test → 2028 delivery → 2030 lunar → 2034 production ramp)
+  - Alerts (SBIR expired, DRACO cancelled)
 - Responsive design (mobile-friendly)
 - Dark theme with purple/cyan accent colors
 - Source citations throughout
 - Quick navigation dropdowns within each tab
+- Back-to-top links in navigation bars
 
 ## Current Program Status (as of Feb 2026)
 
@@ -72,8 +82,17 @@ A comprehensive business development resource hub for Radiant Nuclear, focused o
 The main entry point for the website, designed to orient visitors and convey the opportunity:
 
 ### Hero Section - "The Space Nuclear Opportunity"
+- Earthrise background image with dark overlay
 - Compelling opening statement about the 2030 lunar reactor goal
-- CTAs to Contract Hub and Strategy tabs
+- Doug Bernauer quote: "Nuclear energy is the only power that will allow us to outlive our own Sun..."
+
+### Navigate This Resource (Main Tabs Showcase)
+Prominently featured right after hero, organized into 4 color-coded categories:
+- **For Contract Hunters** (red) - Contract Hub, Agencies, Contract Deep Dive
+- **For Strategists** (purple) - Strategy & Playbook, Programs & Timeline, Policy
+- **For Technical Learning** (cyan) - Technical Overview, History, Radiant Nuclear
+- **For Staying Current** (yellow) - News & Events, Glossary
+Each tab card has description and hover effects
 
 ### Why Space Needs Nuclear Power
 - The Lunar Night Problem (14-day nights, shadowed craters)
@@ -92,14 +111,6 @@ The main entry point for the website, designed to orient visitors and convey the
 - Key government agencies and their roles
 - Industry leaders and their positions
 - Active programs status table
-
-### Navigate This Resource
-Role-based navigation guide:
-- **For Contract Hunters:** Contract Hub, Agencies, Contract Deep Dive
-- **For Strategists:** Strategy & Playbook, Programs & Timeline, Policy
-- **For Technical Learning:** Technical Overview, History, Radiant Nuclear
-- **For Staying Current:** News & Events, Glossary
-- Interactive clickable cards that switch tabs
 
 ### Why This Resource Exists
 - Context on space nuclear market formation
@@ -121,15 +132,19 @@ Each primary agency has Overview, Contracting Process, and Active Programs sub-t
 - **DIU** - Commercial Solutions Openings, ANPI program, 60-90 day awards
 - **DOE** - National labs, HALEU supply, DOME facility, interagency coordination
 - **DoW (Department of War/Army)** - Project Pele (BWXT 1.5MW), Janus (9 base sites), ANPI (DIU), EO 14299
-- **Air Force/AFWERX** - JETSON program ($33.7M Lockheed), AFRL research, STRATFI/TACFI
+- **Air Force/AFWERX** - JETSON program ($33.7M Lockheed), AFRL research, STRATFI ($3M-$15M), TACFI ($250K-$3M), AFWERX Prime (connects to primes), AFWERX Challenge, terrestrial-to-space pathway strategy, AFWERX vs SpaceWERX comparison
 - **NRO** - Proliferated satellite architecture (200+ satellites), intelligence requirements
+
+### Space Force Key Organizations (expanded)
+Detailed profiles under Space Force section:
+- **SDA (Space Development Agency)** - Transferred to Space Force Oct 2022, $6.1B FY2026 budget, PWSA layers (Transport, Tracking, Custody, Battle Management), nuclear power opportunities for persistent sensing
+- **SSC (Space Systems Command)** - $14B+ budget, Front Door portal, OTA authority, manages GPS/SBIRS
+- **RCO (Rapid Capabilities Office)** - Fast-track prototyping for urgent/classified needs
 
 ### Secondary Stakeholders (Other Defense Section)
 Brief but actionable info on:
 - **MDA (Missile Defense Agency)** - Golden Dome, space sensor layer, high-power radar
 - **OUSD R&E** - DoD CTO, 14 Critical Technology Areas, oversees DARPA/DIU/SCO
-- **SDA (Space Development Agency)** - PWSA constellations, Transport/Tracking/Custody layers
-- **SSC (Space Systems Command)** - Front Door innovation portal, $14B+ budget
 
 ### Supporting Content
 - **DOE/National Lab Stakeholders** - INL, NNSA, Office of Nuclear Energy
@@ -230,8 +245,11 @@ Detailed contracting guidance:
 - Federal Contracting 101 overview
 - The Real Workflow (how programs actually happen)
 - Contract Vehicles Explained (OTA, FAR, BAA, RFI, CSO, SBIR, IDIQ, CRADA)
-- **Contract Payment Structures** (NEW - comprehensive section):
+- **Contract Payment Structures** (comprehensive section):
   - Milestone-Based Contracts (DOE style) - Kairos example, built-in oversight
+    - Agency-specific milestone approaches table (DOE, NASA, DoD/DIU, DARPA)
+    - Typical reactor development milestones (M1-M9 visual progression)
+    - Negotiation tips (cure periods, front-loading, avoiding GFE dependencies)
   - COTS Contracts (NASA/SpaceX model) - fixed-price, minimal oversight
   - Cost-Plus/Cost-Based - traditional, risks and downsides
   - Comparison table: payment trigger, cost risk, cancellation risk, oversight level
@@ -334,7 +352,13 @@ Comprehensive news tracking and event calendar with searchable interface:
 ## Development Notes
 
 ### To Run Locally
-Simply open `space-nuclear-hub.html` in a browser - it's fully self-contained.
+Simply open `index.html` in a browser - it's fully self-contained.
+
+### Deployment
+- **GitHub:** github.com/Ace1523/radiant-space-bd
+- **Netlify:** Continuous deployment from main branch
+- **To deploy:** Push to main branch, Netlify auto-deploys (or trigger manually in dashboard)
+- **CLI deploy:** `netlify deploy --prod` (requires `netlify link` first)
 
 ### Key Contacts
 - DARPA TTO BAA: HR001125S0011@darpa.mil
@@ -351,4 +375,4 @@ Simply open `space-nuclear-hub.html` in a browser - it's fully self-contained.
 - Contrary Research Radiant report
 
 ---
-*Last updated: February 1, 2026*
+*Last updated: February 2, 2026*
