@@ -1217,22 +1217,19 @@
                 overflow: visible;
                 white-space: normal;
                 z-index: 1001;
+                padding: 0;
             }
             .nav-tabs-inner {
-                display: none;
+                display: none !important;
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
                 background: var(--bg-secondary);
                 border-bottom: 1px solid var(--border);
-                z-index: 1000;
                 max-height: 70vh;
                 overflow-y: auto;
+                width: 100%;
             }
             .nav-tabs-inner.mobile-open {
-                display: flex;
+                display: flex !important;
             }
             .nav-tabs .nav-tab {
                 border-bottom: 1px solid var(--border);
