@@ -99,6 +99,43 @@
             width: 320px;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .glossary-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .glossary-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+            background: var(--bg-tertiary);
+        }
+
+        .glossary-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(167, 139, 250, 0.1);
+        }
+
+        .glossary-btn-icon {
+            font-size: 1rem;
+        }
+
         .search-container input {
             width: 100%;
             padding: 0.625rem 1rem 0.625rem 2.5rem;
@@ -1175,7 +1212,10 @@
         @media (max-width: 768px) {
             .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             .header-content { flex-direction: column; }
-            .search-container { width: 100%; }
+            .header-right { width: 100%; }
+            .search-container { flex: 1; width: auto; }
+            .glossary-btn { padding: 0.625rem 0.75rem; }
+            .glossary-btn span:not(.glossary-btn-icon) { display: none; }
             .nav-tab { padding: 0.75rem 1rem; font-size: 0.75rem; }
             .opportunity-header { flex-direction: column; }
             .content { padding: 1rem; }
@@ -1305,10 +1345,16 @@
                 <div class="logo-icon">&#9762;</div>
                 <h1>Radiant <span>Space BD Hub</span></h1>
             </div>
-            <div class="search-container">
-                <span class="search-icon">&#128269;</span>
-                <input type="text" id="globalSearch" placeholder="Search everything..." onkeyup="handleSearch(this.value)">
-                <div class="search-results" id="searchResults"></div>
+            <div class="header-right">
+                <div class="search-container">
+                    <span class="search-icon">&#128269;</span>
+                    <input type="text" id="globalSearch" placeholder="Search everything..." onkeyup="handleSearch(this.value)">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                <button class="glossary-btn" onclick="switchTab('glossary')" id="glossaryHeaderBtn">
+                    <span class="glossary-btn-icon">&#128218;</span>
+                    <span>Glossary</span>
+                </button>
             </div>
         </div>
     </header>
@@ -1335,7 +1381,6 @@
             <div class="nav-tab" data-tab="deepdive">Contract Deep Dive</div>
             <div class="nav-tab" data-tab="policy">Policy & Industry Direction</div>
             <div class="nav-tab" data-tab="news">News & Events</div>
-            <div class="nav-tab" data-tab="glossary">Glossary</div>
         </div>
     </nav>
 
@@ -14476,6 +14521,9 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                // Remove active from glossary header button when clicking other tabs
+                const glossaryBtn = document.getElementById('glossaryHeaderBtn');
+                if (glossaryBtn) glossaryBtn.classList.remove('active');
                 this.classList.add('active');
                 document.getElementById(this.dataset.tab).classList.add('active');
             });
@@ -14485,7 +14533,18 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
         function switchTab(tabId) {
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+            // Handle glossary header button
+            const glossaryBtn = document.getElementById('glossaryHeaderBtn');
+            if (glossaryBtn) {
+                if (tabId === 'glossary') {
+                    glossaryBtn.classList.add('active');
+                } else {
+                    glossaryBtn.classList.remove('active');
+                }
+            }
+            // Activate the nav tab if it exists (glossary no longer in nav-tabs)
+            const navTab = document.querySelector(`[data-tab="${tabId}"]`);
+            if (navTab) navTab.classList.add('active');
             document.getElementById(tabId).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -14924,7 +14983,18 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
             // Switch to the correct tab
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            // Handle glossary header button
+            const glossaryBtn = document.getElementById('glossaryHeaderBtn');
+            if (glossaryBtn) {
+                if (tab === 'glossary') {
+                    glossaryBtn.classList.add('active');
+                } else {
+                    glossaryBtn.classList.remove('active');
+                }
+            }
+            // Activate nav tab if it exists (glossary is in header, not nav-tabs)
+            const navTab = document.querySelector(`[data-tab="${tab}"]`);
+            if (navTab) navTab.classList.add('active');
             document.getElementById(tab).classList.add('active');
 
             // Close search
