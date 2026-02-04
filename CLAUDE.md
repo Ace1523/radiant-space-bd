@@ -362,6 +362,8 @@ Simply open `index.html` in a browser - it's fully self-contained.
 - **To deploy:** Push to main branch, Netlify auto-deploys (or trigger manually in dashboard)
 - **CLI deploy:** `netlify deploy --prod` (requires `netlify link` first)
 
+**IMPORTANT:** User views site via GitHub Pages. After making changes to index.html or adding files, always commit and push to main for changes to go live.
+
 ### Key Contacts
 - DARPA TTO BAA: HR001125S0011@darpa.mil
 - NASA FSP: Monitor SAM.gov and nasa.gov/glenn/fsps
@@ -377,4 +379,4 @@ Simply open `index.html` in a browser - it's fully self-contained.
 - Contrary Research Radiant report
 
 ---
-*Last updated: February 2, 2026*
+*Last updated: February 3, 2026*
