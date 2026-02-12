@@ -1412,7 +1412,7 @@
 
             <h3 style="color: var(--accent-secondary);">Upcoming Conferences</h3>
             <div class="contact-card" style="border-left: 3px solid var(--accent-secondary); font-size: 0.75rem;">
-                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Mar 31-Apr 1</strong><br>DARPA On-Orbit Nuclear Workshop</p>
+                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Apr 21-22</strong><br>DARPA On-Orbit Nuclear Workshop</p>
                 <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Apr 13-16</strong><br>41st Space Symposium</p>
                 <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-secondary);">Apr 27-30</strong><br>NETS 2026 (Dayton)</p>
                 <a href="#" onclick="switchTab('news'); setTimeout(() => { const el = document.getElementById('news-events'); if(el) el.scrollIntoView({behavior: 'smooth'}); }, 200); return false;" style="color: var(--accent); font-size: 0.7rem; display: block; margin-top: 0.5rem;">View All Events &rarr;</a>
@@ -1431,6 +1431,7 @@
                 <li><a href="#" onclick="downloadRFITemplate(); return false;">RFI Response Template</a></li>
                 <li><a href="#" onclick="downloadCaptureTemplate(); return false;">Capture Plan Template</a></li>
                 <li><a href="Radiant-Master-Plan-Atoms-for-Prosperity.pdf" target="_blank" download>Radiant Master Plan (PDF)</a></li>
+                <li><a href="DARPA-SN-26-21-Amendment-01.pdf" target="_blank" download>DARPA On-Orbit Nuclear RFI (Amend. 01)</a></li>
             </ul>
 
             <h3>NASA White Papers</h3>
@@ -1775,7 +1776,7 @@
                                     <td><strong>On-Orbit Nuclear</strong></td>
                                     <td>DARPA</td>
                                     <td>Satellite nuclear power</td>
-                                    <td style="color: #888;">WPs Closed; Workshop Mar 31</td>
+                                    <td style="color: var(--warning);"><strong>WPs Due Feb 20</strong>; Workshop Apr 21-22</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1830,8 +1831,8 @@
                     <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
                         <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('contracts')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128197;</div>
-                            <div class="stat-value" style="font-size: 1rem; color: var(--accent);">DARPA Workshop</div>
-                            <div class="stat-label">Mar 31 - Apr 1, 2026</div>
+                            <div class="stat-value" style="font-size: 1rem; color: var(--warning);">DARPA WPs Due!</div>
+                            <div class="stat-label">Feb 20, 2026</div>
                         </div>
                         <div class="stat-card" style="text-align: center; cursor: pointer;" onclick="switchTab('contracts')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128293;</div>
@@ -1895,12 +1896,13 @@
                     </div>
                 </div>
 
-                <div class="alert" style="background: rgba(150, 150, 150, 0.1); border-left: 4px solid #888;">
-                    <div class="alert-icon">&#128197;</div>
+                <div class="alert alert-warning" style="border-left: 4px solid var(--warning);">
+                    <div class="alert-icon">&#128293;</div>
                     <div class="alert-content">
-                        <h4>DARPA On-Orbit Nuclear — White Papers CLOSED (Feb 6)</h4>
-                        <p>White paper submission closed Feb 6, 2026. Workshop scheduled Mar 31 - Apr 1, 2026 at DARPA Conference Center, Arlington, VA.</p>
-                        <a href="https://www.darpa.mil/events/2025/on-orbit-nuclear-power-concepts-workshop" target="_blank" class="btn btn-secondary" style="margin-top: 0.5rem;">Workshop Info &#8594;</a>
+                        <h4>DARPA On-Orbit Nuclear — White Papers Due Feb 20!</h4>
+                        <p><strong>AMENDED:</strong> White paper deadline extended to <strong>February 20, 2026</strong> (4:00 PM ET). Workshop moved to <strong>April 21-22, 2026</strong> at DARPA Conference Center, Arlington, VA. Select/non-select notifications by March 24.</p>
+                        <a href="https://www.darpa.mil/work-with-us/opportunities/darpa-sn-26-21" target="_blank" class="btn btn-warning" style="margin-top: 0.5rem;">Submit White Paper &#8594;</a>
+                        <a href="DARPA-SN-26-21-Amendment-01.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 0.5rem;">Amendment 01 (PDF) &#8594;</a>
                     </div>
                 </div>
 
@@ -1993,12 +1995,12 @@
                 <div class="opportunity-card hot">
                     <div class="opportunity-header">
                         <div>
-                            <div class="opportunity-title">&#128293; On-Orbit Nuclear Power Concepts - DARPA-SN-26-21</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">White papers closed Feb 6. Workshop Mar 31-Apr 1.</p>
+                            <div class="opportunity-title">&#128293; On-Orbit Nuclear Power Concepts - DARPA-SN-26-21 (AMENDED)</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem;">White papers due Feb 20, 2026. Workshop Apr 21-22.</p>
                         </div>
                         <span class="opportunity-agency">DARPA TTO</span>
                     </div>
-                    <p style="color: var(--text-light);">DARPA TTO exploring technologies for producible, cost-effective nuclear reactors for on-orbit satellite power. White paper submission closed Feb 6, 2026. Focus on producible systems (not bespoke demos), use cases over solar, power conversion, launch survivability. PM: James Shoemaker.</p>
+                    <p style="color: var(--text-light);">DARPA TTO exploring technologies for producible, cost-effective nuclear reactors for on-orbit satellite power. <strong style="color: var(--warning);">White papers due Feb 20, 2026 (4:00 PM ET) per Amendment 01.</strong> Focus on producible systems (not bespoke demos), use cases over solar, power conversion, launch survivability. PM: James Shoemaker.</p>
                     <div class="opportunity-details">
                         <div class="opportunity-detail">
                             <label>Type</label>
@@ -2006,11 +2008,11 @@
                         </div>
                         <div class="opportunity-detail">
                             <label>White Papers</label>
-                            <span style="color: #888;">CLOSED</span>
+                            <span style="color: var(--warning);"><strong>Due Feb 20</strong></span>
                         </div>
                         <div class="opportunity-detail">
                             <label>Workshop</label>
-                            <span>Mar 31 - Apr 1</span>
+                            <span>Apr 21-22</span>
                         </div>
                         <div class="opportunity-detail">
                             <label>Location</label>
@@ -2018,11 +2020,12 @@
                         </div>
                     </div>
                     <div class="feature-box" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--accent);">
-                        <h4 style="margin-bottom: 0.5rem;">Workshop Details</h4>
+                        <h4 style="margin-bottom: 0.5rem;">Key Dates (Amendment 01)</h4>
                         <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
-                            <li><strong>Dates:</strong> March 31 - April 1, 2026</li>
-                            <li><strong>Location:</strong> DARPA Conference Center, Arlington, VA</li>
-                            <li><strong>White Papers:</strong> Closed Feb 6, 2026 (8-page format)</li>
+                            <li><strong>White Papers Due:</strong> <span style="color: var(--warning);">February 20, 2026, 4:00 PM ET</span> (8-page format)</li>
+                            <li><strong>Select/Non-Select Notification:</strong> March 24, 2026</li>
+                            <li><strong>Workshop:</strong> April 21-22, 2026</li>
+                            <li><strong>Location:</strong> DARPA Conference Center (DCC), 675 N Randolph St, Arlington, VA 22203</li>
                             <li><strong>Contact:</strong> DARPA-SN-26-21@darpa.mil</li>
                         </ul>
                     </div>
@@ -2316,9 +2319,9 @@
                                 <tr>
                                     <td><strong>DARPA On-Orbit Nuclear</strong></td>
                                     <td>DARPA TTO</td>
-                                    <td style="color: #888;">CLOSED (WPs)</td>
-                                    <td>Workshop Mar 31-Apr 1</td>
-                                    <td>White papers closed Feb 6; workshop pending</td>
+                                    <td style="color: var(--warning);"><strong>OPEN (WPs Due Feb 20)</strong></td>
+                                    <td>Workshop Apr 21-22</td>
+                                    <td>Amendment 01: WPs due Feb 20; workshop Apr 21-22</td>
                                 </tr>
                                 <tr style="background: rgba(255, 204, 0, 0.15);">
                                     <td><strong>NASA FSP Phase 2</strong></td>
@@ -3210,8 +3213,8 @@
                                     <div class="feature-box" style="border-left: 4px solid var(--accent);">
                                         <h4>On-Orbit Nuclear Power Initiative (TTO)</h4>
                                         <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
-                                            <li>Workshop: <strong>March 31 - April 1, 2026</strong></li>
-                                            <li>White papers: Closed (Feb 6, 2026)</li>
+                                            <li>Workshop: <strong>April 21-22, 2026</strong> (updated per Amendment 01)</li>
+                                            <li>White papers: <strong style="color: var(--warning);">Due Feb 20, 2026 (4:00 PM ET)</strong></li>
                                             <li>Focus: Producible, cost-effective reactors</li>
                                             <li>Joint with DOE</li>
                                             <li><strong>Office:</strong> TTO</li>
@@ -3306,8 +3309,8 @@
                                     <li><strong>Read BAAs weekly</strong> — Check DARPA website every week</li>
                                     <li><strong>Attend Proposers Days</strong> — Always attend when announced</li>
                                     <li><strong>Request PM meetings</strong> — Email directly with 1-page concept</li>
-                                    <li><strong>Respond to RFIs</strong> — On-Orbit Nuclear Power workshop pending (Mar 31-Apr 1)</li>
-                                    <li><strong>Workshop participation</strong> — Upcoming: March 31 - April 1, 2026</li>
+                                    <li><strong>Respond to RFIs</strong> — <strong style="color: var(--warning);">On-Orbit Nuclear white papers due Feb 20!</strong></li>
+                                    <li><strong>Workshop participation</strong> — Upcoming: April 21-22, 2026</li>
                                 </ul>
 
                                 <h4 style="color: var(--accent); margin-bottom: 0.75rem;">White Paper Structure (5-8 pages)</h4>
@@ -3345,9 +3348,9 @@
                                     <div class="feature-box" style="border-left: 4px solid var(--accent);">
                                         <h4 style="color: var(--accent);">On-Orbit Nuclear Power Initiative</h4>
                                         <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.85rem;">
-                                            <li>Workshop: <strong>March 31 - April 1, 2026</strong></li>
+                                            <li>Workshop: <strong>April 21-22, 2026</strong></li>
                                             <li>Focus: Producible, cost-effective reactors</li>
-                                            <li>White papers: Closed (Feb 6, 2026)</li>
+                                            <li>White papers: <strong style="color: var(--warning);">Due Feb 20, 2026</strong></li>
                                             <li>Contact: <a href="mailto:HR001125S0011@darpa.mil">HR001125S0011@darpa.mil</a></li>
                                         </ul>
                                     </div>
@@ -6222,10 +6225,10 @@
                                     </div>
                                     <div>
                                         <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Post-DRACO Reality</h4>
-                                        <p style="color: var(--text-muted); font-size: 0.875rem;">DRACO cancelled June 2025. DARPA transitioning knowledge to NASA. Focus shifting to producible systems via On-Orbit Nuclear workshop (Mar-Apr 2026).</p>
+                                        <p style="color: var(--text-muted); font-size: 0.875rem;">DRACO cancelled June 2025. DARPA transitioning knowledge to NASA. Focus shifting to producible systems via On-Orbit Nuclear workshop (Apr 21-22, 2026).</p>
                                         <h4 style="color: var(--accent); margin-bottom: 0.5rem; margin-top: 1rem;">Current Opportunities</h4>
                                         <ul style="color: var(--text-muted); font-size: 0.875rem;">
-                                            <li><strong>On-Orbit Nuclear Power</strong> — Workshop Mar 31-Apr 1, 2026</li>
+                                            <li><strong>On-Orbit Nuclear Power</strong> — <strong style="color: var(--warning);">WPs due Feb 20!</strong> Workshop Apr 21-22, 2026</li>
                                             <li><strong>Rads to Watts</strong> — Direct radiation-to-electricity (active)</li>
                                             <li><strong>TTO BAA</strong> — HR001125S0011 (rolling)</li>
                                         </ul>
@@ -9960,7 +9963,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                 <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>JETSON</strong></td><td>AFRL / Space Force</td><td>6-20 kWe nuclear electric spacecraft</td><td style="color: var(--success);">Active - CDR phase</td><td>Deliverables Dec 2025</td></tr>
                                 <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>SPAR Institute</strong></td><td>Space Force / AFRL</td><td>Nuclear propulsion R&D (8 universities)</td><td style="color: var(--success);">Active - $35M awarded</td><td>2-year program</td></tr>
                                 <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>Rads to Watts</strong></td><td>DARPA</td><td>Direct radiation-to-electricity</td><td style="color: var(--success);">Active - Work began Dec 2025</td><td>30-month program</td></tr>
-                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>On-Orbit Nuclear</strong></td><td>DARPA TTO + DOE</td><td>Space reactor concepts</td><td style="color: var(--warning);">Exploration phase</td><td>Workshop Mar-Apr 2026</td></tr>
+                                <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>On-Orbit Nuclear</strong></td><td>DARPA TTO + DOE</td><td>Space reactor concepts</td><td style="color: var(--warning);">WPs Due Feb 20</td><td>Workshop Apr 21-22, 2026</td></tr>
                                 <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>MARVL</strong></td><td>NASA Langley</td><td>Modular radiators for NEP</td><td style="color: var(--success);">Active - 2-year program</td><td>Ground demo ~2027</td></tr>
                                 <tr style="background: rgba(239, 68, 68, 0.1);"><td style="color: var(--danger);"><strong>DRACO</strong></td><td style="color: var(--danger);">DARPA + NASA</td><td style="color: var(--danger);">Nuclear thermal propulsion demo</td><td style="color: var(--danger);">CANCELLED (May 2025)</td><td style="color: var(--danger);">FY26 budget: $0</td></tr>
                             </tbody>
@@ -10366,12 +10369,14 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                     </div>
 
                     <div class="accordion">
-                        <button class="accordion-toggle" style="border-left: 4px solid var(--warning);">&#128269; On-Orbit Nuclear Power Concepts - EXPLORATION PHASE</button>
+                        <button class="accordion-toggle" style="border-left: 4px solid var(--warning);">&#128293; On-Orbit Nuclear Power Concepts - WHITE PAPERS DUE FEB 20</button>
                         <div class="accordion-content">
-                            <p style="margin-bottom: 1rem;">DARPA TTO is now focusing on producible, cost-effective nuclear reactors rather than one-time demonstrations.</p>
+                            <p style="margin-bottom: 1rem;">DARPA TTO is now focusing on producible, cost-effective nuclear reactors rather than one-time demonstrations. <strong style="color: var(--warning);">Amendment 01 extended the white paper deadline to Feb 20, 2026.</strong></p>
 
                             <ul style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">
-                                <li><strong>Workshop:</strong> March 31 - April 1, 2026</li>
+                                <li><strong>White Papers Due:</strong> <span style="color: var(--warning);">February 20, 2026 (4:00 PM ET)</span></li>
+                                <li><strong>Select/Non-Select Notification:</strong> March 24, 2026</li>
+                                <li><strong>Workshop:</strong> April 21-22, 2026</li>
                                 <li><strong>Partners:</strong> DARPA TTO and Department of Energy</li>
                                 <li><strong>Goal:</strong> Establish common understanding of on-orbit nuclear power technology and challenges</li>
                                 <li><strong>Attendance:</strong> By invitation based on white paper submissions</li>
@@ -10556,8 +10561,8 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                             <div class="timeline-content"><h4>DOME Facility Complete</h4><p style="color: var(--text-light); font-size: 0.9rem;">World's first microreactor test bed ready at INL.</p></div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">Mar-Apr 2026</div>
-                            <div class="timeline-content"><h4>DARPA On-Orbit Nuclear Workshop</h4><p style="color: var(--text-light); font-size: 0.9rem;">March 31 - April 1, 2026. Nuclear electric concepts discussion.</p></div>
+                            <div class="timeline-date">Apr 2026</div>
+                            <div class="timeline-content"><h4>DARPA On-Orbit Nuclear Workshop</h4><p style="color: var(--text-light); font-size: 0.9rem;">April 21-22, 2026 at DARPA Conference Center, Arlington, VA. Nuclear electric concepts discussion.</p></div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-date" style="background: var(--success);">Summer 2026</div>
@@ -12712,7 +12717,7 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                         <div class="glossary-item" data-category="program"><div class="glossary-term">MEITNER</div><div class="glossary-definition"><strong>Modeling-Enhanced Innovations Trailblazing Nuclear Energy Reinvigoration</strong> - ARPA-E program funding innovative reactor concepts. Focus on cost reduction and safety improvements.</div></div>
                         <div class="glossary-item" data-category="program"><div class="glossary-term">HALEU Consortium</div><div class="glossary-definition"><strong>DOE HALEU Availability Program</strong> - $2.7B initiative to establish domestic HALEU supply chain. Contracts with Centrus, Urenco, and others. Critical for advanced reactor deployment.</div></div>
                         <div class="glossary-item" data-category="program"><div class="glossary-term">ARDP</div><div class="glossary-definition"><strong>Advanced Reactor Demonstration Program</strong> - DOE program supporting commercial advanced reactor deployment. ~$3.2B for TerraPower and X-energy demonstrations.</div></div>
-                        <div class="glossary-item" data-category="program"><div class="glossary-term">On-Orbit Nuclear</div><div class="glossary-definition"><strong>DARPA Workshop Series</strong> - March-April 2026 workshops exploring on-orbit nuclear power opportunities. White papers closed February 6, 2026. Potential new DARPA program.</div></div>
+                        <div class="glossary-item" data-category="program"><div class="glossary-term">On-Orbit Nuclear</div><div class="glossary-definition"><strong>DARPA RFI + Workshop</strong> - DARPA-SN-26-21. White papers due February 20, 2026 (Amendment 01). Workshop April 21-22, 2026 at DARPA Conference Center, Arlington, VA. Exploring producible, cost-effective on-orbit nuclear power systems. Joint with DOE.</div></div>
                     </div>
                 </div>
 
@@ -14327,12 +14332,6 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                         <td>Washington, DC</td>
                                         <td>Largest satellite industry event. GovMilSpace track for defense/government.</td>
                                     </tr>
-                                    <tr>
-                                        <td><strong>Mar 31 - Apr 1</strong></td>
-                                        <td><a href="https://www.darpa.mil/events/2025/on-orbit-nuclear-power-concepts-workshop" target="_blank" style="color: var(--accent);">DARPA On-Orbit Nuclear Power Workshop</a></td>
-                                        <td>Arlington, VA</td>
-                                        <td>&#11088;&#11088; CRITICAL for space nuclear BD. DARPA exploring NEP after DRACO. White papers closed Feb 6.</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -14356,6 +14355,12 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                         <td><a href="https://iaaspace.org/" target="_blank" style="color: var(--accent);">5th IAA Conference on Space Situational Awareness</a></td>
                                         <td>Madrid, Spain</td>
                                         <td>International space security, surveillance, tracking.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Apr 21-22</strong></td>
+                                        <td><a href="https://www.darpa.mil/events/2025/on-orbit-nuclear-power-concepts-workshop" target="_blank" style="color: var(--accent);">DARPA On-Orbit Nuclear Power Workshop</a></td>
+                                        <td>Arlington, VA</td>
+                                        <td>&#11088;&#11088; CRITICAL for space nuclear BD. DARPA exploring NEP after DRACO. WPs due Feb 20. Amended dates.</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Apr 13-16</strong></td>
@@ -14439,7 +14444,8 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                             <h4 style="color: var(--error);">&#9888; Immediate (Q1 2026)</h4>
                             <ul style="color: var(--text-muted); margin-left: 1rem; font-size: 0.9rem;">
                                 <li><strong>Feb 9:</strong> Radiant DARK approved by DOE (safety doc 2 of 3)</li>
-                                <li><strong>Mar 31-Apr 1:</strong> DARPA On-Orbit Nuclear Workshop (Arlington, VA)</li>
+                                <li><strong>Feb 20:</strong> DARPA On-Orbit Nuclear white papers due (4:00 PM ET)</li>
+                                <li><strong>Apr 21-22:</strong> DARPA On-Orbit Nuclear Workshop (Arlington, VA)</li>
                                 <li><strong>Early 2026:</strong> NASA FSP Phase 2 solicitation expected</li>
                                 <li><strong>Mar 2026:</strong> DOME construction complete target</li>
                             </ul>
@@ -14492,8 +14498,8 @@ Generation 3:    &#9679;&#8594;&#11044;&#128165; &#9679;&#8594;&#11044;&#128165;
                                 <p style="color: var(--text-muted); font-size: 0.9rem;">Premier global space event. Senior government, military, industry. Critical for teaming, visibility, prime contractor relationships.</p>
                             </div>
                             <div>
-                                <h4 style="margin-bottom: 0.5rem;">DARPA Workshop (Mar 31-Apr 1, Arlington)</h4>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">Direct engagement on on-orbit nuclear power concepts. Post-DRACO opportunity shaping. White papers closed Feb 6.</p>
+                                <h4 style="margin-bottom: 0.5rem;">DARPA Workshop (Apr 21-22, Arlington)</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Direct engagement on on-orbit nuclear power concepts. Post-DRACO opportunity shaping. White papers due Feb 20 (Amendment 01).</p>
                             </div>
                             <div>
                                 <h4 style="margin-bottom: 0.5rem;">NEI Conference (Apr 7-9, Washington DC)</h4>
